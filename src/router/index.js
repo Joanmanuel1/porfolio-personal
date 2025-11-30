@@ -3,7 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import ProjectsView from "../views/ProjectView.vue";
 import ContactView from "../views/ContactView.vue";
-import ExperienceView from "../views//Experience.vue";
+import ExperienceView from "../views/Experience.vue";
+import EducationView from "../views/Education.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/experience",
     name: "Experience",
     component: ExperienceView,
+  },
+  {
+    path: "/education",
+    name: "Education",
+    component: EducationView,
   },
 ];
 

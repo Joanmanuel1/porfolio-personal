@@ -1,40 +1,42 @@
 <template>
-  <section class="h-full flex items-center justify-center text-center p-8 overflow-hidden relative">
+  <section class="h-full flex items-center justify-center text-center p-4 sm:p-8 lg:p-12 overflow-hidden relative">
 
-    <div class="relative z-10 flex flex-col items-center justify-center h-full w-full p-8">
+    <div class="relative z-10 flex flex-col items-center justify-center h-full w-full p-0 sm:p-8">
 
       <div
-        class="relative z-10 w-full max-w-5xl p-6 md:p-8 rounded-xl shadow-3xl bg-white/10 backdrop-blur-md border border-gray-700">
-        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+        class="relative z-10 w-full max-w-5xl p-5 sm:p-8 rounded-xl shadow-3xl bg-white/10 backdrop-blur-md border border-gray-700">
+        
+        <div class="flex flex-col md:flex-row items-center gap-4 sm:gap-6 md:gap-8">
           <div class="flex-shrink-0">
             <img src="../assets/img/perfil.jpg" alt="Foto de perfil de Joan Manuel Romero"
-              class="h-48 w-48 md:h-48 md:w-48 rounded-full object-cover border-4 border-gray-600 shadow-lg">
+              class="h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 rounded-full object-cover border-4 border-gray-600 shadow-lg">
           </div>
+          
           <div class="text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-2 min-h-[3rem] md:min-h-[3.5rem]"
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2 min-h-[2.5rem] md:min-h-[3.5rem]"
               data-aos="fade-up" data-aos-duration="1000">
               <span v-html="displayedLines[0]"></span>
               <span v-if="currentLineIndex === 0" class="blinking-cursor">|</span>
             </h1>
 
-            <p class="text-lg font-light text-gray-200 mb-2 min-h-[3rem]" data-aos="fade-up" data-aos-delay="200"
+            <p class="text-base sm:text-lg font-light text-gray-200 mb-2 min-h-[2.5rem]" data-aos="fade-up" data-aos-delay="200"
               data-aos-duration="1000">
               <span v-html="displayedLines[1]"></span>
               <span v-if="currentLineIndex === 1" class="blinking-cursor">|</span>
             </p>
 
-            <p class="text-lg text-gray-300 mb-2 leading-relaxed min-h-[3rem]" data-aos="zoom-in" data-aos-delay="400"
+            <p class="text-base text-gray-300 mb-2 leading-relaxed min-h-[2.5rem]" data-aos="zoom-in" data-aos-delay="400"
               data-aos-duration="800">
               <span v-html="displayedLines[2]"></span>
               <span v-if="currentLineIndex === 2" class="blinking-cursor">|</span>
             </p>
 
-            <p class="text-md text-blue-100 mb-6 leading-relaxed min-h-[3rem]" data-aos="zoom-in" data-aos-delay="400"
+            <p class="text-sm text-blue-100 mb-4 leading-relaxed min-h-[2.5rem]" data-aos="zoom-in" data-aos-delay="400"
               data-aos-duration="800">
               <span v-html="displayedLines[3]"></span>
               <span v-if="currentLineIndex === 3" class="blinking-cursor">|</span>
             </p>
-            <p class="text-md text-blue-100 mb-2 leading-relaxed min-h-[6rem]" data-aos="zoom-in" data-aos-delay="400"
+            <p class="text-sm text-blue-100 mb-2 leading-relaxed min-h-[4rem] sm:min-h-[6rem]" data-aos="zoom-in" data-aos-delay="400"
               data-aos-duration="800">
               <span v-html="displayedLines[4]"></span>
               <span v-if="currentLineIndex === 4" class="blinking-cursor">|</span>
@@ -42,18 +44,18 @@
           </div>
         </div>
 
-        <div v-if="showButtons" class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in mt-8">
+        <div v-if="showButtons" class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in mt-6 sm:mt-8">
           <a href="/CV-JoanManuelRomero.pdf" download="CV-JoanManuelRomero.pdf">
-            <Button label="Descargar CV" icon="pi pi-download" severity="secondary" raised rounded
+            <Button label="Descargar CV" icon="pi pi-download" severity="secondary" raised rounded size="small"
               class="w-full sm:w-auto transition duration-300 hover:shadow-xl hover:scale-[1.05]" />
           </a>
           <a href="https://www.linkedin.com/in/joanmanuelromero/" target="_blank">
-            <Button label="LinkedIn" icon="pi pi-linkedin" severity="info" raised rounded
+            <Button label="LinkedIn" icon="pi pi-linkedin" severity="info" raised rounded size="small"
               class="w-full sm:w-auto transition duration-300 hover:shadow-xl hover:scale-[1.05]" />
           </a>
           <RouterLink to="/projects">
-            <Button label="Ver Mis Proyectos" icon="pi pi-check-square" severity="success"
-              raised rounded class="w-full sm:w-auto transition duration-300 hover:shadow-xl hover:scale-[1.05]" />
+            <Button label="Ver Mis Proyectos" icon="pi pi-check-square" severity="success" raised rounded size="small"
+              class="w-full sm:w-auto transition duration-300 hover:shadow-xl hover:scale-[1.05]" />
           </RouterLink>
         </div>
       </div>
@@ -176,5 +178,4 @@ onUnmounted(() => {
 .profile-background::before {
   content: none;
 }
-
 </style>

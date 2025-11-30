@@ -1,137 +1,65 @@
 <template>
-  <section class="max-w-6xl mx-auto p-8 lg:p-12"> 
-    <h2 class="text-4xl lg:text-5xl font-extrabold text-center text-white mb-4">
-      Hablemos de tu proyecto
-    </h2>
-    <p class="text-xl text-center text-blue-100 mb-12">
-      Si tienes una idea, una propuesta de trabajo o simplemente quieres saludar, envíame un mensaje.
-    </p>
+<section class="max-w-4xl mx-auto p-8 lg:p-12">
+    
+    <header class="text-center mb-12">
+      <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+        Contactame
+      </h2>
+      <p class="text-xl text-blue-100 font-light">
+        Si buscas un desarrollador Frontend proactivo para tu próximo proyecto contactame.
+      </p>
+    </header>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-      
-      <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Envíame un mensaje directo</h3>
+    <div class="bg-gray-800/50 p-8 sm:p-12 rounded-2xl shadow-xl border border-gray-700 space-y-8">
         
-        <form @submit.prevent="submitForm" class="space-y-6">
-          
-          <div class="field">
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
-            <InputText 
-              id="name" 
-              v-model="formData.name" 
-              placeholder="Tu Nombre Completo" 
-              required 
-              class="w-full p-inputtext-sm"
-            />
-          </div>
+        <h3 class="text-2xl font-bold text-white mb-6 text-center flex items-center justify-center">
+            <Users :size="24" class="mr-3 text-green-400"/> Vías de contacto principales
+        </h3>
 
-          <div class="field">
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-            <InputText 
-              id="email" 
-              v-model="formData.email" 
-              placeholder="contacto@ejemplo.com" 
-              type="email" 
-              required
-              class="w-full p-inputtext-sm"
-            />
-          </div>
-
-          <div class="field">
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
-            <Textarea 
-              id="message" 
-              v-model="formData.message" 
-              placeholder="Describe tu proyecto o consulta aquí..." 
-              rows="5" 
-              required
-              class="w-full"
-            />
-          </div>
-
-          <div class="pt-4">
-            <Button 
-              type="submit" 
-              label="Enviar Mensaje" 
-              icon="pi pi-send" 
-              class="w-full p-button-success p-button-rounded" 
-              :loading="isSending"
-            />
-          </div>
-        </form>
-      </div>
-
-      <div class="lg:col-span-1 space-y-8">
-        <div class="bg-gray-100 text-black p-8 rounded-xl shadow-lg">
-            <h3 class="text-2xl font-semibold mb-6">Información Directa</h3>
+        <div class="text-center">
+            <p class="text-sm font-semibold text-gray-400 mb-2">Correo electrónico</p>
             
-            <div class="space-y-4">
-                <div class="flex items-center space-x-3">
-                    <i class="pi pi-envelope text-xl text-primary-400"></i>
-                    <a href="mailto:tu.email@ejemplo.com" class="hover:text-primary-400">joanmanuelromero100@gmail.com</a>
-                </div>
-                <div class="flex items-center space-x-3">
-                    <i class="pi pi-map-marker text-xl text-primary-400"></i>
-                    <p>Buenos Aires, Argentina</p>
-                </div>
+            <a 
+                href="mailto:joanmanuelromero100@gmail.com" 
+                class="block sm:inline-flex items-center space-x-3 text-2xl text-green-400 hover:text-green-300 transition group font-extrabold"
+            >
+                <AtSign :size="24" class="flex-shrink-0 group-hover:scale-110 transition mx-auto sm:mx-0"/>
+                
+                <span class="underline underline-offset-4 decoration-green-400 break-words">
+                    joanmanuelromero100@gmail.com
+                </span>
+            </a>
+        </div>
+        
+        <div class="pt-6 border-t border-gray-700">
+             <p class="text-sm font-semibold text-gray-400 mb-4 text-center">Perfiles Profesionales</p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                
+                <a href="https://www.linkedin.com/in/joanmanuelromero/" target="_blank" class="flex items-center space-x-3 text-lg text-blue-400 hover:text-blue-300 transition group p-3 rounded-lg hover:bg-gray-700">
+                    <i class="pi pi-linkedin text-xl group-hover:scale-110 transition"></i>
+                    <span class="font-medium">LinkedIn</span>
+                </a>
+                
+                <a href="https://github.com/Joanmanuel1" target="_blank" class="flex items-center space-x-3 text-lg text-gray-400 hover:text-white transition group p-3 rounded-lg hover:bg-gray-700">
+                    <i class="pi pi-github text-xl group-hover:scale-110 transition"></i>
+                    <span class="font-medium">GitHub</span>
+                </a>
             </div>
         </div>
 
-        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Sígueme</h3>
-            <div class="space-y-4">
-                <a href="https://github.com/Joanmanuel1" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-500 transition">
-                    <i class="pi pi-github text-xl"></i>
-                    <span>GitHub / Ver Código</span>
-                </a>
-                <a href="https://www.linkedin.com/in/joanmanuelromero/" target="_blank" class="flex items-center space-x-3 text-gray-700 hover:text-blue-500 transition">
-                    <i class="pi pi-linkedin text-xl"></i>
-                    <span>LinkedIn / Perfil Profesional</span>
-                </a>
-            </div>
-        </div>
-      </div>
+        <p class="text-base text-gray-400 mt-6 text-center flex items-center justify-center">
+             <MapPin :size="16" class="mr-2 text-green-400"/>
+             Buenos Aires, Argentina
+        </p>
 
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-// Importamos los componentes de PrimeVue necesarios
-import InputText from 'primevue/inputtext';
-import Textarea from 'primevue/textarea';
-import Button from 'primevue/button';
+// Nota: Necesitas importar estos iconos de Lucide en tu componente
+import { Users, AtSign, MapPin } from 'lucide-vue-next'; 
 
-// 1. Manejo del estado del formulario
-const formData = ref({
-    name: '',
-    email: '',
-    message: '',
-});
-const isSending = ref(false);
-
-// 2. Función para manejar el envío
-const submitForm = () => {
-    isSending.value = true;
-    
-    // **IMPORTANTE: Lógica de Envío**
-    // Aquí es donde integrarías un servicio de terceros para recibir los mensajes:
-    // Opciones populares:
-    // a) Netlify Forms o Vercel Forms (si despliegas en esas plataformas).
-    // b) Formspree (el más simple, requiere cambiar el 'action' del <form> y quitar el @submit.prevent).
-    // c) Un backend (Node.js/Firebase) si necesitas lógica compleja.
-
-    console.log('Datos a enviar:', formData.value);
-    
-    // Simulación de envío
-    setTimeout(() => {
-        isSending.value = false;
-        alert('Mensaje enviado (simulación). ¡Gracias por tu interés!');
-        // Opcional: Resetear el formulario
-        // formData.value = { name: '', email: '', message: '' };
-    }, 2000);
-};
-
-// **Nota:** No incluimos estilos <style scoped> porque estamos usando Tailwind CSS.
+// Ya no necesitamos ref, InputText, Button, submitForm, etc., ya que no hay formulario.
 </script>

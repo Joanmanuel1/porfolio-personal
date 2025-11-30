@@ -1,17 +1,14 @@
 <template>
-  <section class="p-8 lg:p-12 bg-gray-800 min-h-screen">
+  <section class="p-4 sm:p-8 lg:p-12 bg-gray-800 min-h-screen">
     <div class="max-w-7xl mx-auto">
 
-      <header class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+      <header class="text-center mb-8 sm:mb-12" data-aos="fade-up">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
           <i class="pi pi-th-large mr-3 text-green-500"></i> Mis Proyectos
         </h2>
-        <p class="text-xl text-gray-300 font-light">
-          Echa un vistazo a mi trabajo y las tecnologías que utilizo.
-        </p>
       </header>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
         <ProjectCard v-for="project in projectsData" :key="project.id" :project="project" data-aos="zoom-in"
           data-aos-duration="1000" />
       </div>

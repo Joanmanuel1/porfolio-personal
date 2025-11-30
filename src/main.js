@@ -8,7 +8,7 @@ import App from './App.vue'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import Chip from 'primevue/chip';
 import 'primeicons/primeicons.css';
 
 const app = createApp(App)
@@ -18,6 +18,7 @@ AOS.init({
   duration: 800,
 });
 
+app.component('Chip', Chip);
 app.use(router);
 app.use(PrimeVue, {
   theme: { preset: Lara, options: { darkModeSelector: 'system' } }
