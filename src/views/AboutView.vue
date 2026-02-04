@@ -24,7 +24,7 @@
         </p>
 
         <p class="text-base sm:text-lg text-gray-700 leading-relaxed italic border-l-4 border-green-500 pl-3 sm:pl-4">
-          Actualmente, me especializo en la construcción de **Single Page Applications (SPA)** escalables con Vue.js y
+          Actualmente, me especializo en la construcción de Single Page Applications (SPA) escalables con Vue.js y
           Angular, asegurando que cada componente sea reutilizable, accesible y cumpla estrictamente con las necesidades
           funcionales.
         </p>
@@ -37,14 +37,16 @@
       </div>
 
       <div class="pt-4 sm:pt-6">
-        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 text-center border-b border-gray-700 pb-3 sm:pb-4">
+        <h3
+          class="text-3xl sm:text-4xl font-bold text-white mb-6 sm:mb-8 text-center border-b border-gray-700 pb-3 sm:pb-4">
           <Code :size="24" class="mr-2 text-green-500 inline-block align-middle" /> Mi Stack técnico
         </h3>
 
         <div class="flex flex-col gap-6 sm:gap-10">
 
           <div class="space-y-6 sm:space-y-8 p-4 rounded-xl border-2 border-green-500 shadow-xl bg-gray-900/50">
-            <h4 class="text-xl sm:text-2xl font-extrabold text-green-400 pb-2 flex items-center border-b border-gray-600">
+            <h4
+              class="text-xl sm:text-2xl font-extrabold text-green-400 pb-2 flex items-center border-b border-gray-600">
               <Zap :size="18" class="mr-2" /> Desarrollo
             </h4>
 
@@ -61,7 +63,7 @@
                   <li><span class="font-bold text-blue-500">TypeScript</span></li>
                 </ul>
               </div>
-              
+
               <div class="skill-group bg-gray-100 hover:bg-gray-200">
                 <p class="font-bold text-base sm:text-lg text-gray-800 mb-2 flex items-center">
                   <Palette :size="16" class="mr-2 text-gray-600" /> User interface
@@ -186,15 +188,17 @@ import { Zap, Code, Palette, Database, Compass, Trello, GitBranch, MousePointer2
 .p-chip .p-chip-text {
   font-size: 0.85rem;
 }
+
 .p-chip i {
-    font-size: 0.85rem;
-    margin-right: 0.3rem;
+  font-size: 0.85rem;
+  margin-right: 0.3rem;
 }
 
 @media (min-width: 640px) {
   .p-chip {
     padding: 0.5rem 0.75rem;
   }
+
   .p-chip .p-chip-text {
     font-size: 0.9rem;
   }

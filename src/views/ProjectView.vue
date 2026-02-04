@@ -100,8 +100,28 @@ const projectsData = ref([
       { item: '5-c.png', alt: 'Detalle de Pokémon' },
     ],
   },
+  {
+    id: 6,
+    title: 'NutriAmor (Vue 3 con IA)',
+    description: 'Aplicación web que permite a los usuarios cargar sus comidas diarias, generando un informe mensual. Cargar sus propias recetas y que la IA analice las comidas.',
+    technologies: ['Vue 3', 'JavaScript', 'CSS', 'IA'],
+    demoUrl: '',
+    githubUrl: '',
+    gallery: [
+      { item: '6-a.png', alt: 'Home' },
+      { item: '6-b.png', alt: 'Cargar informe' },
+      { item: '6-c.png', alt: 'Detalle del informe' },
+      { item: '6-d.png', alt: 'registra comida' },
+      { item: '6-e.png', alt: 'ia carga comida' },
+      { item: '6-f.png', alt: 'analisis de ia' },
+      { item: '6-g.png', alt: 'carga de datos' },
+      { item: '6-h.png', alt: 'carga datos complementarios de Pokémon' },
+      { item: '6-i.png', alt: 'home cargado' },
+      { item: '6-j.png', alt: 'recetas de comida' },
+      { item: '6-k.png', alt: 'receta nueva carga' },
+    ],
+  },
 ]);
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
