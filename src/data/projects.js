@@ -58,6 +58,7 @@ export const productionProjects = [
     demoUrl: '',
     githubUrl: '',
     status: false,
+    wip: true,
     featured: true,
     frame: 'browser',
     galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],

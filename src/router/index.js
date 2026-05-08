@@ -8,7 +8,7 @@ const routes = [
   { path: '/contact',    name: 'Contact',       component: () => import('../views/ContactView.vue') },
   { path: '/experience', name: 'Experience',    component: () => import('../views/Experience.vue') },
   { path: '/education',  name: 'Education',     component: () => import('../views/Education.vue') },
-  { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/NotFound.vue') },
+{ path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/NotFound.vue') },
 ]
 
 const router = createRouter({

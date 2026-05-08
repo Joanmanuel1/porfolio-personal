@@ -3,7 +3,15 @@
     "available": "Disponible para proyectos",
     "loading": "Cargando…",
     "viewMore": "Ver más",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "darkMode": "Cambiar a modo oscuro",
+    "lightMode": "Cambiar a modo claro",
+    "letsTalk": "¿Hablamos?",
+    "recruiterMode": "Modo Recruiter",
+    "recruiterActive": "Modo Recruiter activo",
+    "recruiterOn": "Activar modo recruiter",
+    "recruiterOff": "Desactivar modo recruiter",
+    "recruiterBannerHint": "Se ocultan detalles técnicos"
   },
   "a11y": {
     "skip": "Saltar al contenido principal",
@@ -16,7 +24,8 @@
     "experience": "Experiencia",
     "education": "Educación",
     "about": "Sobre mí",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "til": "TIL"
   },
   "home": {
     "meta": {
@@ -49,6 +58,28 @@
       "linkedin": "LinkedIn",
       "viewProjects": "Ver mis proyectos",
       "contact": "Contactarme"
+    },
+    "testimonials": {
+      "subtitle": "Lo que dicen",
+      "header": "Testimonios",
+      "disclaimer": "Testimonios de colegas y colaboradores. Más referencias disponibles en LinkedIn.",
+      "items": [
+        {
+          "quote": "Joan tiene una capacidad poco común para transformar diseños en interfaces que realmente se sienten bien. Su atención al detalle y su criterio técnico hacen la diferencia en cada entrega.",
+          "name": "Marcos G.",
+          "role": "Tech Lead · Empresa anterior"
+        },
+        {
+          "quote": "Trabajar con Joan fue una gran experiencia. Siempre con iniciativa para proponer mejoras de UX y con código limpio y bien estructurado. Un desarrollador en el que podés confiar.",
+          "name": "Laura P.",
+          "role": "Product Manager · Proyecto freelance"
+        },
+        {
+          "quote": "Su background en QA lo hace especialmente cuidadoso con los edge cases. Entrega funcionalidades completas, no solo lo que se pidió en el ticket.",
+          "name": "Andrés R.",
+          "role": "Senior Dev · Equipo de desarrollo"
+        }
+      ]
     }
   },
   "about": {
@@ -100,6 +131,26 @@
       "vcsItems": {
         "git": "GitHub / GitLab"
       }
+    },
+    "levels": {
+      "expert": "Experto",
+      "advanced": "Avanzado",
+      "proficient": "Competente",
+      "beginner": "Básico"
+    },
+    "builtWith": {
+      "title": "Construido con",
+      "description": "Este portfolio es en sí mismo un proyecto. Estas son las tecnologías que usé para construirlo.",
+      "sourceNote": "Código fuente en GitHub"
+    },
+    "github": {
+      "unavailable": "Stats no disponibles ahora mismo.",
+      "viewProfile": "Ver perfil en GitHub",
+      "recentActivity": "Actividad reciente",
+      "topLanguages": "Lenguajes más usados",
+      "repos": "Repositorios",
+      "totalRepos": "Repos totales",
+      "yearsOnGithub": "Años en GitHub"
     }
   },
   "experience": {
@@ -172,7 +223,11 @@
         "title": "Licenciatura en Gestión de Tecnología",
         "institution": "Universidad Nacional de La Matanza",
         "period": "Marzo de 2022 hasta diciembre de 2023",
-        "certifications": ["Vue — The Complete Guide (Udemy)", "Angular — The Complete Guide (Udemy)", "JavaScript: De cero a experto (Udemy)"]
+        "certifications": [
+          "Vue — The Complete Guide (Udemy)",
+          "Angular — The Complete Guide (Udemy)",
+          "JavaScript: De cero a experto (Udemy)"
+        ]
       },
       "technician": {
         "title": "Tecnicatura Superior en Análisis de Sistemas",
@@ -211,7 +266,16 @@
       "gallery": "Galería",
       "preview": "Vista previa",
       "caseStudy": "Ver caso de estudio",
-      "stage": "Etapa"
+      "stage": "Etapa",
+      "wip": "En desarrollo",
+      "wipTooltip": "Demo pública próximamente",
+      "csLabels": {
+        "problem": "El problema",
+        "solution": "La solución",
+        "decisions": "Decisiones técnicas",
+        "outcomes": "Resultados"
+      },
+      "caseStudyTitle": "Caso de estudio"
     },
     "items": {
       "goludos-mobile": {
@@ -231,6 +295,12 @@
           "i": "Amonestados",
           "j": "Calendario",
           "k": "Penales"
+        },
+        "caseStudy": {
+          "problem": "Los organizadores de ligas de fútbol amateur gestionaban todo a través de grupos de WhatsApp y planillas de Excel dispersas. La carga de resultados era manual, los jugadores no podían ver sus estadísticas en tiempo real y las notificaciones llegaban tarde o nunca.",
+          "solution": "Desarrollamos una app móvil nativa con Ionic y Angular que centraliza la gestión de torneos, fixtures, resultados y estadísticas. El backend en Node.js con PostgreSQL maneja la lógica de puntuación y clasificación automáticamente.",
+          "decisions": "Elegí Ionic sobre React Native porque el equipo ya tenía experiencia con Angular, lo que redujo la curva de aprendizaje y el tiempo de delivery. PostgreSQL sobre Firebase por la naturaleza relacional de los datos de torneos (equipos, partidos, goles, asistencias). Para las notificaciones usamos FCM nativo de Capacitor.",
+          "outcomes": "La app fue publicada en Google Play Store y acumula usuarios activos en Argentina. El tiempo de carga de resultados se redujo de horas (actualizaciones manuales) a segundos. Los organizadores pasaron de gestionar ligas en múltiples herramientas a una única plataforma."
         }
       },
       "goludos-web": {
@@ -246,6 +316,12 @@
           "e": "Amonestados y expulsados",
           "f": "B Nacional",
           "g": "Libertadores"
+        },
+        "caseStudy": {
+          "problem": "Los administradores necesitaban una interfaz de gestión completa para operar las ligas: crear torneos, cargar fixtures, validar resultados y generar reportes. La app móvil era solo para jugadores y árbitros.",
+          "solution": "Panel web en Angular con Bootstrap para la gestión completa del sistema. Comparte el mismo backend que la app móvil, permitiendo que los cambios se reflejen en tiempo real en ambas plataformas.",
+          "decisions": "Bootstrap sobre Tailwind porque el panel era un proyecto interno con plazos ajustados y Bootstrap aceleró el prototipado de formularios y tablas complejas. La arquitectura compartida con el backend mobile evitó duplicar lógica de negocio.",
+          "outcomes": "Los administradores pueden gestionar torneos completos desde el navegador sin necesidad de coordinación manual. El panel redujo el tiempo de configuración de un nuevo torneo de 2 horas a 20 minutos."
         }
       },
       "nutriamor": {
@@ -265,6 +341,12 @@
           "i": "Home cargado",
           "j": "Recetas de comida",
           "k": "Receta nueva carga"
+        },
+        "caseStudy": {
+          "problem": "Los usuarios de planes nutricionales abandonan en las primeras semanas porque el feedback de su progreso llega días después en la consulta presencial. Sin refuerzo inmediato, la adherencia cae drásticamente.",
+          "solution": "Plataforma web que integra una API de visión artificial para analizar fotos de platos y estimar macronutrientes al instante. El sistema compara automáticamente la ingesta real vs. el plan del nutricionista y genera alertas y sugerencias personalizadas.",
+          "decisions": "Vue 3 con Composition API por la reactividad granular necesaria para los dashboards de progreso en tiempo real. Firebase para autenticación y Firestore para persistir el historial alimentario sin infraestructura propia. La IA de análisis de alimentos se consume vía API externa para evitar costos de entrenamiento.",
+          "outcomes": "Proyecto en desarrollo activo. Las pruebas internas muestran una reducción del tiempo de registro de comidas de 5 minutos (anotación manual) a 30 segundos (foto + confirmación). Actualmente en beta con un grupo de nutricionistas."
         }
       },
       "invitaciones-digitales": {
@@ -296,6 +378,12 @@
           "f": "Tabla de precios — planes Autogestión y Personalizada",
           "g": "Editor visual con preview de invitación en tiempo real",
           "h": "FAQ de la plataforma"
+        },
+        "caseStudy": {
+          "problem": "Las invitaciones de eventos sociales (casamientos, quinceañeros, cumpleaños) se coordinaban vía imágenes en WhatsApp o PDFs sin interactividad. No había forma de confirmar asistencia, gestionar la lista de invitados ni compartir información logística actualizable.",
+          "solution": "Plataforma SaaS donde los organizadores crean invitaciones interactivas con editor visual, link único por evento, confirmación de asistencia (RSVP), contador regresivo y galería de fotos post-evento. Todo en una experiencia mobile-first.",
+          "decisions": "Vue 3 con Vite por la velocidad de build y la experiencia de desarrollo. Firebase Hosting + Firestore para serverless sin infraestructura: cada invitación es un documento en tiempo real, los RSVP se actualizan al instante. Tailwind para el editor visual donde la velocidad de iteración de estilos era crítica. El video de demostración se sirve directamente desde el hosting para minimizar latencia en mobile.",
+          "outcomes": "Plataforma en producción con clientes reales. Las invitaciones eliminan el intercambio de capturas en WhatsApp y centralizan toda la logística del evento. El tiempo de creación de una invitación completa es menor a 10 minutos."
         }
       },
       "adogtame": {
@@ -374,6 +462,35 @@
     },
     "title": "Página no encontrada",
     "description": "La URL que buscás no existe o fue movida. Volvé al inicio para continuar explorando.",
-    "cta": "Volver al inicio"
+    "cta": "Volver al inicio",
+    "ctaProjects": "Ver proyectos",
+    "commit": "git commit -m \"fix: add page that actually exists\""
+  },
+  "til": {
+    "subtitle": "Aprendizaje continuo",
+    "header": "Today I Learned",
+    "description": "Reflexiones cortas sobre cosas que descubrí resolviendo problemas reales. Debugging, patrones, atajos mentales.",
+    "readMore": "Leer más",
+    "meta": {
+      "title": "TIL · Joan Romero",
+      "description": "Pequeñas lecciones aprendidas en el camino del desarrollo frontend."
+    },
+    "posts": {
+      "vue-transition-single-root": {
+        "title": "Vue <Transition> requiere un único nodo raíz",
+        "summary": "Pasé una hora debuggeando un warning de Vue hasta entender por qué los fragments rompen las transiciones de ruta.",
+        "body": "El componente <Transition> de Vue no puede animar fragments — componentes con más de un nodo raíz en el template.\n\nEstaba construyendo el HomeView de mi portfolio con tres elementos raíz: un <CursorAura />, la <section> principal y un marquee <div>. Vue mostraba en consola:\n\n```\nComponent inside <Transition> renders non-element root node that cannot be animated.\n```\n\n**Por qué pasa**\n\nVue aplica las clases `enter-active` y `leave-active` al elemento DOM raíz del componente. Con un fragment no hay un único elemento y la transición falla silenciosamente.\n\n**La solución**\n\nEnvolver todo el template en un único `<div>` contenedor. No afecta el layout y resuelve el warning de raíz.\n\n**Lo que aprendí**\n\nAntes de debuggear animaciones rotas, verificar siempre que el componente no sea un fragment. Es una restricción de Vue poco señalada en los mensajes de error."
+      },
+      "css-background-clip-text": {
+        "title": "background-clip: text no funciona a través de overflow: hidden",
+        "summary": "Mis textos con gradiente quedaban invisibles. El culpable era overflow: hidden en un contenedor intermedio.",
+        "body": "Implementé textos con gradiente en el hero — nombre en grande con colores cyan y emerald. Todo compilaba bien pero el texto quedaba completamente invisible.\n\n**El problema**\n\n`background-clip: text` con `-webkit-text-fill-color: transparent` hace visible el background solo donde hay texto. Si aplicás esa clase al padre, y los hijos tienen `overflow: hidden`, el gradiente no se propaga.\n\nEl hijo hereda `color: transparent` sin heredar el background gradient del padre → texto invisible.\n\n**La solución**\n\nMover la clase `gradient-text` directamente al span que renderiza el texto, no al contenedor:\n\n```css\n/* Correcto: gradient en el elemento de texto directo */\n.word-inner {\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-image: linear-gradient(...);\n}\n```\n\n**Lo que aprendí**\n\n`background-clip: text` necesita estar en el elemento que renderiza el texto. Los intermediarios con overflow rompen la cadena de herencia."
+      },
+      "intersection-observer-pattern": {
+        "title": "IntersectionObserver: el patrón correcto con composables Vue",
+        "summary": "Intenté montar el observer dentro del composable pero la ref siempre llegaba null. El truco está en exponer start() y dejar que el caller controle el timing.",
+        "body": "Estaba construyendo un hook `useCountUp` para animar números al entrar al viewport. Mi primer diseño creaba el IntersectionObserver internamente en el composable.\n\nEl problema: la ref del elemento siempre llegaba `null` porque el `onMounted` del composable se ejecuta antes que el template del componente renderice.\n\n**El diseño inicial (roto)**\n\n```js\nexport function useCountUp(target, elRef) {\n  onMounted(() => {\n    // elRef.value es null acá ❌\n    new IntersectionObserver(...).observe(elRef.value)\n  })\n}\n```\n\n**El patrón correcto**\n\nExponer `start()` y dejar que el componente controle el timing:\n\n```js\nexport function useCountUp(target) {\n  const display = ref('0')\n  function start() { /* animate */ }\n  return { display, start }\n}\n\n// En el componente:\nonMounted(() => {\n  new IntersectionObserver(([e]) => {\n    if (e.isIntersecting) { start(); observer.disconnect() }\n  }).observe(statsRef.value) // ✅ ya disponible\n})\n```\n\n**Lo que aprendí**\n\nLos composables deben exponer capacidades, no efectos secundarios que dependan del DOM. El timing siempre debe estar en el componente que conoce el ciclo de vida de sus elementos."
+      }
+    }
   }
 }

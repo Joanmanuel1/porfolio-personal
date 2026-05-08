@@ -25,7 +25,10 @@
           {{ t(link.key) }}
         </RouterLink>
         <div class="w-px h-4 bg-white/10 mx-2"></div>
+        <RecruiterToggle />
+        <div class="w-px h-4 bg-white/10 mx-1"></div>
         <LanguageSwitcher />
+        <ThemeToggle />
         <a
           href="/CV-JoanManuelRomero.pdf"
           download
@@ -43,7 +46,8 @@
       </nav>
 
       <!-- Mobile controls -->
-      <div class="flex items-center gap-3 md:hidden">
+      <div class="flex items-center gap-2 md:hidden">
+        <ThemeToggle />
         <LanguageSwitcher />
         <button
           @click="toggleMenu"
@@ -93,6 +97,8 @@ import { RouterLink, useRoute } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import LanguageSwitcher from './LanguageSwitcher.vue'
+import ThemeToggle from './ThemeToggle.vue'
+import RecruiterToggle from './RecruiterToggle.vue'
 
 const { t } = useI18n()
 const route = useRoute()

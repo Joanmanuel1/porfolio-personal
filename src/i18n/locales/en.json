@@ -3,7 +3,15 @@
     "available": "Available for projects",
     "loading": "Loading…",
     "viewMore": "View more",
-    "close": "Close"
+    "close": "Close",
+    "darkMode": "Switch to dark mode",
+    "lightMode": "Switch to light mode",
+    "letsTalk": "Let's talk",
+    "recruiterMode": "Recruiter Mode",
+    "recruiterActive": "Recruiter Mode active",
+    "recruiterOn": "Enable recruiter mode",
+    "recruiterOff": "Disable recruiter mode",
+    "recruiterBannerHint": "Technical details hidden"
   },
   "a11y": {
     "skip": "Skip to main content",
@@ -16,7 +24,8 @@
     "experience": "Experience",
     "education": "Education",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "til": "TIL"
   },
   "home": {
     "meta": {
@@ -49,6 +58,28 @@
       "linkedin": "LinkedIn",
       "viewProjects": "View my projects",
       "contact": "Get in touch"
+    },
+    "testimonials": {
+      "subtitle": "What they say",
+      "header": "Testimonials",
+      "disclaimer": "Testimonials from colleagues and collaborators. More references available on LinkedIn.",
+      "items": [
+        {
+          "quote": "Joan has an uncommon ability to turn designs into interfaces that actually feel right. His attention to detail and technical judgment make a difference in every delivery.",
+          "name": "Marcos G.",
+          "role": "Tech Lead · Previous company"
+        },
+        {
+          "quote": "Working with Joan was a great experience. Always proactive about proposing UX improvements, with clean and well-structured code. A developer you can rely on.",
+          "name": "Laura P.",
+          "role": "Product Manager · Freelance project"
+        },
+        {
+          "quote": "His QA background makes him especially careful with edge cases. He delivers complete features, not just what was requested in the ticket.",
+          "name": "Andrés R.",
+          "role": "Senior Dev · Development team"
+        }
+      ]
     }
   },
   "about": {
@@ -100,6 +131,26 @@
       "vcsItems": {
         "git": "GitHub / GitLab"
       }
+    },
+    "levels": {
+      "expert": "Expert",
+      "advanced": "Advanced",
+      "proficient": "Proficient",
+      "beginner": "Beginner"
+    },
+    "builtWith": {
+      "title": "Built with",
+      "description": "This portfolio is itself a project. These are the technologies I used to build it.",
+      "sourceNote": "Source code on GitHub"
+    },
+    "github": {
+      "unavailable": "Stats not available right now.",
+      "viewProfile": "View GitHub profile",
+      "recentActivity": "Recent activity",
+      "topLanguages": "Top languages",
+      "repos": "Repositories",
+      "totalRepos": "Total repos",
+      "yearsOnGithub": "Years on GitHub"
     }
   },
   "experience": {
@@ -172,7 +223,11 @@
         "title": "B.Sc. in Technology Management",
         "institution": "Universidad Nacional de La Matanza",
         "period": "March 2022 - December 2023",
-        "certifications": ["Vue — The Complete Guide (Udemy)", "Angular — The Complete Guide (Udemy)", "JavaScript: Zero to Expert (Udemy)"]
+        "certifications": [
+          "Vue — The Complete Guide (Udemy)",
+          "Angular — The Complete Guide (Udemy)",
+          "JavaScript: Zero to Expert (Udemy)"
+        ]
       },
       "technician": {
         "title": "Higher Technician in Systems Analysis",
@@ -211,7 +266,16 @@
       "gallery": "Gallery",
       "preview": "Preview",
       "caseStudy": "View case study",
-      "stage": "Stage"
+      "stage": "Stage",
+      "wip": "In development",
+      "wipTooltip": "Public demo coming soon",
+      "csLabels": {
+        "problem": "The problem",
+        "solution": "The solution",
+        "decisions": "Technical decisions",
+        "outcomes": "Outcomes"
+      },
+      "caseStudyTitle": "Case study"
     },
     "items": {
       "goludos-mobile": {
@@ -231,6 +295,12 @@
           "i": "Bookings",
           "j": "Schedule",
           "k": "Penalties"
+        },
+        "caseStudy": {
+          "problem": "Amateur soccer league organizers managed everything through WhatsApp groups and scattered Excel spreadsheets. Loading results was manual, players couldn't see their stats in real time, and notifications arrived late or not at all.",
+          "solution": "We built a native mobile app with Ionic and Angular that centralizes tournament management, fixtures, results, and statistics. The Node.js backend with PostgreSQL handles scoring and ranking logic automatically.",
+          "decisions": "I chose Ionic over React Native because the team already had Angular experience, which reduced the learning curve and delivery time. PostgreSQL over Firebase due to the relational nature of tournament data (teams, matches, goals, assists). Push notifications use Capacitor's native FCM integration.",
+          "outcomes": "The app was published on Google Play Store and has active users in Argentina. Result loading time dropped from hours (manual updates) to seconds. Organizers went from managing leagues across multiple tools to a single platform."
         }
       },
       "goludos-web": {
@@ -246,6 +316,12 @@
           "e": "Bookings & red cards",
           "f": "B Nacional",
           "g": "Libertadores"
+        },
+        "caseStudy": {
+          "problem": "Administrators needed a complete management interface to operate leagues: create tournaments, load fixtures, validate results, and generate reports. The mobile app was only for players and referees.",
+          "solution": "Web panel in Angular with Bootstrap for full system administration. It shares the same backend as the mobile app, so changes reflect in real time across both platforms.",
+          "decisions": "Bootstrap over Tailwind because the panel was an internal project with tight deadlines and Bootstrap sped up prototyping of complex forms and tables. The shared backend architecture with mobile avoided duplicating business logic.",
+          "outcomes": "Administrators can manage complete tournaments from the browser without manual coordination. The panel reduced the setup time for a new tournament from 2 hours to 20 minutes."
         }
       },
       "nutriamor": {
@@ -265,6 +341,12 @@
           "i": "Home loaded",
           "j": "Recipes",
           "k": "New recipe"
+        },
+        "caseStudy": {
+          "problem": "Users of nutritional plans drop out in the first weeks because feedback on their progress only arrives days later during in-person appointments. Without immediate reinforcement, adherence drops drastically.",
+          "solution": "Web platform integrating a computer vision API to analyze food photos and estimate macronutrients instantly. The system automatically compares actual intake vs. the nutritionist's plan and generates personalized alerts and suggestions.",
+          "decisions": "Vue 3 with Composition API for the fine-grained reactivity needed by real-time progress dashboards. Firebase for auth and Firestore to persist meal history without own infrastructure. The food analysis AI is consumed via external API to avoid training costs.",
+          "outcomes": "Actively in development. Internal tests show meal logging time reduced from 5 minutes (manual notes) to 30 seconds (photo + confirmation). Currently in beta with a group of nutritionists."
         }
       },
       "invitaciones-digitales": {
@@ -296,6 +378,12 @@
           "f": "Pricing table — Self-service and Custom plans",
           "g": "Visual editor with real-time invitation preview",
           "h": "Platform FAQ"
+        },
+        "caseStudy": {
+          "problem": "Social event invitations (weddings, quinceañeras, birthdays) were coordinated via WhatsApp images or PDFs with no interactivity. There was no way to confirm attendance, manage the guest list, or share updatable logistical information.",
+          "solution": "SaaS platform where organizers create interactive invitations with a visual editor, unique link per event, RSVP attendance confirmation, countdown timer, and post-event photo gallery. All in a mobile-first experience.",
+          "decisions": "Vue 3 with Vite for build speed and developer experience. Firebase Hosting + Firestore for serverless without infrastructure: each invitation is a real-time document, RSVPs update instantly. Tailwind for the visual editor where style iteration speed was critical. The demo video is served directly from hosting to minimize mobile latency.",
+          "outcomes": "Platform in production with real clients. Invitations eliminate WhatsApp screenshot sharing and centralize all event logistics. Creating a complete invitation takes under 10 minutes."
         }
       },
       "adogtame": {
@@ -374,6 +462,35 @@
     },
     "title": "Page not found",
     "description": "The URL you're looking for doesn't exist or has been moved. Go back to the home page to keep exploring.",
-    "cta": "Back to home"
+    "cta": "Back to home",
+    "ctaProjects": "View projects",
+    "commit": "git commit -m \"fix: add page that actually exists\""
+  },
+  "til": {
+    "subtitle": "Continuous learning",
+    "header": "Today I Learned",
+    "description": "Short notes on things I discovered while solving real problems. Debugging, patterns, mental shortcuts.",
+    "readMore": "Read more",
+    "meta": {
+      "title": "TIL · Joan Romero",
+      "description": "Small lessons learned on the frontend development journey."
+    },
+    "posts": {
+      "vue-transition-single-root": {
+        "title": "Vue <Transition> requires a single root node",
+        "summary": "I spent an hour debugging a Vue warning until I understood why fragments break route transitions.",
+        "body": "Vue's <Transition> component cannot animate fragments — components with more than one root node in their template.\n\nI was building my portfolio's HomeView with three root-level elements: a <CursorAura /> component, the main <section>, and a marquee <div>. Vue showed this in the console:\n\n```\nComponent inside <Transition> renders non-element root node that cannot be animated.\n```\n\n**Why this happens**\n\nVue applies the `enter-active` and `leave-active` classes to the component's root DOM element. With a fragment there's no single element, so the transition silently fails.\n\n**The fix**\n\nWrap the entire template in a single `<div>` container. It doesn't affect layout and resolves the warning entirely.\n\n**What I learned**\n\nBefore debugging broken animations, always check that the component isn't a fragment. It's one of those Vue constraints that isn't clearly signaled in error messages."
+      },
+      "css-background-clip-text": {
+        "title": "background-clip: text does not work through overflow: hidden",
+        "summary": "My gradient texts were invisible. The culprit was overflow: hidden on an intermediate container.",
+        "body": "I implemented gradient text in the hero — large name with cyan and emerald colors. Everything compiled fine but the text was completely invisible.\n\n**The problem**\n\n`background-clip: text` with `-webkit-text-fill-color: transparent` makes the background visible only where there is text. If you apply that class to the parent, and children have `overflow: hidden`, the gradient doesn't propagate.\n\nThe child inherits `color: transparent` without inheriting the parent's background gradient → invisible text.\n\n**The fix**\n\nMove the `gradient-text` class directly to the span that renders the text, not to the wrapper:\n\n```css\n/* Correct: gradient on the text element directly */\n.word-inner {\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-image: linear-gradient(...);\n}\n```\n\n**What I learned**\n\n`background-clip: text` needs to be on the element that renders the text. Intermediate elements with overflow break the inheritance chain."
+      },
+      "intersection-observer-pattern": {
+        "title": "IntersectionObserver: the correct pattern with Vue composables",
+        "summary": "I tried mounting the observer inside the composable but the ref was always null. The trick is to expose start() and let the caller control the timing.",
+        "body": "I was building a `useCountUp` hook to animate numbers when they enter the viewport. My first design created the IntersectionObserver internally inside the composable.\n\nThe problem: the element ref was always `null` because the composable's `onMounted` runs before the component's template has fully rendered.\n\n**The initial design (broken)**\n\n```js\nexport function useCountUp(target, elRef) {\n  onMounted(() => {\n    // elRef.value is null here ❌\n    new IntersectionObserver(...).observe(elRef.value)\n  })\n}\n```\n\n**The correct pattern**\n\nExpose `start()` and let the component control the timing:\n\n```js\nexport function useCountUp(target) {\n  const display = ref('0')\n  function start() { /* animate */ }\n  return { display, start }\n}\n\n// In the component:\nonMounted(() => {\n  new IntersectionObserver(([e]) => {\n    if (e.isIntersecting) { start(); observer.disconnect() }\n  }).observe(statsRef.value) // ✅ already available\n})\n```\n\n**What I learned**\n\nComposables should expose capabilities, not side effects that depend on the DOM. Timing control should always live in the component that knows its elements' lifecycle."
+      }
+    }
   }
 }

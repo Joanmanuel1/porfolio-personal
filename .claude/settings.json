@@ -23,7 +23,15 @@
       "Bash(sed -i 's/hover:text-indigo-300/hover:text-cyan-300/g; s/bg-indigo-500\\\\/8/bg-cyan-500\\\\/8/g; s/border-indigo-500\\\\/15/border-cyan-500\\\\/15/g; s/bg-indigo-500\\\\/15/bg-cyan-500\\\\/15/g; s/border-indigo-500\\\\/30/border-cyan-500\\\\/30/g; s/text-indigo-400/text-cyan-400/g' src/views/ProjectDetailView.vue)",
       "Bash(sed -i 's/bg-indigo-600\\\\/8/bg-cyan-600\\\\/8/g; s/text-indigo-300/text-sky-300/g; s/to-indigo-500\\\\/50/to-cyan-500\\\\/50/g' src/views/HomeView.vue)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(list\\(d.keys\\(\\)\\), indent=2\\)\\)\")",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(curl -s \"https://api.github.com/users/Joanmanuel1\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\({k:d[k] for k in ['public_repos','followers','following','name','bio','created_at'] if k in d}\\)\")",
+      "Bash(curl -s \"https://api.github.com/users/Joanmanuel1/repos?per_page=100&sort=updated\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('common',{}\\), indent=2, ensure_ascii=False\\)\\)\")",
+      "Bash(node scripts/add-til-i18n.mjs)",
+      "Bash(node scripts/add-case-studies.mjs)"
     ]
   }
 }

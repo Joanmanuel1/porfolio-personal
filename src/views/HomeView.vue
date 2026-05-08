@@ -1,15 +1,16 @@
 <template>
+  <div>
   <CursorAura />
 
   <section
     ref="heroRef"
-    class="relative min-h-[92vh] flex items-center overflow-hidden hero-glow"
+    class="relative flex items-center overflow-hidden hero-glow"
     @mousemove="onHeroMove"
   >
     <!-- Section-specific glow behind content -->
     <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-cyan-600/8 blur-[120px] pointer-events-none" aria-hidden="true"></div>
 
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 sm:py-28">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
         <!-- Left — text -->
@@ -43,13 +44,13 @@
                 <span class="word-inner" :style="{ '--word-delay': `${i * 70}ms` }">{{ word }}</span>
               </span>
             </span>
-            <span class="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl gradient-text">
+            <span class="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
               <span
                 v-for="(word, i) in nameWords"
                 :key="`n-${i}`"
                 class="word-mask mr-[0.18em]"
               >
-                <span class="word-inner" :style="{ '--word-delay': `${(greetingWords.length + i) * 70 + 60}ms` }">{{ word }}</span>
+                <span class="word-inner gradient-text" :style="{ '--word-delay': `${(greetingWords.length + i) * 70 + 60}ms` }">{{ word }}</span>
               </span>
             </span>
           </h1>
@@ -176,6 +177,8 @@
               :alt="t('home.hero.name')"
               loading="eager"
               decoding="async"
+              width="288"
+              height="288"
               class="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-2xl select-none pointer-events-none"
             />
 
@@ -199,7 +202,7 @@
 
     <!-- Scroll hint -->
     <div
-      class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
       v-motion
       :initial="{ opacity: 0 }"
       :enter="{ opacity: 1, transition: { delay: 1400, duration: 600 } }"
@@ -215,6 +218,61 @@
   <!-- Marquee tech stack -->
   <div class="relative border-y border-white/5 bg-canvas/40 backdrop-blur-sm">
     <MarqueeStack :items="marqueeItems" />
+  </div>
+
+  <!-- Testimonials -->
+  <section class="section-pad">
+    <div class="max-w-5xl mx-auto">
+      <div
+        class="text-center mb-12"
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
+      >
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('home.testimonials.subtitle') }}</p>
+        <h2 class="text-3xl sm:text-4xl font-display font-black text-white tracking-tightest">{{ t('home.testimonials.header') }}</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article
+          v-for="(t_item, idx) in testimonials"
+          :key="t_item.id"
+          class="glass glass-hover rounded-2xl p-6 flex flex-col"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: idx * 100, duration: 500 } }"
+        >
+          <!-- Stars -->
+          <div class="flex gap-1 mb-4">
+            <i v-for="s in 5" :key="s" class="pi pi-star-fill text-xs text-amber-400"></i>
+          </div>
+          <!-- Quote -->
+          <blockquote class="text-slate-400 text-sm leading-relaxed flex-grow italic mb-5">
+            "{{ t(t_item.quoteKey) }}"
+          </blockquote>
+          <!-- Author -->
+          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+              {{ t_item.initials }}
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-white">{{ t(t_item.nameKey) }}</p>
+              <p class="text-xs text-slate-500">{{ t(t_item.roleKey) }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p
+        class="text-center text-xs text-slate-600 mt-8"
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{ opacity: 1, transition: { delay: 400, duration: 600 } }"
+      >
+        {{ t('home.testimonials.disclaimer') }}
+      </p>
+    </div>
+  </section>
   </div>
 </template>
 
@@ -333,6 +391,13 @@ onUnmounted(() => {
   cancelAnimationFrame(avatarRaf)
   if (statsObserver) statsObserver.disconnect()
 })
+
+// ─── Testimonials ─────────────────────────────────────────────
+const testimonials = [
+  { id: 1, initials: 'MG', quoteKey: 'home.testimonials.items.0.quote', nameKey: 'home.testimonials.items.0.name', roleKey: 'home.testimonials.items.0.role' },
+  { id: 2, initials: 'LP', quoteKey: 'home.testimonials.items.1.quote', nameKey: 'home.testimonials.items.1.name', roleKey: 'home.testimonials.items.1.role' },
+  { id: 3, initials: 'AR', quoteKey: 'home.testimonials.items.2.quote', nameKey: 'home.testimonials.items.2.name', roleKey: 'home.testimonials.items.2.role' },
+]
 
 // ─── Marquee stack ────────────────────────────────────────────
 const marqueeItems = [

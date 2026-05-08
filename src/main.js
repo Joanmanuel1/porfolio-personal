@@ -38,6 +38,6 @@ app.use(createHead())
 app.use(MotionPlugin)
 app.use(ToastService)
 app.use(PrimeVue, {
-  theme: { preset: Lara, options: { darkModeSelector: 'system' } },
+  theme: { preset: Lara, options: { darkModeSelector: '[data-theme="dark"]' } },
 })
 app.mount('#app')

@@ -1,75 +1,78 @@
 <template>
-  <section v-if="project" class="section-pad">
+  <section v-if="project">
+
+    <!-- Hero band -->
+    <div
+      class="relative overflow-hidden border-b border-white/5 bg-gradient-to-br from-[#0d1520] to-[#0b0f19]"
+      v-motion
+      :initial="{ opacity: 0 }"
+      :enter="{ opacity: 1, transition: { duration: 600 } }"
+    >
+      <!-- Decorative glow -->
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+      <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-emerald-600/10 blur-[80px] rounded-full pointer-events-none"></div>
+
+      <div class="relative max-w-5xl mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-20">
+        <!-- Back -->
+        <RouterLink
+          to="/projects"
+          class="inline-flex items-center gap-2 text-slate-500 hover:text-cyan-300 mb-8 text-sm font-medium transition-colors group"
+          v-motion
+          :initial="{ opacity: 0, x: -12 }"
+          :enter="{ opacity: 1, x: 0, transition: { duration: 400 } }"
+        >
+          <i class="pi pi-arrow-left text-xs group-hover:-translate-x-0.5 transition-transform"></i>
+          {{ t('nav.projects') }}
+        </RouterLink>
+
+        <!-- Header -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 24 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 80, duration: 550 } }"
+        >
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span v-for="tech in project.technologies" :key="tech" class="tech-pill">{{ tech }}</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white tracking-tightest mb-5 leading-tight">
+            {{ t(project.titleKey) }}
+          </h1>
+          <p class="text-lg text-slate-400 leading-relaxed max-w-3xl">
+            {{ t(project.descriptionKey) }}
+          </p>
+        </div>
+
+        <!-- Impact + CTAs row -->
+        <div
+          class="mt-8 flex flex-col sm:flex-row gap-5 items-start"
+          v-motion
+          :initial="{ opacity: 0, y: 16 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: 200, duration: 500 } }"
+        >
+          <div v-if="project.impactKey" class="flex-1 p-4 rounded-xl bg-cyan-500/8 border border-cyan-500/15">
+            <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-1.5">{{ t('projects.labels.impact') }}</p>
+            <p class="text-slate-300 text-sm italic leading-relaxed">{{ t(project.impactKey) }}</p>
+          </div>
+
+          <div class="flex flex-wrap gap-3 flex-shrink-0">
+            <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank" rel="noopener" class="cta-primary">
+              <i class="pi pi-external-link"></i> {{ t('projects.labels.demo') }}
+            </a>
+            <span v-else-if="project.wip" :title="t('projects.labels.wipTooltip')"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/25 text-amber-400 text-sm cursor-default">
+              <i class="pi pi-wrench text-xs"></i> {{ t('projects.labels.wip') }}
+            </span>
+            <a v-if="project.githubUrl" :href="project.githubUrl" target="_blank" rel="noopener" class="cta-secondary">
+              <i class="pi pi-github"></i> {{ t('projects.labels.code') }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-pad">
     <div class="max-w-5xl mx-auto">
 
-      <!-- Back -->
-      <RouterLink
-        to="/projects"
-        class="inline-flex items-center gap-2 text-slate-500 hover:text-cyan-300 mb-10 text-sm font-medium transition-colors group"
-        v-motion
-        :initial="{ opacity: 0, x: -12 }"
-        :enter="{ opacity: 1, x: 0, transition: { duration: 400 } }"
-      >
-        <i class="pi pi-arrow-left text-xs group-hover:-translate-x-0.5 transition-transform"></i>
-        {{ t('nav.projects') }}
-      </RouterLink>
-
-      <!-- Header -->
-      <header
-        class="mb-10"
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: 60, duration: 500 } }"
-      >
-        <div class="flex flex-wrap gap-1.5 mb-4">
-          <span v-for="tech in project.technologies" :key="tech" class="tech-pill">{{ tech }}</span>
-        </div>
-        <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest mb-4">
-          {{ t(project.titleKey) }}
-        </h1>
-        <p class="text-lg text-slate-400 leading-relaxed max-w-3xl">
-          {{ t(project.descriptionKey) }}
-        </p>
-      </header>
-
-      <!-- Impact -->
-      <div
-        v-if="project.impactKey"
-        class="mb-10 p-5 rounded-xl bg-cyan-500/8 border border-cyan-500/15"
-        v-motion
-        :initial="{ opacity: 0, y: 16 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: 120, duration: 500 } }"
-      >
-        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-2">{{ t('projects.labels.impact') }}</p>
-        <p class="text-slate-300 italic leading-relaxed">{{ t(project.impactKey) }}</p>
-      </div>
-
-      <!-- CTAs -->
-      <div
-        class="flex flex-wrap gap-3 mb-14"
-        v-motion
-        :initial="{ opacity: 0, y: 16 }"
-        :enter="{ opacity: 1, y: 0, transition: { delay: 180, duration: 500 } }"
-      >
-        <a
-          v-if="project.demoUrl"
-          :href="project.demoUrl"
-          target="_blank"
-          rel="noopener"
-          class="cta-primary"
-        >
-          <i class="pi pi-external-link"></i> {{ t('projects.labels.demo') }}
-        </a>
-        <a
-          v-if="project.githubUrl"
-          :href="project.githubUrl"
-          target="_blank"
-          rel="noopener"
-          class="cta-secondary"
-        >
-          <i class="pi pi-github"></i> {{ t('projects.labels.code') }}
-        </a>
-      </div>
 
       <!-- What I learned -->
       <div
@@ -84,6 +87,30 @@
           {{ t('projects.labels.learned') }}
         </p>
         <p class="text-slate-300 leading-relaxed italic">{{ learnedText }}</p>
+      </div>
+
+      <!-- Case study section -->
+      <div
+        v-if="caseStudy"
+        class="mb-14 space-y-5"
+        v-motion
+        :initial="{ opacity: 0, y: 16 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 280, duration: 500 } }"
+      >
+        <div class="flex items-center gap-2 mb-6">
+          <span class="w-1 h-5 rounded-full bg-gradient-to-b from-cyan-400 to-emerald-500"></span>
+          <h2 class="text-xl font-display font-bold text-white">{{ t('projects.labels.caseStudyTitle') }}</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div v-for="(key, field) in caseStudyFields" :key="field" class="glass rounded-xl p-5">
+            <p class="text-xs font-semibold tracking-widest uppercase mb-2 flex items-center gap-1.5"
+               :class="key.color">
+              <i :class="key.icon + ' text-[10px]'"></i>
+              {{ t('projects.labels.csLabels.' + field) }}
+            </p>
+            <p class="text-sm text-slate-400 leading-relaxed">{{ caseStudy[field] }}</p>
+          </div>
+        </div>
       </div>
 
       <!-- Stage-based layout -->
@@ -222,6 +249,7 @@
         </div>
       </template>
     </div>
+    </div>
 
     <!-- Lightbox -->
     <Dialog
@@ -283,6 +311,29 @@ const learnedText = computed(() => {
   const val = t(key)
   return val === key ? null : val
 })
+
+const caseStudy = computed(() => {
+  if (!project.value) return null
+  const cs = project.value.caseStudy ?? null
+  if (cs) return cs
+  // Read from i18n if not in data
+  const slug = project.value.slug
+  const problem = t(`projects.items.${slug}.caseStudy.problem`)
+  if (problem === `projects.items.${slug}.caseStudy.problem`) return null
+  return {
+    problem,
+    solution: t(`projects.items.${slug}.caseStudy.solution`),
+    decisions: t(`projects.items.${slug}.caseStudy.decisions`),
+    outcomes: t(`projects.items.${slug}.caseStudy.outcomes`),
+  }
+})
+
+const caseStudyFields = {
+  problem:   { icon: 'pi pi-exclamation-circle', color: 'text-red-400' },
+  solution:  { icon: 'pi pi-lightbulb',          color: 'text-emerald-400' },
+  decisions: { icon: 'pi pi-code',               color: 'text-cyan-400' },
+  outcomes:  { icon: 'pi pi-chart-line',          color: 'text-amber-400' },
+}
 
 useSeo({
   titleKey: project.value?.titleKey,

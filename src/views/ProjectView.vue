@@ -37,11 +37,21 @@
               <!-- Visual panel -->
               <div class="relative h-64 sm:h-80 lg:h-full min-h-[280px] bg-[#0d1120] overflow-hidden flex items-center justify-center p-6">
                 <template v-if="project.gallery?.length && getImageUrl(project.gallery[0].item)">
+                  <!-- Blurred bg -->
                   <img
                     :src="getImageUrl(project.gallery[0].item)"
                     aria-hidden="true"
                     class="absolute inset-0 w-full h-full object-cover opacity-15 blur-2xl scale-110"
                   />
+                  <!-- Skeleton overlay until main img loads (skip if video) -->
+                  <div
+                    v-if="!project.videoUrl && !loadedImages.has(project.id)"
+                    class="absolute inset-0 z-20 bg-[#0d1120]/80 flex items-center justify-center"
+                  >
+                    <div class="w-full max-w-xs h-48 rounded-xl bg-white/[0.03] relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent skeleton-shimmer"></div>
+                    </div>
+                  </div>
                   <DeviceFrame
                     :type="project.frame"
                     :url="project.demoUrl"
@@ -54,6 +64,7 @@
                       loading="lazy"
                       decoding="async"
                       class="transition-transform duration-700 group-hover:scale-105"
+                      @load="loadedImages.add(project.id)"
                     />
                   </DeviceFrame>
                 </template>
@@ -94,6 +105,13 @@
                   >
                     <i class="pi pi-external-link"></i> {{ t('projects.labels.demo') }}
                   </a>
+                  <span
+                    v-else-if="project.wip"
+                    :title="t('projects.labels.wipTooltip')"
+                    class="inline-flex items-center gap-1.5 text-sm px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/25 text-amber-400 cursor-default select-none"
+                  >
+                    <i class="pi pi-wrench text-xs"></i> {{ t('projects.labels.wip') }}
+                  </span>
                   <RouterLink
                     :to="{ name: 'ProjectDetail', params: { slug: project.slug } }"
                     class="cta-secondary text-sm px-4 py-2 rounded-lg"
@@ -122,11 +140,12 @@
             {{ t('projects.kinds.practice') }}
           </h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bento-grid">
           <ProjectCard
             v-for="(project, idx) in practiceProjects"
             :key="project.id"
             :project="project"
+            :class="bentoClass(idx)"
             v-motion
             :initial="{ opacity: 0, y: 20 }"
             :enter="{ opacity: 1, y: 0, transition: { delay: idx * 80, duration: 500 } }"
@@ -209,7 +228,7 @@ import ProjectCard from '@/components/ProjectCard.vue'
 import DeviceFrame from '@/components/DeviceFrame.vue'
 import Dialog from 'primevue/dialog'
 import Galleria from 'primevue/galleria'
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { productionProjects, practiceProjects } from '@/data/projects'
@@ -224,9 +243,23 @@ useSeo({
   descKey: 'projects.meta.description',
 })
 
+const loadedImages = reactive(new Set())
 const displayProductionGallery = ref(false)
 const activeProject = ref(null)
 const activeGalleryItems = ref([])
+
+// Bento grid sizing — first card wider, rest balanced
+function bentoClass(idx) {
+  const layouts = [
+    'lg:col-span-2 lg:row-span-2',
+    'lg:col-span-1',
+    'lg:col-span-1',
+    'lg:col-span-2',
+    'lg:col-span-1',
+    'lg:col-span-1',
+  ]
+  return layouts[idx % layouts.length]
+}
 
 const openProductionGallery = (project) => {
   activeProject.value = project
