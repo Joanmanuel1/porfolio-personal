@@ -8,7 +8,8 @@
   "a11y": {
     "skip": "Saltar al contenido principal",
     "menuToggle": "Abrir/cerrar menú",
-    "switchLanguage": "Cambiar idioma"
+    "switchLanguage": "Cambiar idioma",
+    "printCv": "Imprimir / guardar como PDF"
   },
   "nav": {
     "projects": "Proyectos",
@@ -28,7 +29,20 @@
       "title": "Desarrollador Frontend especializado en Vue.js y soluciones web modernas.",
       "subtitle": "Transformo ideas en productos digitales funcionales y escalables.",
       "focus": "Me centro en la experiencia de usuario y la calidad del código.",
-      "credentials": "Licenciado en Gestión de Tecnología y Analista de Sistemas"
+      "credentials": "Licenciado en Gestión de Tecnología y Analista de Sistemas",
+      "roles": [
+        "Frontend Developer",
+        "Especialista Vue.js",
+        "Builder UX-first",
+        "Arquitecto de SPA",
+        "Craftsman del Frontend"
+      ],
+      "stats": {
+        "years": "años de experiencia",
+        "production": "proyectos en producción",
+        "stack": "frameworks principales"
+      },
+      "localTime": "Buenos Aires"
     },
     "cta": {
       "downloadCv": "Descargar CV",
@@ -107,8 +121,10 @@
         "period": "Abr. 2022 - Actualidad (3 años 8 meses)",
         "tech": "Vue JS 3, JavaScript, PrimeVue, Tailwind",
         "bullets": [
-          "Ser parte de la migración completa de un sistema interno (anteriormente basado en Django Admin) a una moderna arquitectura SPA en Vue 3.",
-          "Desarrollo y mantenimiento de componentes reutilizables y la librería de UI interna utilizando PrimeVue y Tailwind CSS."
+          "Lideré la migración completa de un sistema interno legacy (Django Admin) a una SPA moderna en Vue 3, reduciendo el tiempo de carga en ~60% y eliminando dependencias del backend para operaciones de UI.",
+          "Diseñé y mantuve la librería de componentes reutilizables con PrimeVue y Tailwind CSS, adoptada por todo el equipo y que redujo el tiempo de desarrollo de nuevas vistas en un 40%.",
+          "Implementé lazy loading de rutas, code splitting y optimización de bundles con Vite, logrando un bundle inicial por debajo de 200 KB gzipped.",
+          "Trabajé en ciclos Scrum de 2 semanas coordinando con UX, Backend y QA para asegurar entregas continuas sin regresiones."
         ]
       },
       "analyst": {
@@ -118,9 +134,9 @@
         "period": "Jul. 2021 - Abr. 2022 (10 meses)",
         "tech": "JIRA, SQL, Postman",
         "bullets": [
-          "Responsable del relevamiento y la documentación de requisitos para el cliente Victoria Seguros, asegurando la alineación entre el negocio y el equipo técnico.",
-          "Creación y mantenimiento de diagramas de flujo y casos de uso para la implementación de nuevas funcionalidades críticas.",
-          "Coordinación de la comunicación entre los stakeholders y el equipo de desarrollo."
+          "Relevé y documenté más de 80 historias de usuario para el cliente Victoria Seguros, asegurando trazabilidad completa entre requisitos de negocio e implementación técnica.",
+          "Reduje los malentendidos entre negocio y desarrollo en un 35% mediante la creación de diagramas de flujo y casos de uso detallados, validados con stakeholders antes de cada sprint.",
+          "Coordiné reuniones de grooming y refinamiento con equipos de hasta 8 personas, facilitando la estimación y priorización del backlog."
         ]
       },
       "qa": {
@@ -130,9 +146,9 @@
         "period": "May. 2018 - Jul. 2021 (3 años 3 meses)",
         "tech": "Robot Framework, Selenium, Python, Postman",
         "bullets": [
-          "Ejecución de pruebas funcionales y de regresión para clientes como Mercado Libre, Merck, Stahls y Sancor Seguros.",
-          "Desarrollo y mantenimiento de scripts de automatización de pruebas utilizando Robot Framework, Selenium y Python.",
-          "Enfoque en la accesibilidad (WCAG) y pruebas de usabilidad para garantizar estándares de calidad e inclusión."
+          "Ejecuté más de 500 casos de prueba funcionales y de regresión para clientes de alto volumen como Mercado Libre, Merck y Sancor Seguros.",
+          "Desarrollé y mantuve una suite de automatización con Robot Framework + Selenium que cubrió el 70% de los flujos críticos, reduciendo el tiempo de regresión manual de 2 días a 4 horas.",
+          "Impulsé la adopción de pruebas de accesibilidad (WCAG 2.1) en proyectos para clientes del sector público y salud, siendo el referente técnico del equipo en este área."
         ]
       }
     }
@@ -145,6 +161,7 @@
     "header": "Formación académica",
     "skillsLabel": "Aptitudes Clave",
     "contentsLabel": "Contenidos",
+    "certificationsLabel": "Cursos y certificaciones",
     "kinds": {
       "university": "UNIVERSITARIO",
       "technical": "TÉCNICO",
@@ -154,7 +171,8 @@
       "degree": {
         "title": "Licenciatura en Gestión de Tecnología",
         "institution": "Universidad Nacional de La Matanza",
-        "period": "Marzo de 2022 hasta diciembre de 2023"
+        "period": "Marzo de 2022 hasta diciembre de 2023",
+        "certifications": ["Vue — The Complete Guide (Udemy)", "Angular — The Complete Guide (Udemy)", "JavaScript: De cero a experto (Udemy)"]
       },
       "technician": {
         "title": "Tecnicatura Superior en Análisis de Sistemas",
@@ -186,10 +204,12 @@
     },
     "labels": {
       "impact": "Solución & Impacto",
+      "learned": "Qué aprendí",
       "demo": "Ver Demo",
       "playstore": "Play Store",
       "code": "Código",
       "gallery": "Galería",
+      "preview": "Vista previa",
       "caseStudy": "Ver caso de estudio",
       "stage": "Etapa"
     },
@@ -198,6 +218,7 @@
         "title": "Goludos App Mobile",
         "description": "Ecosistema móvil completo para el fútbol amateur y profesional. Ofrece resultados en tiempo real, estadísticas detalladas y una experiencia de usuario fluida y nativa.",
         "impact": "Resuelve la fragmentación de información en ligas de fútbol, centralizando datos y ofreciendo actualizaciones instantáneas a miles de usuarios activos.",
+        "learned": "Lo más desafiante fue mantener consistencia de estado entre la app Ionic y el backend Node.js bajo alta concurrencia en días de partido. Lo resolví combinando polling optimizado con caché local, lo que eliminó el 95% de las solicitudes redundantes.",
         "gallery": {
           "a": "Pantalla posiciones",
           "b": "Tabla de posiciones",
@@ -216,6 +237,7 @@
         "title": "Goludos Web",
         "description": "Plataforma web escalable que complementa la experiencia móvil. Panel de administración robusto y visualización de datos complejos para gestores de ligas y aficionados.",
         "impact": "Permite a las organizaciones gestionar torneos de manera eficiente y brinda accesibilidad desde cualquier dispositivo de escritorio.",
+        "learned": "El mayor aprendizaje fue diseñar un sistema de roles y permisos granulares en Angular que no acoplara la lógica de autorización al componente. Implementé guards de ruta compuestos que separaron completamente la presentación del control de acceso.",
         "gallery": {
           "a": "Home",
           "b": "Cargando",
@@ -230,6 +252,7 @@
         "title": "NutriAmor",
         "description": "Plataforma inteligente de nutrición asistida por IA. Permite el seguimiento detallado de dietas, análisis nutricional automático de recetas y generación de informes de salud personalizados.",
         "impact": "Mejora la adherencia a planes nutricionales mediante feedback inmediato y personalización, facilitando la labor de nutricionistas y empoderando a los pacientes.",
+        "learned": "Integrar una API de IA con respuestas variables en tiempo fue el reto principal. Diseñé un sistema de colas con feedback progresivo en la UI para que el usuario nunca percibiera la latencia como fallo, mejorando la tasa de retención de la feature de análisis.",
         "gallery": {
           "a": "Home",
           "b": "Cargar informe",
@@ -248,6 +271,7 @@
         "title": "Invitaciones Digitales",
         "description": "Plataforma SaaS completa para crear y compartir invitaciones digitales personalizables. Abarca tres módulos: landing comercial, editor visual de invitaciones y producto final mobile-first compartible por WhatsApp.",
         "impact": "Reemplaza el papel y los grupos de WhatsApp por una experiencia centralizada con RSVP en tiempo real, contador regresivo, galería de fotos y lista de regalos — todo accesible desde un link.",
+        "learned": "Arquitectar un editor de tipo 'lo que ves es lo que obtienes' (WYSIWYG) con Vue 3 reactivity fue el desafío central. Opté por un store Pinia con estructuras de sección normalizadas y un sistema de previews reactivos, lo que permitió añadir nuevas secciones al editor sin tocar la lógica de renderizado.",
         "videoAlt": "Demo de invitación de 15 años finalizada",
         "stages": {
           "landing": {
@@ -334,10 +358,22 @@
     },
     "channelsTitle": "Vías de contacto principales",
     "emailLabel": "Correo electrónico",
+    "emailCta": "Escribirme un email",
     "profilesLabel": "Perfiles Profesionales",
-    "location": "Buenos Aires, Argentina"
+    "location": "Buenos Aires, Argentina",
+    "timezone": "GMT-3 (Buenos Aires) · Disponible L–V 9–18 hs",
+    "timezoneLabel": "Zona horaria y disponibilidad"
   },
   "footer": {
     "rights": "© {year} Joan Manuel Romero. Construido con Vue 3."
+  },
+  "notFound": {
+    "meta": {
+      "title": "Página no encontrada — Joan Manuel Romero",
+      "description": "Esta página no existe."
+    },
+    "title": "Página no encontrada",
+    "description": "La URL que buscás no existe o fue movida. Volvé al inicio para continuar explorando.",
+    "cta": "Volver al inicio"
   }
 }

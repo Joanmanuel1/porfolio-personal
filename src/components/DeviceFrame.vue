@@ -120,14 +120,17 @@ defineProps({
 }
 .device-browser-screen {
   background: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  min-height: 220px;
 }
 .device-browser-screen :deep(img) {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
   display: block;
 }
 </style>

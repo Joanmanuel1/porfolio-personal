@@ -13,6 +13,7 @@ import { MotionPlugin } from '@vueuse/motion'
 import router from './router'
 import i18n from './i18n'
 import App from './App.vue'
+import { magnetic } from './directives/magnetic'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -30,6 +31,7 @@ AOS.init({
 })
 
 app.component('Chip', Chip)
+app.directive('magnetic', magnetic)
 app.use(router)
 app.use(i18n)
 app.use(createHead())

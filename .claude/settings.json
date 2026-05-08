@@ -10,7 +10,20 @@
       "Bash(command -v convert magick rsvg-convert inkscape)",
       "Bash(npm ls *)",
       "Bash(node scripts/generate-favicons.mjs)",
-      "Bash(node scripts/generate-og-image.mjs)"
+      "Bash(node scripts/generate-og-image.mjs)",
+      "Bash(node scripts/generate-sitemap.mjs)",
+      "Bash(sed -i 's/bg-indigo-600\\\\/10/bg-cyan-600\\\\/10/g; *)",
+      "Bash(sed -i 's/from-indigo-500 via-violet-500 to-cyan-400/from-cyan-500 via-emerald-400 to-sky-400/g' /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/src/components/ScrollProgress.vue)",
+      "Bash(sed -i 's/bg-indigo-600/bg-cyan-600/g; *)",
+      "Bash(sed -i 's/hover:bg-indigo-500\\\\/10/hover:bg-cyan-500\\\\/10/g' /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/src/components/NavBar.vue)",
+      "Bash(sed -i 's/from-indigo-500\\\\/20/from-cyan-500\\\\/20/g; *)",
+      "Bash(sed -i 's/from-indigo-500\\\\/50/from-cyan-500\\\\/50/g; *)",
+      "Bash(sed -i 's/text-indigo-400/text-cyan-400/g; *)",
+      "Bash(sed -i 's/bg-indigo-400/bg-cyan-400/g; s/bg-indigo-500\\\\/60/bg-cyan-500\\\\/60/g' src/views/Experience.vue)",
+      "Bash(sed -i 's/hover:text-indigo-300/hover:text-cyan-300/g; s/bg-indigo-500\\\\/8/bg-cyan-500\\\\/8/g; s/border-indigo-500\\\\/15/border-cyan-500\\\\/15/g; s/bg-indigo-500\\\\/15/bg-cyan-500\\\\/15/g; s/border-indigo-500\\\\/30/border-cyan-500\\\\/30/g; s/text-indigo-400/text-cyan-400/g' src/views/ProjectDetailView.vue)",
+      "Bash(sed -i 's/bg-indigo-600\\\\/8/bg-cyan-600\\\\/8/g; s/text-indigo-300/text-sky-300/g; s/to-indigo-500\\\\/50/to-cyan-500\\\\/50/g' src/views/HomeView.vue)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(list\\(d.keys\\(\\)\\), indent=2\\)\\)\")",
+      "Bash(node -e ' *)"
     ]
   }
 }

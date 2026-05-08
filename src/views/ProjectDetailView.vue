@@ -1,28 +1,33 @@
 <template>
-  <section v-if="project" class="p-4 sm:p-8 lg:p-12 min-h-screen">
+  <section v-if="project" class="section-pad">
     <div class="max-w-5xl mx-auto">
+
+      <!-- Back -->
       <RouterLink
         to="/projects"
-        class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 mb-6 font-medium"
+        class="inline-flex items-center gap-2 text-slate-500 hover:text-cyan-300 mb-10 text-sm font-medium transition-colors group"
+        v-motion
+        :initial="{ opacity: 0, x: -12 }"
+        :enter="{ opacity: 1, x: 0, transition: { duration: 400 } }"
       >
-        <i class="pi pi-arrow-left"></i> {{ t('nav.projects') }}
+        <i class="pi pi-arrow-left text-xs group-hover:-translate-x-0.5 transition-transform"></i>
+        {{ t('nav.projects') }}
       </RouterLink>
 
       <!-- Header -->
-      <header class="mb-8">
-        <h1 class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight mb-3">
+      <header
+        class="mb-10"
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 60, duration: 500 } }"
+      >
+        <div class="flex flex-wrap gap-1.5 mb-4">
+          <span v-for="tech in project.technologies" :key="tech" class="tech-pill">{{ tech }}</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest mb-4">
           {{ t(project.titleKey) }}
         </h1>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span
-            v-for="tech in project.technologies"
-            :key="tech"
-            class="px-3 py-1 bg-gray-800/70 text-green-400 rounded-full text-xs font-semibold border border-gray-700"
-          >
-            {{ tech }}
-          </span>
-        </div>
-        <p class="text-lg text-gray-300 leading-relaxed">
+        <p class="text-lg text-slate-400 leading-relaxed max-w-3xl">
           {{ t(project.descriptionKey) }}
         </p>
       </header>
@@ -30,79 +35,98 @@
       <!-- Impact -->
       <div
         v-if="project.impactKey"
-        class="mb-10 p-6 bg-green-500/10 rounded-xl border border-green-500/20"
+        class="mb-10 p-5 rounded-xl bg-cyan-500/8 border border-cyan-500/15"
+        v-motion
+        :initial="{ opacity: 0, y: 16 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 120, duration: 500 } }"
       >
-        <h2 class="text-green-400 font-bold mb-2 flex items-center text-xl">
-          <i class="pi pi-check-circle mr-2"></i> {{ t('projects.labels.impact') }}
-        </h2>
-        <p class="text-gray-300 italic leading-relaxed">
-          {{ t(project.impactKey) }}
-        </p>
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-2">{{ t('projects.labels.impact') }}</p>
+        <p class="text-slate-300 italic leading-relaxed">{{ t(project.impactKey) }}</p>
       </div>
 
       <!-- CTAs -->
-      <div class="flex flex-wrap gap-3 mb-12">
+      <div
+        class="flex flex-wrap gap-3 mb-14"
+        v-motion
+        :initial="{ opacity: 0, y: 16 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 180, duration: 500 } }"
+      >
         <a
           v-if="project.demoUrl"
           :href="project.demoUrl"
           target="_blank"
           rel="noopener"
-          class="px-5 py-2.5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-colors shadow-lg shadow-green-500/30 flex items-center"
+          class="cta-primary"
         >
-          <i class="pi pi-external-link mr-2"></i> {{ t('projects.labels.demo') }}
+          <i class="pi pi-external-link"></i> {{ t('projects.labels.demo') }}
         </a>
         <a
           v-if="project.githubUrl"
           :href="project.githubUrl"
           target="_blank"
           rel="noopener"
-          class="px-5 py-2.5 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-xl transition-colors border border-gray-600 flex items-center"
+          class="cta-secondary"
         >
-          <i class="pi pi-github mr-2"></i> {{ t('projects.labels.code') }}
+          <i class="pi pi-github"></i> {{ t('projects.labels.code') }}
         </a>
       </div>
 
-      <!-- Stage-based layout (when project has stages) -->
+      <!-- What I learned -->
+      <div
+        v-if="learnedText"
+        class="mb-14 glass rounded-2xl p-5 sm:p-6 border-l-2 border-emerald-500/50"
+        v-motion
+        :initial="{ opacity: 0, y: 16 }"
+        :enter="{ opacity: 1, y: 0, transition: { delay: 220, duration: 500 } }"
+      >
+        <p class="text-xs font-semibold tracking-widest text-emerald-400 uppercase mb-3 flex items-center gap-2">
+          <i class="pi pi-book text-xs"></i>
+          {{ t('projects.labels.learned') }}
+        </p>
+        <p class="text-slate-300 leading-relaxed italic">{{ learnedText }}</p>
+      </div>
+
+      <!-- Stage-based layout -->
       <template v-if="project.stages?.length">
         <div class="space-y-16">
           <article
             v-for="(stage, index) in project.stages"
             :key="index"
-            class="relative"
+            v-motion
+            :initial="{ opacity: 0, y: 24 }"
+            :enter="{ opacity: 1, y: 0, transition: { delay: index * 120, duration: 550 } }"
           >
             <!-- Stage header -->
-            <div class="flex items-center gap-4 mb-6">
-              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-500/15 border border-green-500/40 flex items-center justify-center">
-                <span class="text-green-400 font-bold text-sm">{{ index + 1 }}</span>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-9 h-9 rounded-full bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center flex-shrink-0">
+                <span class="text-cyan-400 font-bold text-sm">{{ index + 1 }}</span>
               </div>
               <div>
-                <p class="text-xs font-semibold text-green-500 uppercase tracking-widest mb-0.5">
+                <p class="text-xs font-semibold text-cyan-400 uppercase tracking-widest">
                   {{ t('projects.labels.stage') }} {{ index + 1 }}
                 </p>
-                <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tight">
+                <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-white tracking-tightest">
                   {{ t(stage.titleKey) }}
                 </h2>
               </div>
             </div>
 
             <!-- Stage description -->
-            <p class="text-gray-300 leading-relaxed mb-8 pl-14">
+            <p class="text-slate-400 leading-relaxed mb-8 pl-[52px]">
               {{ t(stage.descriptionKey) }}
             </p>
 
-            <!-- Stage media: video + images -->
-            <div class="pl-0 sm:pl-14">
-              <!-- Video in mobile frame -->
+            <!-- Media -->
+            <div class="pl-0 sm:pl-[52px]">
               <div v-if="stage.videoUrl" class="mb-6">
-                <div class="flex justify-center bg-gray-900/60 rounded-2xl border border-gray-700 p-6 sm:p-10">
+                <div class="flex justify-center glass rounded-2xl p-6 sm:p-10">
                   <DeviceFrame type="mobile" :videoSrc="stage.videoUrl" class="max-w-xs" />
                 </div>
-                <p class="text-center text-xs text-gray-500 mt-2">
-                  {{ t(project.titleKey + '_videoAlt') || t('projects.items.invitaciones-digitales.videoAlt') }}
+                <p class="text-center text-xs text-slate-600 mt-2">
+                  {{ t(`projects.items.${project.slug}.videoAlt`) }}
                 </p>
               </div>
 
-              <!-- Images grid -->
               <div
                 v-if="stageImages(stage).length"
                 :class="['grid gap-4', gridClass(stageImages(stage).length)]"
@@ -110,7 +134,7 @@
                 <figure
                   v-for="img in stageImages(stage)"
                   :key="img.item"
-                  class="group relative rounded-xl overflow-hidden border border-gray-700 bg-gray-900 cursor-zoom-in"
+                  class="group relative rounded-xl overflow-hidden border border-white/8 bg-[#0d1120] cursor-zoom-in"
                   @click="openLightbox(img)"
                 >
                   <img
@@ -120,49 +144,51 @@
                     decoding="async"
                     class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
                   />
-                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                    <i class="pi pi-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg"></i>
+                  <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors flex items-center justify-center">
+                    <i class="pi pi-search-plus text-white text-xl opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg"></i>
                   </div>
-                  <figcaption class="px-3 py-2 text-xs text-gray-400 bg-gray-900/80">
+                  <figcaption class="px-3 py-2 text-xs text-slate-500 bg-[#0d1120]/90 border-t border-white/5">
                     {{ t(img.altKey) }}
                   </figcaption>
                 </figure>
               </div>
             </div>
 
-            <!-- Divider between stages (not after last) -->
+            <!-- Stage divider -->
             <div
               v-if="index < project.stages.length - 1"
-              class="mt-16 flex items-center gap-4"
-            >
-              <div class="flex-1 h-px bg-gray-700/60"></div>
-              <i class="pi pi-arrow-down text-gray-600 text-xs"></i>
-              <div class="flex-1 h-px bg-gray-700/60"></div>
-            </div>
+              class="mt-16 section-divider"
+              aria-hidden="true"
+            ></div>
           </article>
         </div>
       </template>
 
-      <!-- Default gallery layout (projects without stages) -->
+      <!-- Default gallery layout -->
       <template v-else>
         <div
           v-if="project.gallery?.length && getImageUrl(project.gallery[0].item)"
-          class="mb-10 rounded-2xl overflow-hidden border border-gray-700 bg-gray-900/50"
+          class="mb-10 glass rounded-2xl overflow-hidden"
         >
-          <DeviceFrame :type="project.frame" :url="project.demoUrl" :videoSrc="project.videoUrl || ''" class="max-w-2xl mx-auto p-6">
-            <img
-              :src="getImageUrl(project.gallery[0].item)"
-              :alt="t(project.gallery[0].altKey)"
-              loading="lazy"
-              decoding="async"
-            />
-          </DeviceFrame>
+          <div class="p-6 sm:p-8 flex justify-center bg-[#0d1120]/50">
+            <DeviceFrame
+              :type="project.frame"
+              :url="project.demoUrl"
+              :videoSrc="project.videoUrl || ''"
+              class="max-w-2xl w-full"
+            >
+              <img
+                :src="getImageUrl(project.gallery[0].item)"
+                :alt="t(project.gallery[0].altKey)"
+                loading="lazy"
+                decoding="async"
+              />
+            </DeviceFrame>
+          </div>
         </div>
 
-        <div v-if="project.gallery?.length" class="rounded-2xl border border-gray-700 bg-gray-900/40 p-4 sm:p-6">
-          <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
-            <i class="pi pi-images mr-2 text-green-400"></i> {{ t('projects.labels.gallery') }}
-          </h2>
+        <div v-if="project.gallery?.length" class="glass rounded-2xl p-5 sm:p-7">
+          <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-5">{{ t('projects.labels.gallery') }}</p>
           <Galleria
             :value="project.gallery"
             :numVisible="5"
@@ -204,23 +230,21 @@
       modal
       :dismissableMask="true"
       :showHeader="false"
-      :style="{ background: 'transparent', boxShadow: 'none', padding: 0 }"
-      :contentStyle="{ background: 'transparent', padding: 0 }"
       :pt="{
-        root: { class: 'bg-transparent shadow-none' },
+        root: { class: 'bg-transparent shadow-none border-0' },
         content: { class: 'bg-transparent p-0' },
-        mask: { class: 'bg-black/80 backdrop-blur-sm' },
+        mask: { class: 'bg-black/85 backdrop-blur-md' },
       }"
     >
       <div class="relative flex flex-col items-center" @click="lightboxVisible = false">
         <img
           :src="getImageUrl(lightboxItem.item)"
           :alt="t(lightboxItem.altKey)"
-          class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl"
+          class="max-w-[90vw] max-h-[85vh] object-contain rounded-2xl shadow-2xl"
         />
-        <p class="mt-3 text-sm text-gray-300">{{ t(lightboxItem.altKey) }}</p>
+        <p class="mt-3 text-sm text-slate-400">{{ t(lightboxItem.altKey) }}</p>
         <button
-          class="absolute top-2 right-2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition"
+          class="absolute -top-3 -right-3 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white transition-all"
           @click.stop="lightboxVisible = false"
           :aria-label="t('common.close')"
         >
@@ -251,6 +275,13 @@ const project = computed(() => findProjectBySlug(props.slug))
 
 watchEffect(() => {
   if (!project.value) router.replace({ name: 'Projects' })
+})
+
+const learnedText = computed(() => {
+  const key = project.value ? `projects.items.${project.value.slug}.learned` : null
+  if (!key) return null
+  const val = t(key)
+  return val === key ? null : val
 })
 
 useSeo({

@@ -5,7 +5,7 @@
     aria-hidden="true"
   >
     <div
-      class="h-full origin-left bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-400 transition-transform duration-100 will-change-transform"
+      class="h-full origin-left bg-gradient-to-r from-cyan-500 via-emerald-400 to-sky-400 transition-transform duration-100 will-change-transform"
       :style="{ transform: `scaleX(${progress})` }"
     ></div>
   </div>

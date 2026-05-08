@@ -19,9 +19,9 @@ const { t } = useI18n()
       <!-- Static gradient base -->
       <div class="absolute inset-0 bg-hero-mesh"></div>
       <!-- Animated blobs -->
-      <div class="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-indigo-600/10 blur-[120px] animate-blob"></div>
-      <div class="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-violet-600/10 blur-[120px] animate-blob" style="animation-delay:4s"></div>
-      <div class="absolute top-[40%] left-[55%] w-[400px] h-[400px] rounded-full bg-cyan-500/8 blur-[100px] animate-blob" style="animation-delay:8s"></div>
+      <div class="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-cyan-600/10 blur-[120px] animate-blob"></div>
+      <div class="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-emerald-600/10 blur-[120px] animate-blob" style="animation-delay:4s"></div>
+      <div class="absolute top-[40%] left-[55%] w-[400px] h-[400px] rounded-full bg-sky-500/8 blur-[100px] animate-blob" style="animation-delay:8s"></div>
       <div class="absolute inset-0 bg-dot-grid opacity-[0.025]"></div>
     </div>
 

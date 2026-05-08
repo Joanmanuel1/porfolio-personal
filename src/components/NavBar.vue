@@ -7,9 +7,9 @@
       <!-- Logo -->
       <RouterLink
         to="/"
-        class="font-display font-bold text-lg tracking-tight text-white hover:text-indigo-300 transition-colors duration-200 flex items-center gap-2"
+        class="font-display font-bold text-lg tracking-tight text-white hover:text-cyan-300 transition-colors duration-200 flex items-center gap-2"
       >
-        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-xs font-black text-white shadow-lg">JM</span>
+        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-xs font-black text-white shadow-lg">JM</span>
         <span class="hidden sm:block"><span class="gradient-text">Joan</span> Romero</span>
       </RouterLink>
 
@@ -29,10 +29,17 @@
         <a
           href="/CV-JoanManuelRomero.pdf"
           download
-          class="ml-2 px-4 py-1.5 rounded-lg text-sm font-semibold bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 hover:text-indigo-200 border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-200"
+          class="ml-2 px-4 py-1.5 rounded-lg text-sm font-semibold bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 hover:text-cyan-200 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-200"
         >
           CV
         </a>
+        <button
+          @click="printPage"
+          class="ml-1 w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-300 hover:bg-white/5 border border-white/8 transition-all"
+          :title="t('a11y.printCv')"
+        >
+          <i class="pi pi-print text-xs"></i>
+        </button>
       </nav>
 
       <!-- Mobile controls -->
@@ -71,7 +78,7 @@
           <a
             href="/CV-JoanManuelRomero.pdf"
             download
-            class="mt-2 px-3 py-2.5 rounded-lg text-sm font-semibold text-indigo-300 hover:bg-indigo-500/10 transition-all"
+            class="mt-2 px-3 py-2.5 rounded-lg text-sm font-semibold text-cyan-300 hover:bg-cyan-500/10 transition-all"
           >
             {{ t('home.cta.downloadCv') }}
           </a>
@@ -102,6 +109,7 @@ const navLinks = [
 
 const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value)
 const closeMenu = () => (isMenuOpen.value = false)
+const printPage = () => window.print()
 
 let rafId = 0
 const onScroll = () => {

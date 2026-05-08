@@ -1,5 +1,24 @@
 <template>
-  <article class="glass glass-hover rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
+  <article class="group glass glass-hover rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
+
+    <!-- Image preview with hover overlay -->
+    <div v-if="firstImage" class="relative overflow-hidden h-44 bg-[#0d1120] flex-shrink-0">
+      <img
+        :src="getImageUrl(firstImage.item)"
+        :alt="t(firstImage.altKey)"
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.06]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f19]/80 via-transparent to-transparent pointer-events-none"></div>
+      <!-- Hover overlay -->
+      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+        <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-semibold bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full flex items-center gap-2">
+          <i class="pi pi-eye text-xs"></i> {{ t('projects.labels.preview') }}
+        </span>
+      </div>
+    </div>
+
     <div class="p-6 flex flex-col flex-grow">
       <div class="flex flex-wrap gap-1.5 mb-3">
         <span v-for="tech in project.technologies" :key="tech" class="tech-pill">{{ tech }}</span>
@@ -84,11 +103,11 @@
 <script setup>
 import Galleria from 'primevue/galleria'
 import Dialog from 'primevue/dialog'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useImageUrl } from '@/composables/useImageUrl'
 
-defineProps({
+const props = defineProps({
   project: { type: Object, required: true },
 })
 
@@ -96,4 +115,6 @@ const { t } = useI18n()
 const getImageUrl = useImageUrl()
 const displayGallery = ref(false)
 const openGallery = () => (displayGallery.value = true)
+
+const firstImage = computed(() => props.project.gallery?.[0] ?? null)
 </script>

@@ -14,13 +14,13 @@ export default {
       },
       colors: {
         canvas: '#0b0f19',
-        surface: '#111827',
-        elevated: '#1a2236',
+        surface: '#0d1520',
+        elevated: '#111e2e',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'hero-mesh':
-          'radial-gradient(at 20% 20%, rgba(99,102,241,0.18) 0px, transparent 50%), radial-gradient(at 80% 80%, rgba(139,92,246,0.15) 0px, transparent 50%), radial-gradient(at 50% 0%, rgba(6,182,212,0.12) 0px, transparent 50%)',
+          'radial-gradient(at 20% 25%, rgba(6,182,212,0.12) 0px, transparent 50%), radial-gradient(at 80% 75%, rgba(16,185,129,0.10) 0px, transparent 50%), radial-gradient(at 55% 5%, rgba(14,165,233,0.09) 0px, transparent 50%)',
       },
       keyframes: {
         blob: {
@@ -31,27 +31,17 @@ export default {
         },
         'pulse-dot': {
           '0%, 100%': { opacity: 1, transform: 'scale(1)' },
-          '50%': { opacity: 0.6, transform: 'scale(1.3)' },
+          '50%': { opacity: 0.5, transform: 'scale(1.3)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-8px)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% center' },
-          '100%': { backgroundPosition: '200% center' },
-        },
-        'fade-in-up': {
-          '0%': { opacity: 0, transform: 'translateY(24px)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
       },
       animation: {
         blob: 'blob 12s infinite ease-in-out',
         'pulse-dot': 'pulse-dot 2.2s ease-in-out infinite',
         float: 'float 4s ease-in-out infinite',
-        shimmer: 'shimmer 3s linear infinite',
-        'fade-in-up': 'fade-in-up 0.6s ease forwards',
       },
     },
   },

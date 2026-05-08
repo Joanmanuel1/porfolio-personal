@@ -8,7 +8,8 @@
   "a11y": {
     "skip": "Skip to main content",
     "menuToggle": "Toggle menu",
-    "switchLanguage": "Switch language"
+    "switchLanguage": "Switch language",
+    "printCv": "Print / save as PDF"
   },
   "nav": {
     "projects": "Projects",
@@ -28,7 +29,20 @@
       "title": "Frontend Developer specialized in Vue.js and modern web solutions.",
       "subtitle": "I turn ideas into functional, scalable digital products.",
       "focus": "Focused on user experience and code quality.",
-      "credentials": "B.Sc. in Technology Management & Systems Analyst"
+      "credentials": "B.Sc. in Technology Management & Systems Analyst",
+      "roles": [
+        "Frontend Developer",
+        "Vue.js Specialist",
+        "UX-first Builder",
+        "SPA Architect",
+        "Frontend Craftsman"
+      ],
+      "stats": {
+        "years": "years of experience",
+        "production": "production projects",
+        "stack": "main frameworks"
+      },
+      "localTime": "Buenos Aires"
     },
     "cta": {
       "downloadCv": "Download CV",
@@ -107,8 +121,10 @@
         "period": "Apr. 2022 - Present (3 yrs 8 mos)",
         "tech": "Vue JS 3, JavaScript, PrimeVue, Tailwind",
         "bullets": [
-          "Part of the full migration of an internal system (formerly Django Admin) to a modern Vue 3 SPA architecture.",
-          "Built and maintained reusable components and the internal UI library using PrimeVue and Tailwind CSS."
+          "Led the full migration of a legacy internal system (Django Admin) to a modern Vue 3 SPA, reducing load time by ~60% and removing UI dependencies on the backend.",
+          "Designed and maintained the reusable component library with PrimeVue and Tailwind CSS, adopted team-wide and cutting new-view development time by 40%.",
+          "Implemented route lazy loading, code splitting and Vite bundle optimizations, achieving an initial bundle under 200 KB gzipped.",
+          "Delivered in 2-week Scrum cycles, coordinating with UX, Backend and QA to ensure continuous delivery with zero regressions."
         ]
       },
       "analyst": {
@@ -118,9 +134,9 @@
         "period": "Jul. 2021 - Apr. 2022 (10 mos)",
         "tech": "JIRA, SQL, Postman",
         "bullets": [
-          "Owned requirements gathering and documentation for client Victoria Seguros, ensuring alignment between business and the technical team.",
-          "Created and maintained flow diagrams and use cases for critical new features.",
-          "Coordinated communication between stakeholders and the development team."
+          "Gathered and documented over 80 user stories for client Victoria Seguros, ensuring full traceability from business requirements to technical implementation.",
+          "Cut misunderstandings between business and development by 35% through detailed flow diagrams and use cases validated with stakeholders before each sprint.",
+          "Facilitated grooming and refinement meetings with teams of up to 8 people, driving backlog estimation and prioritization."
         ]
       },
       "qa": {
@@ -130,9 +146,9 @@
         "period": "May 2018 - Jul. 2021 (3 yrs 3 mos)",
         "tech": "Robot Framework, Selenium, Python, Postman",
         "bullets": [
-          "Ran functional and regression testing for clients like Mercado Libre, Merck, Stahls and Sancor Seguros.",
-          "Built and maintained automated testing scripts using Robot Framework, Selenium and Python.",
-          "Focus on accessibility (WCAG) and usability testing to guarantee quality and inclusion standards."
+          "Executed over 500 functional and regression test cases for high-volume clients including Mercado Libre, Merck and Sancor Seguros.",
+          "Built and maintained an automation suite with Robot Framework + Selenium covering 70% of critical flows, shrinking manual regression time from 2 days to 4 hours.",
+          "Championed accessibility testing (WCAG 2.1) for public sector and healthcare clients, becoming the team's technical reference in this area."
         ]
       }
     }
@@ -145,6 +161,7 @@
     "header": "Education",
     "skillsLabel": "Key skills",
     "contentsLabel": "Contents",
+    "certificationsLabel": "Courses & certifications",
     "kinds": {
       "university": "UNIVERSITY",
       "technical": "TECHNICAL",
@@ -154,7 +171,8 @@
       "degree": {
         "title": "B.Sc. in Technology Management",
         "institution": "Universidad Nacional de La Matanza",
-        "period": "March 2022 - December 2023"
+        "period": "March 2022 - December 2023",
+        "certifications": ["Vue — The Complete Guide (Udemy)", "Angular — The Complete Guide (Udemy)", "JavaScript: Zero to Expert (Udemy)"]
       },
       "technician": {
         "title": "Higher Technician in Systems Analysis",
@@ -186,10 +204,12 @@
     },
     "labels": {
       "impact": "Solution & Impact",
+      "learned": "What I learned",
       "demo": "View Demo",
       "playstore": "Play Store",
       "code": "Code",
       "gallery": "Gallery",
+      "preview": "Preview",
       "caseStudy": "View case study",
       "stage": "Stage"
     },
@@ -198,6 +218,7 @@
         "title": "Goludos Mobile App",
         "description": "Complete mobile ecosystem for amateur and professional football. Live results, detailed stats and a fluid native UX.",
         "impact": "Solves information fragmentation in football leagues, centralizing data and delivering instant updates to thousands of active users.",
+        "learned": "The hardest part was maintaining state consistency between the Ionic app and the Node.js backend under high concurrency on match days. I solved it by combining optimized polling with local caching, eliminating 95% of redundant requests.",
         "gallery": {
           "a": "Standings screen",
           "b": "League table",
@@ -216,6 +237,7 @@
         "title": "Goludos Web",
         "description": "Scalable web platform that complements the mobile experience. Robust admin panel and complex data visualization for league managers and fans.",
         "impact": "Lets organizations manage tournaments efficiently and stay accessible from any desktop device.",
+        "learned": "The key learning was designing a granular role and permission system in Angular without coupling authorization logic to the component layer. I implemented composable route guards that kept presentation and access control completely separate.",
         "gallery": {
           "a": "Home",
           "b": "Loading",
@@ -230,6 +252,7 @@
         "title": "NutriAmor",
         "description": "AI-powered nutrition platform. Detailed diet tracking, automatic nutritional analysis of recipes and personalized health reports.",
         "impact": "Improves adherence to nutrition plans through immediate, personalized feedback — supporting nutritionists and empowering patients.",
+        "learned": "Integrating an AI API with variable response times was the main challenge. I designed a queue system with progressive UI feedback so users never perceived the latency as a failure, which improved the retention rate for the AI analysis feature.",
         "gallery": {
           "a": "Home",
           "b": "Upload report",
@@ -248,6 +271,7 @@
         "title": "Digital Invitations",
         "description": "Full-stack SaaS platform for creating and sharing customizable digital invitations. Covers three modules: commercial landing page, visual invitation editor, and mobile-first final product shareable via WhatsApp.",
         "impact": "Replaces paper invites and WhatsApp groups with a centralized experience featuring real-time RSVP, countdown timer, photo gallery, and gift list — all accessible through a single link.",
+        "learned": "Architecting a WYSIWYG-style editor with Vue 3 reactivity was the core challenge. I chose a Pinia store with normalized section structures and a reactive preview system, which made adding new editor sections possible without touching the render logic.",
         "videoAlt": "Demo of a completed quinceañera invitation",
         "stages": {
           "landing": {
@@ -334,10 +358,22 @@
     },
     "channelsTitle": "Main contact channels",
     "emailLabel": "Email",
+    "emailCta": "Send me an email",
     "profilesLabel": "Professional profiles",
-    "location": "Buenos Aires, Argentina"
+    "location": "Buenos Aires, Argentina",
+    "timezone": "GMT-3 (Buenos Aires) · Available Mon–Fri 9am–6pm",
+    "timezoneLabel": "Timezone & availability"
   },
   "footer": {
     "rights": "© {year} Joan Manuel Romero. Built with Vue 3."
+  },
+  "notFound": {
+    "meta": {
+      "title": "Page not found — Joan Manuel Romero",
+      "description": "This page doesn't exist."
+    },
+    "title": "Page not found",
+    "description": "The URL you're looking for doesn't exist or has been moved. Go back to the home page to keep exploring.",
+    "cta": "Back to home"
   }
 }

@@ -9,7 +9,7 @@
         :initial="{ opacity: 0, y: 24 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
       >
-        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('nav.contact') }}</p>
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('nav.contact') }}</p>
         <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest mb-4">
           {{ t('contact.header') }}
         </h1>
@@ -27,16 +27,25 @@
       >
         <!-- Email -->
         <div>
-          <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-2">{{ t('contact.emailLabel') }}</p>
+          <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-3">{{ t('contact.emailLabel') }}</p>
           <a
-            href="mailto:joanmanuelromero100@gmail.com"
-            class="inline-flex items-center gap-3 text-indigo-300 hover:text-indigo-200 font-semibold text-base sm:text-lg transition-colors group"
+            href="mailto:joanmanuelromero100@gmail.com?subject=Hola%20Joan%20%E2%80%94%20consulta%20desde%20portfolio"
+            class="inline-flex items-center gap-3 text-cyan-300 hover:text-cyan-200 font-semibold text-base sm:text-lg transition-colors group mb-3"
           >
-            <span class="w-9 h-9 rounded-xl bg-indigo-500/15 border border-indigo-500/25 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-500/25 transition-colors">
-              <i class="pi pi-envelope text-sm text-indigo-400"></i>
+            <span class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/25 transition-colors">
+              <i class="pi pi-envelope text-sm text-cyan-400"></i>
             </span>
             joanmanuelromero100@gmail.com
           </a>
+          <div>
+            <a
+              href="mailto:joanmanuelromero100@gmail.com?subject=Hola%20Joan%20%E2%80%94%20consulta%20desde%20portfolio"
+              class="cta-primary inline-flex text-sm"
+            >
+              <i class="pi pi-send"></i>
+              {{ t('contact.emailCta') }}
+            </a>
+          </div>
         </div>
 
         <div class="border-t border-white/5 pt-6">
@@ -65,10 +74,14 @@
           </div>
         </div>
 
-        <div class="border-t border-white/5 pt-5">
+        <div class="border-t border-white/5 pt-5 space-y-2">
           <p class="text-sm text-slate-600 flex items-center gap-2">
-            <i class="pi pi-map-marker text-indigo-400 text-xs"></i>
+            <i class="pi pi-map-marker text-cyan-400 text-xs"></i>
             {{ t('contact.location') }}
+          </p>
+          <p class="text-sm text-slate-600 flex items-center gap-2">
+            <i class="pi pi-clock text-cyan-400 text-xs"></i>
+            {{ t('contact.timezone') }}
           </p>
         </div>
       </div>

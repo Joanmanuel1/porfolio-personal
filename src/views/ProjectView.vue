@@ -9,7 +9,7 @@
         :initial="{ opacity: 0, y: 24 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
       >
-        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('projects.subtitle') }}</p>
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('projects.subtitle') }}</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white tracking-tightest">
           {{ t('projects.header') }}
         </h1>
@@ -18,7 +18,7 @@
       <!-- Production projects -->
       <div class="mb-20">
         <div class="flex items-center gap-3 mb-8">
-          <span class="w-1 h-5 rounded-full bg-gradient-to-b from-indigo-400 to-violet-500"></span>
+          <span class="w-1 h-5 rounded-full bg-gradient-to-b from-cyan-400 to-emerald-500"></span>
           <h2 class="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
             {{ t('projects.kinds.production') }}
           </h2>
@@ -78,8 +78,8 @@
                     {{ t(project.descriptionKey) }}
                   </p>
 
-                  <div class="p-4 rounded-xl bg-indigo-500/8 border border-indigo-500/15 mb-6">
-                    <p class="text-xs font-semibold tracking-wider text-indigo-400 uppercase mb-1.5">{{ t('projects.labels.impact') }}</p>
+                  <div class="p-4 rounded-xl bg-cyan-500/8 border border-cyan-500/15 mb-6">
+                    <p class="text-xs font-semibold tracking-wider text-cyan-400 uppercase mb-1.5">{{ t('projects.labels.impact') }}</p>
                     <p class="text-sm text-slate-400 leading-relaxed italic">{{ t(project.impactKey) }}</p>
                   </div>
                 </div>
@@ -117,7 +117,7 @@
       <!-- Practice projects -->
       <div>
         <div class="flex items-center gap-3 mb-8">
-          <span class="w-1 h-5 rounded-full bg-gradient-to-b from-cyan-400 to-indigo-500"></span>
+          <span class="w-1 h-5 rounded-full bg-gradient-to-b from-cyan-400 to-emerald-500"></span>
           <h2 class="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
             {{ t('projects.kinds.practice') }}
           </h2>
@@ -186,7 +186,7 @@
                 v-if="slotProps.item.type === 'video'"
                 class="w-20 h-16 sm:w-24 sm:h-20 rounded bg-slate-800 flex items-center justify-center border border-white/10"
               >
-                <i class="pi pi-play-circle text-xl text-indigo-400"></i>
+                <i class="pi pi-play-circle text-xl text-cyan-400"></i>
               </div>
               <img
                 v-else

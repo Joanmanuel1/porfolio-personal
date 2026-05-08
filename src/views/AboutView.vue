@@ -9,7 +9,7 @@
         :initial="{ opacity: 0, y: 24 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
       >
-        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('about.credentials') }}</p>
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('about.credentials') }}</p>
         <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest">
           {{ t('about.header') }}
         </h1>
@@ -27,12 +27,12 @@
             <template #qa><span class="text-white font-semibold">{{ t('about.bio.qa') }}</span></template>
             <template #funcional><span class="text-white font-semibold">{{ t('about.bio.funcional') }}</span></template>
             <template #frontend><span class="gradient-text font-bold">{{ t('about.bio.frontend') }}</span></template>
-            <template #quality><span class="text-indigo-300 font-semibold">{{ t('about.bio.quality') }}</span></template>
-            <template #ux><span class="text-indigo-300 font-semibold">{{ t('about.bio.ux') }}</span></template>
+            <template #quality><span class="text-cyan-300 font-semibold">{{ t('about.bio.quality') }}</span></template>
+            <template #ux><span class="text-cyan-300 font-semibold">{{ t('about.bio.ux') }}</span></template>
           </i18n-t>
         </p>
 
-        <p class="text-slate-400 italic leading-relaxed border-l-2 border-indigo-500/60 pl-4">
+        <p class="text-slate-400 italic leading-relaxed border-l-2 border-cyan-500/60 pl-4">
           {{ t('about.bio.specialty') }}
         </p>
 
@@ -52,7 +52,7 @@
         :initial="{ opacity: 0, y: 20 }"
         :enter="{ opacity: 1, y: 0, transition: { delay: 160, duration: 550 } }"
       >
-        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('about.stack.title') }}</p>
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('about.stack.title') }}</p>
         <h2 class="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight mb-10">
           {{ t('about.stack.development') }}
         </h2>
@@ -66,7 +66,7 @@
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: 220, duration: 550 } }"
         >
-          <h3 class="text-xs font-semibold tracking-widest text-indigo-400 uppercase flex items-center gap-2">
+          <h3 class="text-xs font-semibold tracking-widest text-cyan-400 uppercase flex items-center gap-2">
             <Code :size="13" /> {{ t('about.stack.languages') }}
           </h3>
           <div class="flex flex-wrap gap-2">
@@ -74,7 +74,7 @@
           </div>
 
           <div class="border-t border-white/5 pt-5">
-            <h3 class="text-xs font-semibold tracking-widest text-indigo-400 uppercase flex items-center gap-2 mb-3">
+            <h3 class="text-xs font-semibold tracking-widest text-cyan-400 uppercase flex items-center gap-2 mb-3">
               <Palette :size="13" /> {{ t('about.stack.ui') }}
             </h3>
             <div class="flex flex-wrap gap-2">
@@ -83,7 +83,7 @@
           </div>
 
           <div class="border-t border-white/5 pt-5">
-            <h3 class="text-xs font-semibold tracking-widest text-indigo-400 uppercase flex items-center gap-2 mb-3">
+            <h3 class="text-xs font-semibold tracking-widest text-cyan-400 uppercase flex items-center gap-2 mb-3">
               <Database :size="13" /> {{ t('about.stack.backend') }}
             </h3>
             <div class="flex flex-wrap gap-2">
@@ -100,7 +100,7 @@
           :enter="{ opacity: 1, y: 0, transition: { delay: 300, duration: 550 } }"
         >
           <div v-for="group in processGroups" :key="group.key">
-            <h3 class="text-xs font-semibold tracking-widest text-indigo-400 uppercase flex items-center gap-2 mb-3">
+            <h3 class="text-xs font-semibold tracking-widest text-cyan-400 uppercase flex items-center gap-2 mb-3">
               <component :is="group.icon" :size="13" /> {{ t(group.labelKey) }}
             </h3>
             <div class="flex flex-wrap gap-2">

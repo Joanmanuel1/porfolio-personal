@@ -9,7 +9,7 @@
         :initial="{ opacity: 0, y: 24 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
       >
-        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('nav.education') }}</p>
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('nav.education') }}</p>
         <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest">
           {{ t('education.header') }}
         </h1>
@@ -30,7 +30,7 @@
                 {{ t(`education.items.${item.key}.title`) }}
               </h2>
               <p class="text-sm text-slate-400 mt-1 flex items-center gap-1.5">
-                <i class="pi pi-building text-indigo-400 text-xs"></i>
+                <i class="pi pi-building text-cyan-400 text-xs"></i>
                 {{ t(`education.items.${item.key}.institution`) }}
               </p>
             </div>
@@ -57,19 +57,34 @@
                   :key="i"
                   class="text-sm text-slate-400 flex items-start gap-2"
                 >
-                  <span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500/50 flex-shrink-0"></span>
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-cyan-500/50 flex-shrink-0"></span>
                   {{ c }}
                 </li>
               </ul>
             </div>
 
             <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-2">{{ t('education.skillsLabel') }}</p>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 mb-4">
               <span
                 v-for="s in item.skills"
                 :key="s.value"
                 class="tech-pill"
               >{{ s.value }}</span>
+            </div>
+
+            <!-- Certifications -->
+            <div v-if="tm(`education.items.${item.key}.certifications`)?.length">
+              <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-2">{{ t('education.certificationsLabel') }}</p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="cert in tm(`education.items.${item.key}.certifications`)"
+                  :key="cert"
+                  class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md bg-emerald-500/8 border border-emerald-500/20 text-emerald-300"
+                >
+                  <i class="pi pi-verified text-[10px]"></i>
+                  {{ cert }}
+                </span>
+              </div>
             </div>
           </div>
         </article>

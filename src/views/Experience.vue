@@ -9,7 +9,7 @@
         :initial="{ opacity: 0, y: 24 }"
         :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
       >
-        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('experience.subtitle') }}</p>
+        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('experience.subtitle') }}</p>
         <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest">
           {{ t('experience.header') }}
         </h1>
@@ -18,7 +18,7 @@
       <!-- Timeline -->
       <div class="relative">
         <!-- Vertical line -->
-        <div class="absolute left-5 sm:left-7 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-violet-500/30 to-transparent" aria-hidden="true"></div>
+        <div class="absolute left-5 sm:left-7 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-emerald-500/30 to-transparent" aria-hidden="true"></div>
 
         <div class="space-y-10">
           <article
@@ -30,8 +30,8 @@
             :enter="{ opacity: 1, x: 0, transition: { delay: idx * 120, duration: 550 } }"
           >
             <!-- Timeline dot -->
-            <div class="absolute left-[13px] sm:left-[23px] top-6 w-5 h-5 rounded-full border-2 border-indigo-500 bg-canvas flex items-center justify-center" aria-hidden="true">
-              <div class="w-1.5 h-1.5 rounded-full bg-indigo-400"></div>
+            <div class="absolute left-[13px] sm:left-[23px] top-6 w-5 h-5 rounded-full border-2 border-cyan-500 bg-canvas flex items-center justify-center" aria-hidden="true">
+              <div class="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
             </div>
 
             <!-- Card -->
@@ -42,7 +42,7 @@
                     {{ t(`experience.items.${item.key}.role`) }}
                   </h2>
                   <p class="text-sm text-slate-400 mt-0.5 flex items-center gap-1.5">
-                    <i class="pi pi-building text-indigo-400 text-xs"></i>
+                    <i class="pi pi-building text-cyan-400 text-xs"></i>
                     {{ t(`experience.items.${item.key}.company`) }}
                     <span class="text-slate-600">·</span>
                     <span class="text-slate-500">{{ t('experience.fullTime') }}</span>
@@ -61,7 +61,7 @@
 
               <!-- Key tech -->
               <p class="text-xs text-slate-500 mb-3 font-medium">
-                <span class="text-indigo-400">{{ t('experience.keyTech') }}:</span>
+                <span class="text-cyan-400">{{ t('experience.keyTech') }}:</span>
                 {{ t(`experience.items.${item.key}.tech`) }}
               </p>
 
@@ -72,7 +72,7 @@
                   :key="i"
                   class="text-sm text-slate-400 leading-relaxed flex items-start gap-2"
                 >
-                  <span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500/60 flex-shrink-0"></span>
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-cyan-500/60 flex-shrink-0"></span>
                   {{ b }}
                 </li>
               </ul>
