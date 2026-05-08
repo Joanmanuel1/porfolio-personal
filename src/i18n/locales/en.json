@@ -1,0 +1,323 @@
+{
+  "common": {
+    "available": "Available for projects",
+    "loading": "Loading…",
+    "viewMore": "View more",
+    "close": "Close"
+  },
+  "a11y": {
+    "skip": "Skip to main content",
+    "menuToggle": "Toggle menu",
+    "switchLanguage": "Switch language"
+  },
+  "nav": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "meta": {
+      "title": "Joan Manuel Romero — Frontend Developer (Vue.js)",
+      "description": "Frontend Developer specialized in Vue.js. I build scalable, accessible SPAs focused on user experience. Buenos Aires, Argentina."
+    },
+    "hero": {
+      "greeting": "Hi, I'm",
+      "name": "Joan Manuel Romero",
+      "title": "Frontend Developer specialized in Vue.js and modern web solutions.",
+      "subtitle": "I turn ideas into functional, scalable digital products.",
+      "focus": "Focused on user experience and code quality.",
+      "credentials": "B.Sc. in Technology Management & Systems Analyst"
+    },
+    "cta": {
+      "downloadCv": "Download CV",
+      "linkedin": "LinkedIn",
+      "viewProjects": "View my projects",
+      "contact": "Get in touch"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About — Joan Manuel Romero",
+      "description": "My professional profile: Frontend Developer with end-to-end background — from QA and Functional Analysis to SPA development with Vue 3 and Angular."
+    },
+    "header": "Professional Profile",
+    "credentials": "B.Sc. in Technology Management & Systems Analyst",
+    "bio": {
+      "intro": "My strength is my end-to-end path: I started in {qa}, moved into {funcional}, which lets me approach {frontend} with a complete view of {quality}, {ux}, and business needs.",
+      "qa": "QA Analysis",
+      "funcional": "Functional Analysis",
+      "frontend": "Frontend Development",
+      "quality": "code quality",
+      "ux": "user experience (UX)",
+      "specialty": "I currently specialize in building scalable Single Page Applications (SPAs) with Vue.js and Angular, ensuring every component is reusable, accessible, and strictly aligned with functional needs.",
+      "values": "My working pillars are {communication}, {responsibility} and {learning} — essential for an agile, high-performance environment.",
+      "communication": "proactive communication",
+      "responsibility": "ownership",
+      "learning": "continuous learning"
+    },
+    "stack": {
+      "title": "My Tech Stack",
+      "development": "Development",
+      "languages": "Languages & Frameworks",
+      "ui": "User Interface",
+      "backend": "Backend & Databases",
+      "managementTitle": "Management, QA & Analysis",
+      "qa": "Testing & Quality Assurance (QA)",
+      "qaItems": {
+        "manual": "Manual Testing (Functional/Regression)",
+        "automated": "Robot Framework / Selenium (Automated)",
+        "wcag": "Accessibility Testing (WCAG)"
+      },
+      "analysis": "Functional Analysis",
+      "analysisItems": {
+        "requirements": "Requirements Gathering",
+        "stories": "User Stories / Use Cases",
+        "docs": "Technical Documentation"
+      },
+      "methods": "Methodologies & Management",
+      "methodsItems": {
+        "scrum": "Scrum (Agile)",
+        "jira": "JIRA / Trello",
+        "postman": "Postman / SOAP (APIs)"
+      },
+      "vcs": "Version Control",
+      "vcsItems": {
+        "git": "GitHub / GitLab"
+      }
+    }
+  },
+  "experience": {
+    "meta": {
+      "title": "Experience — Joan Manuel Romero",
+      "description": "Career path: Frontend Developer at Ministerio Público Fiscal, Functional Analyst at UXOR IT, and QA Analyst at Nahual IT."
+    },
+    "header": "Work Experience",
+    "subtitle": "My professional journey.",
+    "keyTech": "Key technology",
+    "fullTime": "Full-time",
+    "hybrid": "Hybrid",
+    "remote": "Remote",
+    "items": {
+      "frontend": {
+        "role": "Front-end Developer",
+        "company": "Ministerio Público Fiscal",
+        "location": "Buenos Aires Province, Argentina",
+        "period": "Apr. 2022 - Present (3 yrs 8 mos)",
+        "tech": "Vue JS 3, JavaScript, PrimeVue, Tailwind",
+        "bullets": [
+          "Part of the full migration of an internal system (formerly Django Admin) to a modern Vue 3 SPA architecture.",
+          "Built and maintained reusable components and the internal UI library using PrimeVue and Tailwind CSS."
+        ]
+      },
+      "analyst": {
+        "role": "Functional Analyst",
+        "company": "UXOR IT",
+        "location": "Buenos Aires Province, Argentina",
+        "period": "Jul. 2021 - Apr. 2022 (10 mos)",
+        "tech": "JIRA, SQL, Postman",
+        "bullets": [
+          "Owned requirements gathering and documentation for client Victoria Seguros, ensuring alignment between business and the technical team.",
+          "Created and maintained flow diagrams and use cases for critical new features.",
+          "Coordinated communication between stakeholders and the development team."
+        ]
+      },
+      "qa": {
+        "role": "QA Analyst",
+        "company": "Nahual IT - Inclusive Technology",
+        "location": "Buenos Aires, CABA, Argentina",
+        "period": "May 2018 - Jul. 2021 (3 yrs 3 mos)",
+        "tech": "Robot Framework, Selenium, Python, Postman",
+        "bullets": [
+          "Ran functional and regression testing for clients like Mercado Libre, Merck, Stahls and Sancor Seguros.",
+          "Built and maintained automated testing scripts using Robot Framework, Selenium and Python.",
+          "Focus on accessibility (WCAG) and usability testing to guarantee quality and inclusion standards."
+        ]
+      }
+    }
+  },
+  "education": {
+    "meta": {
+      "title": "Education — Joan Manuel Romero",
+      "description": "Education: B.Sc. in Technology Management (UNLaM), Higher Technician in Systems Analysis, and Software Testing certification."
+    },
+    "header": "Education",
+    "skillsLabel": "Key skills",
+    "contentsLabel": "Contents",
+    "kinds": {
+      "university": "UNIVERSITY",
+      "technical": "TECHNICAL",
+      "certification": "CERTIFICATION"
+    },
+    "items": {
+      "degree": {
+        "title": "B.Sc. in Technology Management",
+        "institution": "Universidad Nacional de La Matanza",
+        "period": "March 2022 - December 2023"
+      },
+      "technician": {
+        "title": "Higher Technician in Systems Analysis",
+        "institution": "Instituto de Formación Técnica Superior N° 11",
+        "period": "March 2019 - December 2021"
+      },
+      "qa": {
+        "title": "Software Testing Training",
+        "institution": "Proyecto Nahual",
+        "period": "March 2018 - July 2018",
+        "contents": [
+          "Test case design and execution.",
+          "Bug detection and reporting.",
+          "Intro to SQL."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "meta": {
+      "title": "Projects — Joan Manuel Romero",
+      "description": "Tech solutions with real impact: Goludos (football app & web), NutriAmor (AI nutrition), Digital Invitations and practice projects."
+    },
+    "header": "My Projects",
+    "subtitle": "Tech solutions focused on real impact and scalability.",
+    "kinds": {
+      "production": "Production projects",
+      "practice": "Practice projects"
+    },
+    "labels": {
+      "impact": "Solution & Impact",
+      "demo": "View Demo",
+      "playstore": "Play Store",
+      "code": "Code",
+      "gallery": "Gallery",
+      "caseStudy": "View case study"
+    },
+    "items": {
+      "goludos-mobile": {
+        "title": "Goludos Mobile App",
+        "description": "Complete mobile ecosystem for amateur and professional football. Live results, detailed stats and a fluid native UX.",
+        "impact": "Solves information fragmentation in football leagues, centralizing data and delivering instant updates to thousands of active users.",
+        "gallery": {
+          "a": "Standings screen",
+          "b": "League table",
+          "c": "Fixture",
+          "d": "Fixture detail",
+          "e": "Goal details",
+          "f": "Lineup",
+          "g": "History",
+          "h": "Statistics",
+          "i": "Bookings",
+          "j": "Schedule",
+          "k": "Penalties"
+        }
+      },
+      "goludos-web": {
+        "title": "Goludos Web",
+        "description": "Scalable web platform that complements the mobile experience. Robust admin panel and complex data visualization for league managers and fans.",
+        "impact": "Lets organizations manage tournaments efficiently and stay accessible from any desktop device.",
+        "gallery": {
+          "a": "Home",
+          "b": "Loading",
+          "c": "Standings & fixtures",
+          "d": "Top scorers & assists",
+          "e": "Bookings & red cards",
+          "f": "B Nacional",
+          "g": "Libertadores"
+        }
+      },
+      "nutriamor": {
+        "title": "NutriAmor",
+        "description": "AI-powered nutrition platform. Detailed diet tracking, automatic nutritional analysis of recipes and personalized health reports.",
+        "impact": "Improves adherence to nutrition plans through immediate, personalized feedback — supporting nutritionists and empowering patients.",
+        "gallery": {
+          "a": "Home",
+          "b": "Upload report",
+          "c": "Report detail",
+          "d": "Meal logging",
+          "e": "AI meal logging",
+          "f": "AI analysis",
+          "g": "Data input",
+          "h": "Complementary data",
+          "i": "Home loaded",
+          "j": "Recipes",
+          "k": "New recipe"
+        }
+      },
+      "invitaciones-digitales": {
+        "title": "Digital Invitations",
+        "description": "Web platform to create and share customizable digital invitations for events. Elegant design, RSVP responses and live guest list management.",
+        "impact": "Replaces paper invites and WhatsApp groups with a centralized, device-agnostic experience that improves host organization and guest experience.",
+        "gallery": {
+          "a": "Main invitation screen",
+          "b": "RSVP form",
+          "c": "Event gallery",
+          "d": "Event details"
+        }
+      },
+      "adogtame": {
+        "title": "Adógtame",
+        "description": "Platform connecting pet shelters and potential adopters.",
+        "gallery": {
+          "a": "Home",
+          "b": "Adoption form"
+        }
+      },
+      "pokemon-game": {
+        "title": "Guess the Pokémon",
+        "description": "Interactive trivia game built to explore Vue reactivity and external API consumption.",
+        "gallery": {
+          "a": "Game screen",
+          "b": "Pokémon game screen",
+          "c": "Pokémon game screen"
+        }
+      },
+      "pokedex": {
+        "title": "Pokédex",
+        "description": "Digital encyclopedia showcasing efficient handling of large datasets and async pagination.",
+        "gallery": {
+          "a": "Pokédex",
+          "b": "Pokémon list",
+          "c": "Pokémon detail"
+        }
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — Joan Manuel Romero",
+      "description": "Get in touch to collaborate on your next frontend project. Buenos Aires, Argentina. Available for remote work."
+    },
+    "header": "Get in touch",
+    "subtitle": "Looking for a proactive Frontend Developer for your next project? Reach out.",
+    "form": {
+      "title": "Send me a message",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or question…",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "successTitle": "Message sent!",
+      "successDetail": "I'll get back to you shortly.",
+      "errorTitle": "Something went wrong",
+      "errorDetail": "Please try again or email me directly.",
+      "rateLimit": "Please wait a minute before sending another message.",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Email is required.",
+        "emailInvalid": "Enter a valid email.",
+        "messageRequired": "Write a message.",
+        "messageMin": "Message must be at least 10 characters."
+      }
+    },
+    "channelsTitle": "Main contact channels",
+    "emailLabel": "Email",
+    "profilesLabel": "Professional profiles",
+    "location": "Buenos Aires, Argentina"
+  },
+  "footer": {
+    "rights": "© {year} Joan Manuel Romero. Built with Vue 3."
+  }
+}

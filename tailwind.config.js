@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Inter Variable"', ...defaultTheme.fontFamily.sans],
+        display: ['"Space Grotesk Variable"', ...defaultTheme.fontFamily.sans],
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
+      },
       colors: {
         'primary-50': 'rgb(var(--primary-50))',
         'primary-100': 'rgb(var(--primary-100))',
@@ -21,22 +27,19 @@ export default {
       },
       keyframes: {
         blob: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
-          },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
-          },
-          "100%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
+        'pulse-dot': {
+          '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+          '50%': { opacity: 0.6, transform: 'scale(1.2)' },
         },
       },
       animation: {
-        blob: "blob 7s infinite",
+        blob: 'blob 7s infinite',
+        'pulse-dot': 'pulse-dot 2s ease-in-out infinite',
       },
     },
   },

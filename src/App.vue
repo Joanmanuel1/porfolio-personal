@@ -1,19 +1,26 @@
 <script setup>
-import NavBar from './components/NavBar.vue';
-import { RouterView } from 'vue-router';
-import Footer from './components/Footer.vue'; 
+import NavBar from './components/NavBar.vue'
+import Footer from './components/Footer.vue'
+import ScrollProgress from './components/ScrollProgress.vue'
+import { RouterView } from 'vue-router'
+import Toast from 'primevue/toast'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="relative flex flex-col min-h-screen bg-gray-900 overflow-hidden">
-    <!-- Blobs animados de fondo -->
+    <a href="#main" class="skip-link">{{ t('a11y.skip') }}</a>
+    <ScrollProgress />
+
+    <!-- Animated background blobs -->
     <div class="absolute top-0 left-0 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
     <div class="absolute -bottom-20 left-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
     <div class="absolute -top-20 right-1/3 w-72 h-72 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-    <!-- Contenido principal de la aplicación -->
     <NavBar class="relative z-10" />
-    <main class="relative z-10 flex-grow">
+    <main id="main" tabindex="-1" class="relative z-10 flex-grow outline-none">
       <RouterView v-slot="{ Component }">
         <Transition name="fade" mode="out-in">
           <component :is="Component" />
@@ -21,6 +28,7 @@ import Footer from './components/Footer.vue';
       </RouterView>
     </main>
     <Footer class="relative z-10" />
+    <Toast position="bottom-right" />
   </div>
 </template>
 
@@ -50,8 +58,14 @@ import Footer from './components/Footer.vue';
   0%, 100% {
     transform: translate(0, 0) scale(1);
   }
-  25% { transform: translate(20px, -30px) scale(1.1); }
-  50% { transform: translate(-20px, 40px) scale(0.9); }
-  75% { transform: translate(30px, -20px) scale(1.05); }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 40px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
 }
 </style>

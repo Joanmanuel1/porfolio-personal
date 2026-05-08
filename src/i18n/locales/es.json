@@ -1,0 +1,323 @@
+{
+  "common": {
+    "available": "Disponible para proyectos",
+    "loading": "Cargando…",
+    "viewMore": "Ver más",
+    "close": "Cerrar"
+  },
+  "a11y": {
+    "skip": "Saltar al contenido principal",
+    "menuToggle": "Abrir/cerrar menú",
+    "switchLanguage": "Cambiar idioma"
+  },
+  "nav": {
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "home": {
+    "meta": {
+      "title": "Joan Manuel Romero — Frontend Developer (Vue.js)",
+      "description": "Frontend Developer especializado en Vue.js. Construyo SPAs escalables, accesibles y enfocadas en experiencia de usuario. Buenos Aires, Argentina."
+    },
+    "hero": {
+      "greeting": "Hola, soy",
+      "name": "Joan Manuel Romero",
+      "title": "Desarrollador Frontend especializado en Vue.js y soluciones web modernas.",
+      "subtitle": "Transformo ideas en productos digitales funcionales y escalables.",
+      "focus": "Me centro en la experiencia de usuario y la calidad del código.",
+      "credentials": "Licenciado en Gestión de Tecnología y Analista de Sistemas"
+    },
+    "cta": {
+      "downloadCv": "Descargar CV",
+      "linkedin": "LinkedIn",
+      "viewProjects": "Ver mis proyectos",
+      "contact": "Contactarme"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Sobre mí — Joan Manuel Romero",
+      "description": "Mi perfil profesional: Frontend Developer con trayectoria integral desde QA y Análisis Funcional hasta desarrollo SPA con Vue 3 y Angular."
+    },
+    "header": "Mi Perfil Profesional",
+    "credentials": "Licenciado en Gestión de Tecnología y Analista de Sistemas",
+    "bio": {
+      "intro": "Mi fortaleza reside en mi trayectoria integral: comencé en {qa}, pasando por {funcional}, lo que me permite abordar el {frontend} con una visión completa de la {quality}, la {ux} y los requisitos del negocio.",
+      "qa": "Análisis QA",
+      "funcional": "Análisis Funcional",
+      "frontend": "Desarrollo Frontend",
+      "quality": "calidad del código",
+      "ux": "experiencia de usuario (UX)",
+      "specialty": "Actualmente, me especializo en la construcción de Single Page Applications (SPA) escalables con Vue.js y Angular, asegurando que cada componente sea reutilizable, accesible y cumpla estrictamente con las necesidades funcionales.",
+      "values": "Mis pilares de trabajo son la {communication}, la {responsibility} y el {learning}, cruciales para un entorno ágil y de alto rendimiento.",
+      "communication": "comunicación proactiva",
+      "responsibility": "responsabilidad",
+      "learning": "aprendizaje constante"
+    },
+    "stack": {
+      "title": "Mi Stack técnico",
+      "development": "Desarrollo",
+      "languages": "Lenguajes y Frameworks",
+      "ui": "User Interface",
+      "backend": "Backend y Bases de Datos",
+      "managementTitle": "Gestión, QA y Análisis",
+      "qa": "Testing y Quality Assurance (QA)",
+      "qaItems": {
+        "manual": "Testing Manual (Funcional/Regresión)",
+        "automated": "Robot Framework / Selenium (Automatizado)",
+        "wcag": "Pruebas de Accesibilidad (WCAG)"
+      },
+      "analysis": "Análisis Funcional",
+      "analysisItems": {
+        "requirements": "Relevamiento de Requisitos",
+        "stories": "Historias de Usuario / Casos de Uso",
+        "docs": "Documentación Técnica"
+      },
+      "methods": "Metodologías y Gestión",
+      "methodsItems": {
+        "scrum": "Scrum (Ágiles)",
+        "jira": "JIRA / Trello",
+        "postman": "Postman / Soap (APIs)"
+      },
+      "vcs": "Control de Versiones",
+      "vcsItems": {
+        "git": "GitHub / GitLab"
+      }
+    }
+  },
+  "experience": {
+    "meta": {
+      "title": "Experiencia — Joan Manuel Romero",
+      "description": "Trayectoria profesional: Frontend Developer en Ministerio Público Fiscal, Analista Funcional en UXOR IT, y Analista QA en Nahual IT."
+    },
+    "header": "Experiencia Laboral",
+    "subtitle": "Mi trayectoria profesional.",
+    "keyTech": "Tecnología clave",
+    "fullTime": "Jornada completa",
+    "hybrid": "Híbrido",
+    "remote": "Remoto",
+    "items": {
+      "frontend": {
+        "role": "Desarrollador Front-end",
+        "company": "Ministerio Público Fiscal",
+        "location": "Provincia de Buenos Aires, Argentina",
+        "period": "Abr. 2022 - Actualidad (3 años 8 meses)",
+        "tech": "Vue JS 3, JavaScript, PrimeVue, Tailwind",
+        "bullets": [
+          "Ser parte de la migración completa de un sistema interno (anteriormente basado en Django Admin) a una moderna arquitectura SPA en Vue 3.",
+          "Desarrollo y mantenimiento de componentes reutilizables y la librería de UI interna utilizando PrimeVue y Tailwind CSS."
+        ]
+      },
+      "analyst": {
+        "role": "Analista Funcional",
+        "company": "UXOR IT",
+        "location": "Provincia de Buenos Aires, Argentina",
+        "period": "Jul. 2021 - Abr. 2022 (10 meses)",
+        "tech": "JIRA, SQL, Postman",
+        "bullets": [
+          "Responsable del relevamiento y la documentación de requisitos para el cliente Victoria Seguros, asegurando la alineación entre el negocio y el equipo técnico.",
+          "Creación y mantenimiento de diagramas de flujo y casos de uso para la implementación de nuevas funcionalidades críticas.",
+          "Coordinación de la comunicación entre los stakeholders y el equipo de desarrollo."
+        ]
+      },
+      "qa": {
+        "role": "Analista QA",
+        "company": "Nahual IT - Inclusive Technology",
+        "location": "Buenos Aires, CABA, Argentina",
+        "period": "May. 2018 - Jul. 2021 (3 años 3 meses)",
+        "tech": "Robot Framework, Selenium, Python, Postman",
+        "bullets": [
+          "Ejecución de pruebas funcionales y de regresión para clientes como Mercado Libre, Merck, Stahls y Sancor Seguros.",
+          "Desarrollo y mantenimiento de scripts de automatización de pruebas utilizando Robot Framework, Selenium y Python.",
+          "Enfoque en la accesibilidad (WCAG) y pruebas de usabilidad para garantizar estándares de calidad e inclusión."
+        ]
+      }
+    }
+  },
+  "education": {
+    "meta": {
+      "title": "Formación — Joan Manuel Romero",
+      "description": "Formación académica: Licenciatura en Gestión de Tecnología (UNLaM), Tecnicatura Superior en Análisis de Sistemas y certificación en Testing de Software."
+    },
+    "header": "Formación académica",
+    "skillsLabel": "Aptitudes Clave",
+    "contentsLabel": "Contenidos",
+    "kinds": {
+      "university": "UNIVERSITARIO",
+      "technical": "TÉCNICO",
+      "certification": "CERTIFICACIÓN"
+    },
+    "items": {
+      "degree": {
+        "title": "Licenciatura en Gestión de Tecnología",
+        "institution": "Universidad Nacional de La Matanza",
+        "period": "Marzo de 2022 hasta diciembre de 2023"
+      },
+      "technician": {
+        "title": "Tecnicatura Superior en Análisis de Sistemas",
+        "institution": "Instituto de Formación Técnica Superior N° 11",
+        "period": "Marzo de 2019 hasta diciembre de 2021"
+      },
+      "qa": {
+        "title": "Formación en Testing de Software",
+        "institution": "Proyecto Nahual",
+        "period": "Marzo de 2018 hasta julio de 2018",
+        "contents": [
+          "Armado y ejecución de casos de pruebas.",
+          "Detección y reporte de errores.",
+          "Introducción a SQL."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "meta": {
+      "title": "Proyectos — Joan Manuel Romero",
+      "description": "Soluciones tecnológicas con impacto real: Goludos (app y web de fútbol), NutriAmor (nutrición con IA), Invitaciones Digitales y proyectos de práctica."
+    },
+    "header": "Mis Proyectos",
+    "subtitle": "Soluciones tecnológicas enfocadas en generar impacto real y escalabilidad.",
+    "kinds": {
+      "production": "Proyectos en producción",
+      "practice": "Proyectos de práctica con finalidad educativa"
+    },
+    "labels": {
+      "impact": "Solución & Impacto",
+      "demo": "Ver Demo",
+      "playstore": "Play Store",
+      "code": "Código",
+      "gallery": "Galería",
+      "caseStudy": "Ver caso de estudio"
+    },
+    "items": {
+      "goludos-mobile": {
+        "title": "Goludos App Mobile",
+        "description": "Ecosistema móvil completo para el fútbol amateur y profesional. Ofrece resultados en tiempo real, estadísticas detalladas y una experiencia de usuario fluida y nativa.",
+        "impact": "Resuelve la fragmentación de información en ligas de fútbol, centralizando datos y ofreciendo actualizaciones instantáneas a miles de usuarios activos.",
+        "gallery": {
+          "a": "Pantalla posiciones",
+          "b": "Tabla de posiciones",
+          "c": "Fixture",
+          "d": "Fixture detalle",
+          "e": "Detalle de goles",
+          "f": "Formación",
+          "g": "Historial",
+          "h": "Estadísticas",
+          "i": "Amonestados",
+          "j": "Calendario",
+          "k": "Penales"
+        }
+      },
+      "goludos-web": {
+        "title": "Goludos Web",
+        "description": "Plataforma web escalable que complementa la experiencia móvil. Panel de administración robusto y visualización de datos complejos para gestores de ligas y aficionados.",
+        "impact": "Permite a las organizaciones gestionar torneos de manera eficiente y brinda accesibilidad desde cualquier dispositivo de escritorio.",
+        "gallery": {
+          "a": "Home",
+          "b": "Cargando",
+          "c": "Posiciones y fixture",
+          "d": "Goleadores y asistidores",
+          "e": "Amonestados y expulsados",
+          "f": "B Nacional",
+          "g": "Libertadores"
+        }
+      },
+      "nutriamor": {
+        "title": "NutriAmor",
+        "description": "Plataforma inteligente de nutrición asistida por IA. Permite el seguimiento detallado de dietas, análisis nutricional automático de recetas y generación de informes de salud personalizados.",
+        "impact": "Mejora la adherencia a planes nutricionales mediante feedback inmediato y personalización, facilitando la labor de nutricionistas y empoderando a los pacientes.",
+        "gallery": {
+          "a": "Home",
+          "b": "Cargar informe",
+          "c": "Detalle del informe",
+          "d": "Registro de comida",
+          "e": "IA carga comida",
+          "f": "Análisis de IA",
+          "g": "Carga de datos",
+          "h": "Datos complementarios",
+          "i": "Home cargado",
+          "j": "Recetas de comida",
+          "k": "Receta nueva carga"
+        }
+      },
+      "invitaciones-digitales": {
+        "title": "Invitaciones Digitales",
+        "description": "Plataforma web para crear y compartir invitaciones digitales personalizables para eventos. Diseño elegante, respuesta de invitados (RSVP) y gestión de listas en tiempo real.",
+        "impact": "Reemplaza el papel y los grupos de WhatsApp por una experiencia centralizada, accesible desde cualquier dispositivo, que mejora la organización del anfitrión y la experiencia del invitado.",
+        "gallery": {
+          "a": "Pantalla principal de invitación",
+          "b": "Formulario RSVP",
+          "c": "Galería del evento",
+          "d": "Detalles del evento"
+        }
+      },
+      "adogtame": {
+        "title": "Adógtame",
+        "description": "Plataforma de conexión para adopción de mascotas. Facilita el encuentro entre refugios y adoptantes potenciales.",
+        "gallery": {
+          "a": "Home",
+          "b": "Formulario de adopción"
+        }
+      },
+      "pokemon-game": {
+        "title": "Adivina qué Pokémon es",
+        "description": "Juego interactivo de trivia desarrollado para explorar la reactividad de Vue y consumo de APIs externas.",
+        "gallery": {
+          "a": "Pantalla de juego",
+          "b": "Pantalla de juego de Pokémon",
+          "c": "Pantalla de juego de Pokémon"
+        }
+      },
+      "pokedex": {
+        "title": "Pokédex",
+        "description": "Enciclopedia digital que demuestra el manejo eficiente de grandes conjuntos de datos y paginación asíncrona.",
+        "gallery": {
+          "a": "Pokédex",
+          "b": "Listado de Pokémon",
+          "c": "Detalle de Pokémon"
+        }
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contacto — Joan Manuel Romero",
+      "description": "Contactame para colaborar en tu próximo proyecto frontend. Buenos Aires, Argentina. Disponible para trabajo remoto."
+    },
+    "header": "Contactame",
+    "subtitle": "Si buscas un desarrollador Frontend proactivo para tu próximo proyecto, contactame.",
+    "form": {
+      "title": "Envíame un mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tucorreo@ejemplo.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Contame sobre tu proyecto o consulta…",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando…",
+      "successTitle": "¡Mensaje enviado!",
+      "successDetail": "Te responderé a la brevedad.",
+      "errorTitle": "Algo falló",
+      "errorDetail": "Intentalo de nuevo o escribime directamente por correo.",
+      "rateLimit": "Esperá un minuto antes de enviar otro mensaje.",
+      "errors": {
+        "nameRequired": "Por favor ingresá tu nombre.",
+        "emailRequired": "El correo es obligatorio.",
+        "emailInvalid": "Ingresá un correo válido.",
+        "messageRequired": "Escribí un mensaje.",
+        "messageMin": "El mensaje debe tener al menos 10 caracteres."
+      }
+    },
+    "channelsTitle": "Vías de contacto principales",
+    "emailLabel": "Correo electrónico",
+    "profilesLabel": "Perfiles Profesionales",
+    "location": "Buenos Aires, Argentina"
+  },
+  "footer": {
+    "rights": "© {year} Joan Manuel Romero. Construido con Vue 3."
+  }
+}

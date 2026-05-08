@@ -1,50 +1,50 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
-import ProjectsView from "../views/ProjectView.vue";
-import ContactView from "../views/ContactView.vue";
-import ExperienceView from "../views/Experience.vue";
-import EducationView from "../views/Education.vue";
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: HomeView,
+    path: '/',
+    name: 'Home',
+    component: () => import('../views/HomeView.vue'),
   },
   {
-    path: "/about",
-    name: "About",
-    component: AboutView,
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/AboutView.vue'),
   },
   {
-    path: "/projects",
-    name: "Projects",
-    component: ProjectsView,
+    path: '/projects',
+    name: 'Projects',
+    component: () => import('../views/ProjectView.vue'),
   },
   {
-    path: "/contact",
-    name: "Contact",
-    component: ContactView,
+    path: '/projects/:slug',
+    name: 'ProjectDetail',
+    component: () => import('../views/ProjectDetailView.vue'),
+    props: true,
   },
   {
-    path: "/experience",
-    name: "Experience",
-    component: ExperienceView,
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/ContactView.vue'),
   },
   {
-    path: "/education",
-    name: "Education",
-    component: EducationView,
+    path: '/experience',
+    name: 'Experience',
+    component: () => import('../views/Experience.vue'),
   },
-];
+  {
+    path: '/education',
+    name: 'Education',
+    component: () => import('../views/Education.vue'),
+  },
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, from, savedPosition) {
-    return { top: 0 };
+  scrollBehavior() {
+    return { top: 0 }
   },
-});
+})
 
-export default router;
+export default router

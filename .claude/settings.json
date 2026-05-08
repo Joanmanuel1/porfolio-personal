@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -sf http://localhost:5173 -o /tmp/index.html)",
+      "Read(//tmp/**)",
+      "Bash(kill %1)",
+      "Bash(pkill -f 'vite')",
+      "Bash(command -v convert magick rsvg-convert inkscape)",
+      "Bash(npm ls *)",
+      "Bash(node scripts/generate-favicons.mjs)",
+      "Bash(node scripts/generate-og-image.mjs)"
+    ]
+  }
+}
