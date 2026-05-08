@@ -13,17 +13,14 @@ export default {
         tightest: '-0.04em',
       },
       colors: {
-        'primary-50': 'rgb(var(--primary-50))',
-        'primary-100': 'rgb(var(--primary-100))',
-        'primary-200': 'rgb(var(--primary-200))',
-        'primary-300': 'rgb(var(--primary-300))',
-        'primary-400': 'rgb(var(--primary-400))',
-        'primary-500': 'rgb(var(--primary-500))',
-        'primary-600': 'rgb(var(--primary-600))',
-        'primary-700': 'rgb(var(--primary-700))',
-        'primary-800': 'rgb(var(--primary-800))',
-        'primary-900': 'rgb(var(--primary-900))',
-        'primary-950': 'rgb(var(--primary-950))',
+        canvas: '#0b0f19',
+        surface: '#111827',
+        elevated: '#1a2236',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'hero-mesh':
+          'radial-gradient(at 20% 20%, rgba(99,102,241,0.18) 0px, transparent 50%), radial-gradient(at 80% 80%, rgba(139,92,246,0.15) 0px, transparent 50%), radial-gradient(at 50% 0%, rgba(6,182,212,0.12) 0px, transparent 50%)',
       },
       keyframes: {
         blob: {
@@ -34,12 +31,27 @@ export default {
         },
         'pulse-dot': {
           '0%, 100%': { opacity: 1, transform: 'scale(1)' },
-          '50%': { opacity: 0.6, transform: 'scale(1.2)' },
+          '50%': { opacity: 0.6, transform: 'scale(1.3)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
+        'fade-in-up': {
+          '0%': { opacity: 0, transform: 'translateY(24px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
         },
       },
       animation: {
-        blob: 'blob 7s infinite',
-        'pulse-dot': 'pulse-dot 2s ease-in-out infinite',
+        blob: 'blob 12s infinite ease-in-out',
+        'pulse-dot': 'pulse-dot 2.2s ease-in-out infinite',
+        float: 'float 4s ease-in-out infinite',
+        shimmer: 'shimmer 3s linear infinite',
+        'fade-in-up': 'fade-in-up 0.6s ease forwards',
       },
     },
   },

@@ -190,7 +190,8 @@
       "playstore": "Play Store",
       "code": "Código",
       "gallery": "Galería",
-      "caseStudy": "Ver caso de estudio"
+      "caseStudy": "Ver caso de estudio",
+      "stage": "Etapa"
     },
     "items": {
       "goludos-mobile": {
@@ -245,13 +246,32 @@
       },
       "invitaciones-digitales": {
         "title": "Invitaciones Digitales",
-        "description": "Plataforma web para crear y compartir invitaciones digitales personalizables para eventos. Diseño elegante, respuesta de invitados (RSVP) y gestión de listas en tiempo real.",
-        "impact": "Reemplaza el papel y los grupos de WhatsApp por una experiencia centralizada, accesible desde cualquier dispositivo, que mejora la organización del anfitrión y la experiencia del invitado.",
+        "description": "Plataforma SaaS completa para crear y compartir invitaciones digitales personalizables. Abarca tres módulos: landing comercial, editor visual de invitaciones y producto final mobile-first compartible por WhatsApp.",
+        "impact": "Reemplaza el papel y los grupos de WhatsApp por una experiencia centralizada con RSVP en tiempo real, contador regresivo, galería de fotos y lista de regalos — todo accesible desde un link.",
+        "videoAlt": "Demo de invitación de 15 años finalizada",
+        "stages": {
+          "landing": {
+            "title": "Landing Page Comercial",
+            "description": "Sitio de presentación del producto orientado a la conversión. Comunica la propuesta de valor, muestra estilos por tipo de evento (bodas, 15 años, cumpleaños), explica el proceso en 3 pasos, incluye precios, testimonios reales de clientes y FAQ. Diseñada para captar leads via WhatsApp."
+          },
+          "editor": {
+            "title": "Editor Visual de Invitaciones",
+            "description": "Panel de autogestión donde el cliente activa y configura cada sección de su invitación: portada, cuenta regresiva, información del evento, galería de fotos, playlist, mapa, lista de regalos y confirmación de asistencia. Cambios reflejados en tiempo real con preview móvil integrado."
+          },
+          "invitation": {
+            "title": "Invitación Finalizada",
+            "description": "El producto que reciben los invitados: una experiencia web mobile-first, compartible por WhatsApp como link único. Incluye animaciones, música de fondo, cuenta regresiva en vivo, galería interactiva y confirmación de asistencia con un solo toque."
+          }
+        },
         "gallery": {
-          "a": "Pantalla principal de invitación",
-          "b": "Formulario RSVP",
-          "c": "Galería del evento",
-          "d": "Detalles del evento"
+          "a": "Hero de la landing — propuesta de valor",
+          "b": "Showcase de estilos por tipo de evento",
+          "c": "Grilla de features del producto",
+          "d": "Flujo 'cómo funciona' en 3 pasos",
+          "e": "Sección de testimonios de clientes",
+          "f": "Tabla de precios — planes Autogestión y Personalizada",
+          "g": "Editor visual con preview de invitación en tiempo real",
+          "h": "FAQ de la plataforma"
         }
       },
       "adogtame": {

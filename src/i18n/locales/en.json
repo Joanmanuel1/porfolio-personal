@@ -190,7 +190,8 @@
       "playstore": "Play Store",
       "code": "Code",
       "gallery": "Gallery",
-      "caseStudy": "View case study"
+      "caseStudy": "View case study",
+      "stage": "Stage"
     },
     "items": {
       "goludos-mobile": {
@@ -245,13 +246,32 @@
       },
       "invitaciones-digitales": {
         "title": "Digital Invitations",
-        "description": "Web platform to create and share customizable digital invitations for events. Elegant design, RSVP responses and live guest list management.",
-        "impact": "Replaces paper invites and WhatsApp groups with a centralized, device-agnostic experience that improves host organization and guest experience.",
+        "description": "Full-stack SaaS platform for creating and sharing customizable digital invitations. Covers three modules: commercial landing page, visual invitation editor, and mobile-first final product shareable via WhatsApp.",
+        "impact": "Replaces paper invites and WhatsApp groups with a centralized experience featuring real-time RSVP, countdown timer, photo gallery, and gift list — all accessible through a single link.",
+        "videoAlt": "Demo of a completed quinceañera invitation",
+        "stages": {
+          "landing": {
+            "title": "Commercial Landing Page",
+            "description": "Conversion-focused product presentation site. Communicates the value proposition, showcases styles by event type (weddings, quinceañeras, birthdays), explains the 3-step process, and includes pricing, real client testimonials, and FAQ. Designed to capture leads via WhatsApp."
+          },
+          "editor": {
+            "title": "Visual Invitation Editor",
+            "description": "Self-service dashboard where clients enable and configure each section of their invitation: cover, countdown, event info, photo gallery, playlist, map, gift list, and RSVP confirmation. Changes reflected in real time with an integrated mobile preview."
+          },
+          "invitation": {
+            "title": "Finished Invitation",
+            "description": "The product guests receive: a mobile-first web experience shareable via WhatsApp as a unique link. Features animations, background music, live countdown, interactive gallery, and one-tap RSVP confirmation."
+          }
+        },
         "gallery": {
-          "a": "Main invitation screen",
-          "b": "RSVP form",
-          "c": "Event gallery",
-          "d": "Event details"
+          "a": "Landing hero — value proposition",
+          "b": "Style showcase by event type",
+          "c": "Product features grid",
+          "d": "'How it works' 3-step flow",
+          "e": "Client testimonials section",
+          "f": "Pricing table — Self-service and Custom plans",
+          "g": "Visual editor with real-time invitation preview",
+          "h": "Platform FAQ"
         }
       },
       "adogtame": {

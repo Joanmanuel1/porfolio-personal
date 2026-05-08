@@ -2,7 +2,16 @@
   <div v-if="type === 'mobile'" class="device-mobile mx-auto">
     <div class="device-mobile-notch"></div>
     <div class="device-mobile-screen">
-      <slot />
+      <video
+        v-if="videoSrc"
+        :src="videoSrc"
+        autoplay
+        loop
+        muted
+        playsinline
+        class="device-media"
+      />
+      <slot v-else />
     </div>
   </div>
 
@@ -27,6 +36,7 @@
 defineProps({
   type: { type: String, default: null },
   url: { type: String, default: '' },
+  videoSrc: { type: String, default: '' },
 })
 </script>
 
@@ -64,10 +74,12 @@ defineProps({
   align-items: center;
   justify-content: center;
 }
+.device-media,
 .device-mobile-screen :deep(img) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .device-browser {

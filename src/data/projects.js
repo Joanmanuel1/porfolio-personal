@@ -62,18 +62,33 @@ export const productionProjects = [
     frame: 'browser',
     galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
   }),
-  // TODO: replace placeholders once content is finalized.
-  // - Add demoUrl (production deployment of digital invitations app)
-  // - Drop screenshots in src/assets/img/ as 7-a.png, 7-b.png, ...
-  // - Adjust technologies array if stack differs
   make('invitaciones-digitales', {
     technologies: ['Vue 3', 'Tailwind', 'Firebase', 'Vite'],
-    demoUrl: '',
+    demoUrl: 'https://invitacion-digital-dev.web.app/',
     githubUrl: '',
-    status: false,
+    status: true,
     featured: true,
-    frame: 'browser',
-    galleryLetters: ['a', 'b', 'c', 'd'],
+    frame: 'mobile',
+    videoUrl: '/demo-quince.mp4',
+    galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'],
+    stages: [
+      {
+        titleKey: 'projects.items.invitaciones-digitales.stages.landing.title',
+        descriptionKey: 'projects.items.invitaciones-digitales.stages.landing.description',
+        images: ['a', 'b', 'c', 'd', 'e', 'f'],
+      },
+      {
+        titleKey: 'projects.items.invitaciones-digitales.stages.editor.title',
+        descriptionKey: 'projects.items.invitaciones-digitales.stages.editor.description',
+        images: ['g'],
+      },
+      {
+        titleKey: 'projects.items.invitaciones-digitales.stages.invitation.title',
+        descriptionKey: 'projects.items.invitaciones-digitales.stages.invitation.description',
+        images: ['h'],
+        videoUrl: '/demo-quince.mp4',
+      },
+    ],
   }),
 ]
 

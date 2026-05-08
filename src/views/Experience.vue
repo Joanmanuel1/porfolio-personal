@@ -1,68 +1,101 @@
 <template>
-  <section class="p-4 sm:p-8 lg:p-12 min-h-screen" data-aos="fade-up">
+  <section class="section-pad">
     <div class="max-w-4xl mx-auto">
-      <header class="text-center mb-8 sm:mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-2">
+
+      <!-- Header -->
+      <div
+        class="mb-16 sm:mb-20"
+        v-motion
+        :initial="{ opacity: 0, y: 24 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+      >
+        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('experience.subtitle') }}</p>
+        <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest">
           {{ t('experience.header') }}
-        </h2>
-        <p class="text-lg sm:text-xl text-white font-light">
-          {{ t('experience.subtitle') }}
-        </p>
-      </header>
+        </h1>
+      </div>
 
-      <div class="space-y-6 sm:space-y-10">
-        <article
-          v-for="(item, idx) in items"
-          :key="item.key"
-          class="p-5 sm:p-6 rounded-xl shadow-lg border-l-4 border-green-500 bg-gray-50 transition duration-300 hover:shadow-xl"
-          :style="{ '--delay': idx * 100 + 'ms' }"
-        >
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
-            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-1 md:mb-0">
-              {{ t(`experience.items.${item.key}.role`) }}
-            </h3>
-            <span class="text-xs sm:text-sm text-gray-500 font-semibold">
-              <i class="pi pi-calendar mr-1"></i>
-              {{ t(`experience.items.${item.key}.period`) }}
-            </span>
-          </div>
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-5 sm:left-7 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-violet-500/30 to-transparent" aria-hidden="true"></div>
 
-          <div class="flex flex-col sm:flex-row justify-between text-gray-700 mb-3 sm:mb-4 text-sm sm:text-md">
-            <p class="font-medium">
-              <i class="pi pi-building mr-1 text-green-500"></i>
-              {{ t(`experience.items.${item.key}.company`) }} ·
-              <span class="font-normal">{{ t('experience.fullTime') }}</span>
-            </p>
-            <p class="text-gray-500 italic mt-1 sm:mt-0 text-xs sm:text-md">
-              <i class="pi pi-map-marker mr-1"></i>
-              {{ t(`experience.items.${item.key}.location`) }} · {{ t(`experience.${item.modality}`) }}
-            </p>
-          </div>
-
-          <div class="border-t border-gray-200 pt-3 sm:pt-4">
-            <p class="text-xs sm:text-sm text-gray-800 mb-2">
-              <span class="font-semibold text-green-600">{{ t('experience.keyTech') }}:</span>
-              {{ t(`experience.items.${item.key}.tech`) }}
-            </p>
-
-            <ul class="list-disc list-inside space-y-1 text-gray-700 ml-4">
-              <li v-for="(b, i) in tm(`experience.items.${item.key}.bullets`)" :key="i" class="text-xs sm:text-sm">
-                <span class="font-semibold">{{ b }}</span>
-              </li>
-            </ul>
-
-            <div class="mt-4 flex flex-wrap gap-2">
-              <Tag v-for="tag in item.tags" :key="tag.value" :value="tag.value" :severity="tag.severity" class="text-xs" />
+        <div class="space-y-10">
+          <article
+            v-for="(item, idx) in items"
+            :key="item.key"
+            class="relative pl-14 sm:pl-20"
+            v-motion
+            :initial="{ opacity: 0, x: -20 }"
+            :enter="{ opacity: 1, x: 0, transition: { delay: idx * 120, duration: 550 } }"
+          >
+            <!-- Timeline dot -->
+            <div class="absolute left-[13px] sm:left-[23px] top-6 w-5 h-5 rounded-full border-2 border-indigo-500 bg-canvas flex items-center justify-center" aria-hidden="true">
+              <div class="w-1.5 h-1.5 rounded-full bg-indigo-400"></div>
             </div>
-          </div>
-        </article>
+
+            <!-- Card -->
+            <div class="glass glass-hover rounded-2xl p-6 sm:p-7">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                <div>
+                  <h2 class="text-lg sm:text-xl font-display font-bold text-white tracking-tight">
+                    {{ t(`experience.items.${item.key}.role`) }}
+                  </h2>
+                  <p class="text-sm text-slate-400 mt-0.5 flex items-center gap-1.5">
+                    <i class="pi pi-building text-indigo-400 text-xs"></i>
+                    {{ t(`experience.items.${item.key}.company`) }}
+                    <span class="text-slate-600">·</span>
+                    <span class="text-slate-500">{{ t('experience.fullTime') }}</span>
+                  </p>
+                </div>
+                <div class="flex flex-col items-start sm:items-end gap-1 flex-shrink-0">
+                  <span class="text-xs font-medium text-slate-400 bg-white/5 px-2.5 py-1 rounded-md border border-white/8">
+                    {{ t(`experience.items.${item.key}.period`) }}
+                  </span>
+                  <span class="text-xs text-slate-600 flex items-center gap-1">
+                    <i class="pi pi-map-marker text-[10px]"></i>
+                    {{ t(`experience.items.${item.key}.location`) }} · {{ t(`experience.${item.modality}`) }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Key tech -->
+              <p class="text-xs text-slate-500 mb-3 font-medium">
+                <span class="text-indigo-400">{{ t('experience.keyTech') }}:</span>
+                {{ t(`experience.items.${item.key}.tech`) }}
+              </p>
+
+              <!-- Bullets -->
+              <ul class="space-y-1.5 mb-5">
+                <li
+                  v-for="(b, i) in tm(`experience.items.${item.key}.bullets`)"
+                  :key="i"
+                  class="text-sm text-slate-400 leading-relaxed flex items-start gap-2"
+                >
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500/60 flex-shrink-0"></span>
+                  {{ b }}
+                </li>
+              </ul>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="tag in item.tags"
+                  :key="tag.value"
+                  class="tech-pill"
+                >
+                  {{ tag.value }}
+                </span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import Tag from 'primevue/tag'
 import { useI18n } from 'vue-i18n'
 import { useSeo } from '@/composables/useSeo'
 
@@ -78,42 +111,24 @@ const items = [
     key: 'frontend',
     modality: 'hybrid',
     tags: [
-      { value: 'Vue JS', severity: 'success' },
-      { value: 'JavaScript', severity: 'success' },
-      { value: 'PrimeVue', severity: 'warn' },
-      { value: 'Tailwind', severity: 'warn' },
-      { value: 'Jira', severity: 'info' },
-      { value: 'GitLab', severity: 'danger' },
+      { value: 'Vue 3' }, { value: 'JavaScript' }, { value: 'PrimeVue' },
+      { value: 'Tailwind' }, { value: 'Jira' }, { value: 'GitLab' },
     ],
   },
   {
     key: 'analyst',
     modality: 'remote',
     tags: [
-      { value: 'Postman', severity: 'warn' },
-      { value: 'SQL', severity: 'warn' },
-      { value: 'Jira', severity: 'info' },
-      { value: 'Scrum', severity: 'info' },
+      { value: 'Postman' }, { value: 'SQL' }, { value: 'Jira' }, { value: 'Scrum' },
     ],
   },
   {
     key: 'qa',
     modality: 'hybrid',
     tags: [
-      { value: 'Robot Framework', severity: 'danger' },
-      { value: 'Python', severity: 'info' },
-      { value: 'Selenium', severity: 'success' },
-      { value: 'Postman', severity: 'warn' },
-      { value: 'SQL', severity: 'warn' },
-      { value: 'Jira', severity: 'info' },
+      { value: 'Robot Framework' }, { value: 'Python' }, { value: 'Selenium' },
+      { value: 'Postman' }, { value: 'SQL' }, { value: 'Jira' },
     ],
   },
 ]
 </script>
-
-<style scoped>
-:global(.p-tag.text-xs) {
-  font-size: 0.75rem !important;
-  padding: 0.25rem 0.5rem !important;
-}
-</style>

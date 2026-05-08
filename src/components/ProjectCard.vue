@@ -1,34 +1,45 @@
 <template>
-  <article class="flex flex-col h-full bg-white rounded-lg shadow-xl border border-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-2xl overflow-hidden relative">
-    <div class="p-5 sm:p-6 flex flex-col flex-grow">
-      <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+  <article class="glass glass-hover rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:-translate-y-1">
+    <div class="p-6 flex flex-col flex-grow">
+      <div class="flex flex-wrap gap-1.5 mb-3">
+        <span v-for="tech in project.technologies" :key="tech" class="tech-pill">{{ tech }}</span>
+      </div>
+
+      <h3 class="text-lg font-display font-bold text-white tracking-tight mb-2">
         {{ t(project.titleKey) }}
       </h3>
 
-      <p class="text-sm sm:text-base text-gray-600 mb-3 flex-grow">
+      <p class="text-sm text-slate-400 leading-relaxed flex-grow mb-5">
         {{ t(project.descriptionKey) }}
       </p>
 
-      <div class="flex flex-wrap gap-1 mb-3">
-        <Tag v-for="tech in project.technologies" :key="tech" :value="tech"
-          class="font-semibold text-xs px-2 py-0.5 rounded-full" />
-      </div>
-
-      <div class="flex flex-wrap gap-2 mt-auto pt-3 sm:pt-4 border-t border-gray-100">
-        <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank" rel="noopener">
-          <Button
-            :label="project.status ? t('projects.labels.playstore') : t('projects.labels.demo')"
-            :icon="project.status ? 'pi pi-google' : 'pi pi-external-link'"
-            raised rounded severity="success" size="small"
-          />
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5 mt-auto">
+        <a
+          v-if="project.demoUrl"
+          :href="project.demoUrl"
+          target="_blank"
+          rel="noopener"
+          class="cta-primary text-xs px-3 py-1.5 rounded-lg"
+        >
+          <i :class="project.status ? 'pi pi-google' : 'pi pi-external-link'"></i>
+          {{ project.status ? t('projects.labels.playstore') : t('projects.labels.demo') }}
         </a>
-
-        <a v-if="project.githubUrl" :href="project.githubUrl" target="_blank" rel="noopener">
-          <Button :label="t('projects.labels.code')" icon="pi pi-github" severity="contrast" raised rounded size="small" />
+        <a
+          v-if="project.githubUrl"
+          :href="project.githubUrl"
+          target="_blank"
+          rel="noopener"
+          class="cta-secondary text-xs px-3 py-1.5 rounded-lg"
+        >
+          <i class="pi pi-github"></i> {{ t('projects.labels.code') }}
         </a>
-
-        <Button v-if="project.gallery?.length" :label="t('projects.labels.gallery')" icon="pi pi-images"
-          severity="info" rounded size="small" @click="openGallery" />
+        <button
+          v-if="project.gallery?.length"
+          class="cta-secondary text-xs px-3 py-1.5 rounded-lg cursor-pointer"
+          @click="openGallery"
+        >
+          <i class="pi pi-images"></i> {{ t('projects.labels.gallery') }}
+        </button>
       </div>
     </div>
 
@@ -39,9 +50,21 @@
       :style="{ width: '70vw' }"
       :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
       :dismissableMask="true"
+      :pt="{
+        header: { class: 'bg-[#111827] text-white border-b border-white/5' },
+        content: { class: 'bg-[#0b0f19] text-white p-0' },
+        closeButton: { class: 'text-white hover:bg-white/10' },
+      }"
     >
-      <Galleria :value="project.gallery" :numVisible="5" :circular="true" :showThumbnails="false"
-        :showIndicators="true" :showItemNavigators="true" containerStyle="max-width: 1100px; margin: auto;">
+      <Galleria
+        :value="project.gallery"
+        :numVisible="5"
+        :circular="true"
+        :showThumbnails="false"
+        :showIndicators="true"
+        :showItemNavigators="true"
+        containerStyle="max-width: 1100px; margin: auto;"
+      >
         <template #item="slotProps">
           <div class="flex justify-center items-center p-4">
             <img
@@ -59,20 +82,14 @@
 </template>
 
 <script setup>
-import Button from 'primevue/button'
 import Galleria from 'primevue/galleria'
 import Dialog from 'primevue/dialog'
-import Tag from 'primevue/tag'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useImageUrl } from '@/composables/useImageUrl'
 
 defineProps({
-  project: {
-    type: Object,
-    required: true,
-    default: () => ({ gallery: [] }),
-  },
+  project: { type: Object, required: true },
 })
 
 const { t } = useI18n()
@@ -80,11 +97,3 @@ const getImageUrl = useImageUrl()
 const displayGallery = ref(false)
 const openGallery = () => (displayGallery.value = true)
 </script>
-
-<style scoped>
-:global(.p-tag.text-xs) {
-  font-size: 0.7rem !important;
-  padding: 0.2rem 0.4rem !important;
-  line-height: 1 !important;
-}
-</style>

@@ -1,57 +1,84 @@
 <template>
-  <section class="max-w-4xl mx-auto p-4 sm:p-8 lg:p-12">
-    <header class="text-center mb-8 sm:mb-12">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
-        {{ t('education.header') }}
-      </h2>
-    </header>
+  <section class="section-pad">
+    <div class="max-w-4xl mx-auto">
 
-    <div class="space-y-6 sm:space-y-8">
-      <article
-        v-for="item in items"
-        :key="item.key"
-        class="bg-white p-5 sm:p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300"
-        :class="`border-l-4 ${item.color}`"
+      <!-- Header -->
+      <div
+        class="mb-16 sm:mb-20"
+        v-motion
+        :initial="{ opacity: 0, y: 24 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
       >
-        <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
-          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2 sm:mb-0">
-            {{ t(`education.items.${item.key}.title`) }}
-          </h3>
-          <p class="text-sm font-semibold px-3 py-1 rounded-full self-start sm:self-auto" :class="item.kindClass">
-            {{ t(`education.kinds.${item.kind}`) }}
-          </p>
-        </div>
+        <p class="text-xs font-semibold tracking-widest text-indigo-400 uppercase mb-3">{{ t('nav.education') }}</p>
+        <h1 class="text-4xl sm:text-5xl font-display font-black text-white tracking-tightest">
+          {{ t('education.header') }}
+        </h1>
+      </div>
 
-        <p class="text-base sm:text-lg font-medium text-gray-600 mb-2">
-          <i class="pi pi-building mr-2 text-gray-500"></i>
-          {{ t(`education.items.${item.key}.institution`) }}
-        </p>
-
-        <p class="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
-          <i class="pi pi-calendar mr-2 text-gray-500"></i>
-          {{ t(`education.items.${item.key}.period`) }}
-        </p>
-
-        <div class="pt-3 sm:pt-4 border-t border-gray-200">
-          <div v-if="item.contentsKey" class="pb-3 mb-3 border-b border-gray-100">
-            <p class="font-semibold text-gray-700 mb-2">{{ t('education.contentsLabel') }}:</p>
-            <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1 text-sm">
-              <li v-for="(c, i) in tm(item.contentsKey)" :key="i">{{ c }}</li>
-            </ul>
+      <div class="space-y-5">
+        <article
+          v-for="(item, idx) in items"
+          :key="item.key"
+          class="glass glass-hover rounded-2xl p-6 sm:p-7"
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { delay: idx * 100, duration: 550 } }"
+        >
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+            <div>
+              <h2 class="text-lg sm:text-xl font-display font-bold text-white tracking-tight leading-tight">
+                {{ t(`education.items.${item.key}.title`) }}
+              </h2>
+              <p class="text-sm text-slate-400 mt-1 flex items-center gap-1.5">
+                <i class="pi pi-building text-indigo-400 text-xs"></i>
+                {{ t(`education.items.${item.key}.institution`) }}
+              </p>
+            </div>
+            <div class="flex flex-col items-start sm:items-end gap-2 flex-shrink-0">
+              <span
+                class="text-xs font-semibold px-2.5 py-1 rounded-full border"
+                :style="{ color: item.color, borderColor: item.color + '40', background: item.color + '12' }"
+              >
+                {{ t(`education.kinds.${item.kind}`) }}
+              </span>
+              <span class="text-xs text-slate-600 flex items-center gap-1">
+                <i class="pi pi-calendar text-[10px]"></i>
+                {{ t(`education.items.${item.key}.period`) }}
+              </span>
+            </div>
           </div>
 
-          <p class="font-semibold text-gray-700 mb-2">{{ t('education.skillsLabel') }}:</p>
-          <div class="flex flex-wrap gap-2">
-            <Tag v-for="s in item.skills" :key="s.value" :value="s.value" :icon="s.icon" :severity="s.severity" class="font-medium" />
+          <div class="border-t border-white/5 pt-4">
+            <div v-if="item.contentsKey" class="mb-4">
+              <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-2">{{ t('education.contentsLabel') }}</p>
+              <ul class="space-y-1">
+                <li
+                  v-for="(c, i) in tm(item.contentsKey)"
+                  :key="i"
+                  class="text-sm text-slate-400 flex items-start gap-2"
+                >
+                  <span class="mt-1.5 w-1 h-1 rounded-full bg-indigo-500/50 flex-shrink-0"></span>
+                  {{ c }}
+                </li>
+              </ul>
+            </div>
+
+            <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-2">{{ t('education.skillsLabel') }}</p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="s in item.skills"
+                :key="s.value"
+                class="tech-pill"
+              >{{ s.value }}</span>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import Tag from 'primevue/tag'
 import { useI18n } from 'vue-i18n'
 import { useSeo } from '@/composables/useSeo'
 
@@ -66,40 +93,26 @@ const items = [
   {
     key: 'degree',
     kind: 'university',
-    color: 'border-green-500',
-    kindClass: 'text-green-600 bg-green-100',
+    color: '#4ade80',
     skills: [
-      { value: 'Java', icon: 'pi pi-code', severity: 'success' },
-      { value: 'Angular', icon: 'pi pi-code', severity: 'success' },
-      { value: 'SQL', icon: 'pi pi-database', severity: 'info' },
-      { value: 'Jira', icon: 'pi pi-list', severity: 'warn' },
-      { value: 'Trello', icon: 'pi pi-list', severity: 'warn' },
+      { value: 'Java' }, { value: 'Angular' }, { value: 'SQL' }, { value: 'Jira' }, { value: 'Trello' },
     ],
   },
   {
     key: 'technician',
     kind: 'technical',
-    color: 'border-blue-500',
-    kindClass: 'text-blue-600 bg-blue-100',
+    color: '#60a5fa',
     skills: [
-      { value: 'C#', icon: 'pi pi-code', severity: 'success' },
-      { value: 'Angular', icon: 'pi pi-code', severity: 'success' },
-      { value: 'SQL', icon: 'pi pi-database', severity: 'info' },
-      { value: 'Firebase', icon: 'pi pi-database', severity: 'info' },
-      { value: 'Jira', icon: 'pi pi-list', severity: 'warn' },
-      { value: 'Trello', icon: 'pi pi-list', severity: 'warn' },
+      { value: 'C#' }, { value: 'Angular' }, { value: 'SQL' }, { value: 'Firebase' }, { value: 'Jira' },
     ],
   },
   {
     key: 'qa',
     kind: 'certification',
-    color: 'border-yellow-500',
-    kindClass: 'text-yellow-600 bg-yellow-100',
+    color: '#facc15',
     contentsKey: 'education.items.qa.contents',
     skills: [
-      { value: 'SQL', icon: 'pi pi-database', severity: 'info' },
-      { value: 'Jira', icon: 'pi pi-list', severity: 'warn' },
-      { value: 'Trello', icon: 'pi pi-list', severity: 'warn' },
+      { value: 'SQL' }, { value: 'Jira' }, { value: 'Trello' },
     ],
   },
 ]
