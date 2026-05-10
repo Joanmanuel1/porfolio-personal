@@ -4,18 +4,18 @@ import { dirname, resolve } from 'node:path'
 
 const here = dirname(fileURLToPath(import.meta.url))
 const publicDir = resolve(here, '..', 'public')
-const SITE = 'https://joanmanuelromero.dev'
+const SITE = 'https://portoflio-personal.netlify.app'
 
 // Import project slugs directly from the data source
 const { productionProjects } = await import('../src/data/projects.js')
 
 const staticRoutes = [
-  { path: '/',           priority: '1.0', changefreq: 'monthly' },
-  { path: '/projects',   priority: '0.9', changefreq: 'monthly' },
+  { path: '/', priority: '1.0', changefreq: 'monthly' },
+  { path: '/projects', priority: '0.9', changefreq: 'monthly' },
   { path: '/experience', priority: '0.7', changefreq: 'monthly' },
-  { path: '/education',  priority: '0.6', changefreq: 'monthly' },
-  { path: '/about',      priority: '0.8', changefreq: 'monthly' },
-  { path: '/contact',    priority: '0.7', changefreq: 'monthly' },
+  { path: '/education', priority: '0.6', changefreq: 'monthly' },
+  { path: '/about', priority: '0.8', changefreq: 'monthly' },
+  { path: '/contact', priority: '0.7', changefreq: 'monthly' },
 ]
 
 const dynamicRoutes = productionProjects.map((p) => ({
