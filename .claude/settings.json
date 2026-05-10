@@ -42,7 +42,8 @@
       "Bash(git push *)",
       "Bash(sed -i 's|https://joanmanuelromero.dev|https://portoflio-personal.netlify.app|g' /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/index.html /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/public/robots.txt /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/public/sitemap.xml /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/.github/workflows/ci.yml)",
       "Bash(sed -i 's|data-domain=\"joanmanuelromero.dev\"|data-domain=\"portoflio-personal.netlify.app\"|g' /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/index.html)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(git config *)"
     ]
   }
 }
