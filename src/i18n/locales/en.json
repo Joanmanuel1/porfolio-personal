@@ -276,9 +276,9 @@
     "items": {
       "goludos-mobile": {
         "title": "Goludos Mobile App",
-        "description": "Mobile platform specialized in Argentine football and the lower divisions, designed to follow matches in real time with updated results, stats, tables, averages and detailed coverage of each category. Fast, intuitive experience focused on local football fans.",
-        "impact": "Solves information fragmentation in amateur soccer leagues by centralizing tournament data, fixtures, results, and stats in a single app.",
-        "learned": "The hardest part was maintaining state consistency between the Ionic app and the Node.js backend under high concurrency on match days. I solved it by combining optimized polling with local caching, eliminating 95% of redundant requests.",
+        "description": "Mobile platform focused on Argentine football and the lower divisions, designed to follow results, tables and stats across different categories in a fast, simple and intuitive experience. The app lets users check updated match information, standings and team performance from any mobile device.",
+        "impact": "Centralizes information from different leagues and tournaments in a single platform, avoiding data scattered across social media, groups and multiple websites. The app makes it easy to follow Argentine football with quick access to fixtures, results and updated stats.",
+        "learned": "One of the biggest challenges was optimizing real-time data updates without affecting the mobile app's performance. I implemented controlled polling and local caching strategies to reduce unnecessary requests and improve navigation smoothness, especially during match days with many simultaneous games.",
         "gallery": {
           "a": "Standings screen",
           "b": "League table",
@@ -293,17 +293,17 @@
           "k": "Penalties"
         },
         "caseStudy": {
-          "problem": "Amateur soccer league organizers managed everything through WhatsApp groups and scattered Excel spreadsheets. Loading results was manual, players couldn't see their stats in real time, and notifications arrived late or not at all.",
-          "solution": "We built a native mobile app with Ionic and Angular that centralizes tournament management, fixtures, results, and statistics. The Node.js backend with PostgreSQL handles scoring and ranking logic automatically.",
-          "decisions": "I chose Ionic over React Native because the team already had Angular experience, which reduced the learning curve and delivery time. PostgreSQL over Firebase due to the relational nature of tournament data (teams, matches, goals, assists). Push notifications use Capacitor's native FCM integration.",
-          "outcomes": "The app was published on Google Play Store and has active users in Argentina. It replaced the WhatsApp + spreadsheets combination with a single platform where organizers and players access the same information in real time."
+          "problem": "Users following Argentine football and the lower divisions had to check multiple sources to access updated results, tables and stats. Information often arrived late, was disorganized or hard to view on mobile.",
+          "solution": "I developed a mobile app with Ionic and Angular focused on centralizing results, fixtures, standings and stats for Argentine football in a single platform. The app consumes data from sports APIs and prioritizes a fast, clear experience optimized for mobile devices.",
+          "decisions": "I chose Ionic with Angular to leverage a single cross-platform codebase and speed up mobile development. The architecture was designed prioritizing reusable components, lazy loading and API consumption optimization to improve load times and user experience.",
+          "outcomes": "The app was published on Google Play and validated a proposal specifically aimed at Argentine football and lower division fans. The project helped consolidate knowledge in hybrid mobile development, API consumption, performance optimization and scalable frontend architecture."
         }
       },
       "goludos-web": {
         "title": "Goludos Web",
-        "description": "Mobile platform specialized in Argentine football and the lower divisions, designed to follow matches in real time with updated results, stats, tables, averages and detailed coverage of each category. Fast, intuitive experience focused on local football fans.",
-        "impact": "Enables organizations to efficiently manage tournaments from a web panel shared with the mobile app.",
-        "learned": "The key learning was designing a granular role and permission system in Angular without coupling authorization logic to the component layer. I implemented composable route guards that kept presentation and access control completely separate.",
+        "description": "Mobile platform focused on Argentine football and the lower divisions, designed to follow results, tables and stats across different categories in a fast, simple and intuitive experience. The app lets users check updated match information, standings and team performance from any mobile device.",
+        "impact": "Centralizes information from different leagues and tournaments in a single platform, avoiding data scattered across social media, groups and multiple websites. The app makes it easy to follow Argentine football with quick access to fixtures, results and updated stats.",
+        "learned": "One of the biggest challenges was optimizing real-time data updates without affecting the mobile app's performance. I implemented controlled polling and local caching strategies to reduce unnecessary requests and improve navigation smoothness, especially during match days with many simultaneous games.",
         "gallery": {
           "a": "Home",
           "b": "Loading",
@@ -314,10 +314,10 @@
           "g": "Libertadores"
         },
         "caseStudy": {
-          "problem": "Administrators needed a complete management interface to operate leagues: create tournaments, load fixtures, validate results, and generate reports. The mobile app was only for players and referees.",
-          "solution": "Web panel in Angular with Bootstrap for full system administration. It shares the same backend as the mobile app, so changes reflect in real time across both platforms.",
-          "decisions": "Bootstrap over Tailwind because the panel was an internal project with tight deadlines and Bootstrap sped up prototyping of complex forms and tables. The shared backend architecture with mobile avoided duplicating business logic.",
-          "outcomes": "The panel enables complete tournament management from the browser, eliminating manual coordination and centralizing operations in a single tool shared with the mobile app."
+          "problem": "Users following Argentine football and the lower divisions had to check multiple sources to access updated results, tables and stats. Information often arrived late, was disorganized or hard to view on mobile.",
+          "solution": "I developed a mobile application with Ionic and Angular focused on centralizing results, fixtures, standings and stats for Argentine football in a single platform. The app consumes data from sports APIs and prioritizes a fast, clear experience optimized for mobile devices.",
+          "decisions": "I chose Ionic with Angular to leverage a single cross-platform codebase and speed up mobile development. The architecture was designed prioritizing reusable components, lazy loading and API consumption optimization to improve load times and user experience.",
+          "outcomes": "The app was published on Google Play and validated a proposal specifically aimed at Argentine football and lower division fans. The project helped consolidate knowledge in hybrid mobile development, API consumption, performance optimization and scalable frontend architecture."
         }
       },
       "nutriamor": {

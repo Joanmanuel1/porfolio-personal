@@ -276,9 +276,9 @@
     "items": {
       "goludos-mobile": {
         "title": "Goludos App Mobile",
-        "description": "Plataforma móvil especializada en el fútbol argentino y el ascenso, diseñada para seguir partidos en tiempo real con resultados actualizados, estadísticas, tablas, promedios y cobertura detallada de cada categoría. Ofrece una experiencia rápida, intuitiva y enfocada en los hinchas del fútbol local",
-        "impact": "Resuelve la fragmentación de información en ligas de fútbol amateur, centralizando datos de torneos, fixtures, resultados y estadísticas en una sola app.",
-        "learned": "Lo más desafiante fue mantener consistencia de estado entre la app Ionic y el backend Node.js bajo alta concurrencia en días de partido. Lo resolví combinando polling optimizado con caché local, lo que eliminó el 95% de las solicitudes redundantes.",
+        "description": "Plataforma móvil enfocada en el fútbol argentino y el ascenso, diseñada para seguir resultados, tablas y estadísticas de distintas categorías en una experiencia rápida, simple e intuitiva. La aplicación permite consultar información actualizada de partidos, posiciones y rendimiento de equipos desde cualquier dispositivo móvil.",
+        "impact": "Centraliza información de distintas ligas y torneos en una sola plataforma, evitando la dispersión de datos entre redes sociales, grupos y múltiples sitios web. La app facilita el seguimiento del fútbol argentino con acceso rápido a fixtures, resultados y estadísticas actualizadas.",
+        "learned": "Uno de los mayores desafíos fue optimizar las actualizaciones de datos en tiempo real sin afectar el rendimiento de la aplicación móvil. Implementé estrategias de polling controlado y caché local para reducir solicitudes innecesarias y mejorar la fluidez de navegación, especialmente durante jornadas con muchos partidos simultáneos.",
         "gallery": {
           "a": "Pantalla posiciones",
           "b": "Tabla de posiciones",
@@ -293,17 +293,17 @@
           "k": "Penales"
         },
         "caseStudy": {
-          "problem": "Los organizadores de ligas de fútbol amateur gestionaban todo a través de grupos de WhatsApp y planillas de Excel dispersas. La carga de resultados era manual, los jugadores no podían ver sus estadísticas en tiempo real y las notificaciones llegaban tarde o nunca.",
-          "solution": "Desarrollamos una app móvil nativa con Ionic y Angular que centraliza la gestión de torneos, fixtures, resultados y estadísticas. El backend en Node.js con PostgreSQL maneja la lógica de puntuación y clasificación automáticamente.",
-          "decisions": "Elegí Ionic sobre React Native porque el equipo ya tenía experiencia con Angular, lo que redujo la curva de aprendizaje y el tiempo de delivery. PostgreSQL sobre Firebase por la naturaleza relacional de los datos de torneos (equipos, partidos, goles, asistencias). Para las notificaciones usamos FCM nativo de Capacitor.",
-          "outcomes": "La app fue publicada en Google Play Store y tiene usuarios activos en Argentina. Reemplazó la combinación de WhatsApp + planillas con una única plataforma donde organizadores y jugadores acceden a la misma información en tiempo real."
+          "problem": "Los usuarios que seguían el fútbol argentino y las categorías de ascenso debían consultar múltiples fuentes para acceder a resultados, tablas y estadísticas actualizadas. Muchas veces la información llegaba tarde, estaba desordenada o no era fácil de visualizar desde el celular.",
+          "solution": "Desarrollé una aplicación móvil con Ionic y Angular enfocada en centralizar resultados, fixtures, posiciones y estadísticas del fútbol argentino en una única plataforma. La aplicación consume datos desde APIs deportivas y prioriza una experiencia rápida, clara y optimizada para dispositivos móviles.",
+          "decisions": "Elegí Ionic con Angular para aprovechar una única base de código multiplataforma y acelerar el desarrollo mobile. La arquitectura se diseñó priorizando componentes reutilizables, lazy loading y optimización de consumo de API para mejorar tiempos de carga y experiencia de usuario.",
+          "outcomes": "La aplicación fue publicada en Google Play y permitió validar una propuesta orientada específicamente a los fanáticos del fútbol argentino y el ascenso. El proyecto sirvió para consolidar conocimientos en desarrollo mobile híbrido, consumo de APIs, optimización de rendimiento y arquitectura frontend escalable."
         }
       },
       "goludos-web": {
         "title": "Goludos Web",
-        "description": "Plataforma móvil especializada en el fútbol argentino y el ascenso, diseñada para seguir partidos en tiempo real con resultados actualizados, estadísticas, tablas, promedios y cobertura detallada de cada categoría. Ofrece una experiencia rápida, intuitiva y enfocada en los hinchas del fútbol local",
-        "impact": "Permite a las organizaciones gestionar torneos de manera eficiente desde un panel web compartido con la app móvil.",
-        "learned": "El mayor aprendizaje fue diseñar un sistema de roles y permisos granulares en Angular que no acoplara la lógica de autorización al componente. Implementé guards de ruta compuestos que separaron completamente la presentación del control de acceso.",
+        "description": "Plataforma móvil enfocada en el fútbol argentino y el ascenso, diseñada para seguir resultados, tablas y estadísticas de distintas categorías en una experiencia rápida, simple e intuitiva. La aplicación permite consultar información actualizada de partidos, posiciones y rendimiento de equipos desde cualquier dispositivo móvil.",
+        "impact": "Centraliza información de distintas ligas y torneos en una sola plataforma, evitando la dispersión de datos entre redes sociales, grupos y múltiples sitios web. La app facilita el seguimiento del fútbol argentino con acceso rápido a fixtures, resultados y estadísticas actualizadas.",
+        "learned": "Uno de los mayores desafíos fue optimizar las actualizaciones de datos en tiempo real sin afectar el rendimiento de la aplicación móvil. Implementé estrategias de polling controlado y caché local para reducir solicitudes innecesarias y mejorar la fluidez de navegación, especialmente durante jornadas con muchos partidos simultáneos.",
         "gallery": {
           "a": "Home",
           "b": "Cargando",
@@ -314,10 +314,10 @@
           "g": "Libertadores"
         },
         "caseStudy": {
-          "problem": "Los administradores necesitaban una interfaz de gestión completa para operar las ligas: crear torneos, cargar fixtures, validar resultados y generar reportes. La app móvil era solo para jugadores y árbitros.",
-          "solution": "Panel web en Angular con Bootstrap para la gestión completa del sistema. Comparte el mismo backend que la app móvil, permitiendo que los cambios se reflejen en tiempo real en ambas plataformas.",
-          "decisions": "Bootstrap sobre Tailwind porque el panel era un proyecto interno con plazos ajustados y Bootstrap aceleró el prototipado de formularios y tablas complejas. La arquitectura compartida con el backend mobile evitó duplicar lógica de negocio.",
-          "outcomes": "El panel permite gestionar torneos completos desde el navegador, eliminando la necesidad de coordinación manual y centralizando la operación en una sola herramienta compartida con la app móvil."
+          "problem": "Los usuarios que seguían el fútbol argentino y las categorías de ascenso debían consultar múltiples fuentes para acceder a resultados, tablas y estadísticas actualizadas. Muchas veces la información llegaba tarde, estaba desordenada o no era fácil de visualizar desde el celular.",
+          "solution": "Desarrollé una aplicación móvil con Ionic y Angular enfocada en centralizar resultados, fixtures, posiciones y estadísticas del fútbol argentino en una única plataforma. La aplicación consume datos desde APIs deportivas y prioriza una experiencia rápida, clara y optimizada para dispositivos móviles.",
+          "decisions": "Elegí Ionic con Angular para aprovechar una única base de código multiplataforma y acelerar el desarrollo mobile. La arquitectura se diseñó priorizando componentes reutilizables, lazy loading y optimización de consumo de API para mejorar tiempos de carga y experiencia de usuario.",
+          "outcomes": "La aplicación fue publicada en Google Play y permitió validar una propuesta orientada específicamente a los fanáticos del fútbol argentino y el ascenso. El proyecto sirvió para consolidar conocimientos en desarrollo mobile híbrido, consumo de APIs, optimización de rendimiento y arquitectura frontend escalable."
         }
       },
       "nutriamor": {
