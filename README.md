@@ -3,7 +3,7 @@
 Personal portfolio built with Vue 3.5 and Vite.
 Bilingual (ES/EN), dark/light themes, animated, and tested.
 
-🌐 **Live:** [https://portoflio-personal.netlify.app](https://portoflio-personal.netlify.app)
+🌐 **Live:** [https://joanmanuelromero.netlify.app/](https://joanmanuelromero.netlify.app/)
 
 ---
 
