@@ -276,7 +276,7 @@
     "items": {
       "goludos-mobile": {
         "title": "Goludos Mobile App",
-        "description": "Complete mobile ecosystem for amateur and professional football. Live results, detailed stats and a fluid native UX.",
+        "description": "Mobile platform specialized in Argentine football and the lower divisions, designed to follow matches in real time with updated results, stats, tables, averages and detailed coverage of each category. Fast, intuitive experience focused on local football fans.",
         "impact": "Solves information fragmentation in amateur soccer leagues by centralizing tournament data, fixtures, results, and stats in a single app.",
         "learned": "The hardest part was maintaining state consistency between the Ionic app and the Node.js backend under high concurrency on match days. I solved it by combining optimized polling with local caching, eliminating 95% of redundant requests.",
         "gallery": {
@@ -301,7 +301,7 @@
       },
       "goludos-web": {
         "title": "Goludos Web",
-        "description": "Scalable web platform that complements the mobile experience. Robust admin panel and complex data visualization for league managers and fans.",
+        "description": "Mobile platform specialized in Argentine football and the lower divisions, designed to follow matches in real time with updated results, stats, tables, averages and detailed coverage of each category. Fast, intuitive experience focused on local football fans.",
         "impact": "Enables organizations to efficiently manage tournaments from a web panel shared with the mobile app.",
         "learned": "The key learning was designing a granular role and permission system in Angular without coupling authorization logic to the component layer. I implemented composable route guards that kept presentation and access control completely separate.",
         "gallery": {
