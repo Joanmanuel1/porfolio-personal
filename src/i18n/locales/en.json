@@ -342,7 +342,7 @@
           "problem": "Users of nutritional plans drop out in the first weeks because feedback on their progress only arrives days later during in-person appointments. Without immediate reinforcement, adherence drops drastically.",
           "solution": "Web platform integrating a computer vision API to analyze food photos and estimate macronutrients instantly. The system automatically compares actual intake vs. the nutritionist's plan and generates personalized alerts and suggestions.",
           "decisions": "Vue 3 with Composition API for the fine-grained reactivity needed by real-time progress dashboards. Firebase for auth and Firestore to persist meal history without own infrastructure. The food analysis AI is consumed via external API to avoid training costs.",
-          "outcomes": "Project in active development, currently in internal testing. Meal logging went from manual notes to photo + confirmation, significantly simplifying tracking."
+          "outcomes": "Platform in production, sold and customized for a healthcare client. Running with real users under a closed-delivery model with no public commercial page."
         }
       },
       "invitaciones-digitales": {
@@ -410,11 +410,18 @@
       },
       "pokemon-game": {
         "title": "Guess the Pokémon",
-        "description": "Interactive trivia game built to explore Vue reactivity and external API consumption.",
+        "description": "Pokémon trivia game with 4 difficulty modes, timer, type-based combo system, progressive Pokédex of 905 Pokémon, daily missions, login streaks and 30+ unlockable achievements. No backend — everything runs client-side.",
+        "impact": "Personal project that grew into a full-featured app with progression systems, synthesized audio via Web Audio API and particles via Canvas — with no external dependencies beyond Vue and Axios.",
         "gallery": {
-          "a": "Game screen",
-          "b": "Pokémon game screen",
-          "c": "Pokémon game screen"
+          "a": "Main game screen",
+          "b": "Difficulty modes and selection",
+          "c": "Pokédex and player progression"
+        },
+        "caseStudy": {
+          "problem": "Existing Pokémon trivia games are shallow and lack depth. The goal was to explore how far Vue 3 can go without external UI libraries or global state managers.",
+          "solution": "Full game with four difficulty modes (Gen 1, all generations, legendaries only, mixed), 15-second timer, type-based combo system with up to 3× multipliers, evolution mini-challenges and a hint system with streak cost.",
+          "decisions": "Zero unnecessary dependencies: no Pinia, no Vue Router, no UI library. Audio synthesized with Web Audio API (no sound files). Confetti with pure Canvas API. Dark/light mode with localStorage. All progression state persists locally.",
+          "outcomes": "Functional deployed app with complete progression systems. Demonstrated that Vue 3 Composition API is sufficient to manage complex state without Pinia at medium scale."
         }
       },
       "pokedex": {

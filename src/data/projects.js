@@ -59,8 +59,7 @@ export const productionProjects = [
     technologies: ['Vue 3', 'TensorFlow/AI API', 'Tailwind', 'Firebase'],
     demoUrl: '',
     githubUrl: '',
-    status: false,
-    wip: true,
+    status: true,
     featured: true,
     frame: 'browser',
     caseStudy: true,
@@ -116,9 +115,10 @@ export const practiceProjects = [
     galleryLetters: ['a', 'b'],
   }),
   make('pokemon-game', {
-    technologies: ['Vue 3', 'PokeAPI'],
-    demoUrl: 'https://juego-de-pokemon-vue-js.netlify.app/',
+    technologies: ['Vue 3', 'PokeAPI', 'Web Audio API', 'Canvas API'],
+    demoUrl: 'https://fanaticopokemon.netlify.app/',
     githubUrl: 'https://github.com/Joanmanuel1/Pokemon-game',
+    caseStudy: true,
     galleryLetters: ['a', 'b', 'c'],
   }),
   make('pokedex', {
