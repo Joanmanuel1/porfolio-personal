@@ -415,7 +415,15 @@
         "gallery": {
           "a": "Pantalla de juego principal",
           "b": "Modos de dificultad y selección",
-          "c": "Pokédex y progresión del jugador"
+          "c": "Pokédex y progresión del jugador",
+          "d": "Sistema de combos y timer",
+          "e": "Logros desbloqueables",
+          "f": "Misiones diarias",
+          "g": "Racha de login y monedas",
+          "h": "Mini-desafío de evolución",
+          "i": "Sistema de pistas",
+          "j": "Pantalla de resultados",
+          "k": "Estadísticas del jugador"
         },
         "caseStudy": {
           "problem": "Los juegos de trivia Pokémon existentes son simples y sin profundidad. La idea era explorar hasta dónde se puede llegar con Vue 3 puro sin librerías externas de UI ni estado global.",

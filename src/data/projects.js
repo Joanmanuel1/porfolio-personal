@@ -119,7 +119,7 @@ export const practiceProjects = [
     demoUrl: 'https://fanaticopokemon.netlify.app/',
     githubUrl: 'https://github.com/Joanmanuel1/Pokemon-game',
     caseStudy: true,
-    galleryLetters: ['a', 'b', 'c'],
+    galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
   }),
   make('pokedex', {
     technologies: ['Vue 3', 'REST API'],
