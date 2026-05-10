@@ -425,12 +425,6 @@
           "j": "Results screen",
           "k": "Player statistics"
         },
-        "caseStudy": {
-          "problem": "Existing Pokémon trivia games are shallow and lack depth. The goal was to explore how far Vue 3 can go without external UI libraries or global state managers.",
-          "solution": "Full game with four difficulty modes (Gen 1, all generations, legendaries only, mixed), 15-second timer, type-based combo system with up to 3× multipliers, evolution mini-challenges and a hint system with streak cost.",
-          "decisions": "Zero unnecessary dependencies: no Pinia, no Vue Router, no UI library. Audio synthesized with Web Audio API (no sound files). Confetti with pure Canvas API. Dark/light mode with localStorage. All progression state persists locally.",
-          "outcomes": "Functional deployed app with complete progression systems. Demonstrated that Vue 3 Composition API is sufficient to manage complex state without Pinia at medium scale."
-        }
       },
       "pokedex": {
         "title": "Pokédex",

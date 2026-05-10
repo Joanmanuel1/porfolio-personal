@@ -276,7 +276,7 @@
     "items": {
       "goludos-mobile": {
         "title": "Goludos App Mobile",
-        "description": "Ecosistema móvil completo para el fútbol amateur y profesional. Ofrece resultados en tiempo real, estadísticas detalladas y una experiencia de usuario fluida y nativa.",
+        "description": "Plataforma móvil especializada en el fútbol argentino y el ascenso, diseñada para seguir partidos en tiempo real con resultados actualizados, estadísticas, tablas, promedios y cobertura detallada de cada categoría. Ofrece una experiencia rápida, intuitiva y enfocada en los hinchas del fútbol local",
         "impact": "Resuelve la fragmentación de información en ligas de fútbol amateur, centralizando datos de torneos, fixtures, resultados y estadísticas en una sola app.",
         "learned": "Lo más desafiante fue mantener consistencia de estado entre la app Ionic y el backend Node.js bajo alta concurrencia en días de partido. Lo resolví combinando polling optimizado con caché local, lo que eliminó el 95% de las solicitudes redundantes.",
         "gallery": {
@@ -301,7 +301,7 @@
       },
       "goludos-web": {
         "title": "Goludos Web",
-        "description": "Plataforma web escalable que complementa la experiencia móvil. Panel de administración robusto y visualización de datos complejos para gestores de ligas y aficionados.",
+        "description": "Plataforma móvil especializada en el fútbol argentino y el ascenso, diseñada para seguir partidos en tiempo real con resultados actualizados, estadísticas, tablas, promedios y cobertura detallada de cada categoría. Ofrece una experiencia rápida, intuitiva y enfocada en los hinchas del fútbol local",
         "impact": "Permite a las organizaciones gestionar torneos de manera eficiente desde un panel web compartido con la app móvil.",
         "learned": "El mayor aprendizaje fue diseñar un sistema de roles y permisos granulares en Angular que no acoplara la lógica de autorización al componente. Implementé guards de ruta compuestos que separaron completamente la presentación del control de acceso.",
         "gallery": {
@@ -425,12 +425,6 @@
           "j": "Pantalla de resultados",
           "k": "Estadísticas del jugador"
         },
-        "caseStudy": {
-          "problem": "Los juegos de trivia Pokémon existentes son simples y sin profundidad. La idea era explorar hasta dónde se puede llegar con Vue 3 puro sin librerías externas de UI ni estado global.",
-          "solution": "Juego completo con cuatro modos de dificultad (Gen 1, todas las generaciones, solo legendarios, mixto), timer de 15 segundos, sistema de combos por tipo con multiplicadores hasta 3×, mini-desafíos de evolución y sistema de pistas con costo de racha.",
-          "decisions": "Cero dependencias innecesarias: sin Pinia, sin Vue Router, sin librería de UI. Audio sintetizado con Web Audio API (sin archivos de sonido). Confeti con Canvas API puro. Dark/light mode con localStorage. Todo el estado de progresión persiste localmente.",
-          "outcomes": "App funcional y deployada con sistemas de progresión completos. Demostró que Vue 3 Composition API es suficiente para manejar estado complejo sin Pinia en proyectos de escala media."
-        }
       },
       "pokedex": {
         "title": "Pokédex",
