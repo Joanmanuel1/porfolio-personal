@@ -34,9 +34,8 @@ export default defineConfig({
             if (id.includes('primevue') || id.includes('@primeuix') || id.includes('primeicons')) return 'primevue'
             if (id.includes('vue-i18n') || id.includes('@intlify')) return 'i18n'
             if (id.includes('@vueuse')) return 'vueuse'
-            if (id.includes('@unhead')) return 'unhead'
             if (id.includes('lucide-vue-next')) return 'icons'
-            if (id.includes('vue-router') || id.includes('/vue/')) return 'vue-core'
+            if (id.includes('@unhead') || id.includes('vue-router') || id.includes('/vue/')) return 'vue-core'
             return 'vendor'
           }
         },
