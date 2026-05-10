@@ -58,6 +58,7 @@ export const productionProjects = [
   make('nutriamor', {
     technologies: ['Vue 3', 'TensorFlow/AI API', 'Tailwind', 'Firebase'],
     demoUrl: '',
+    browserUrl: 'www.nutriamor.com.ar',
     githubUrl: '',
     status: true,
     featured: true,

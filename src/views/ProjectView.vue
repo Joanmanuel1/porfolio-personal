@@ -54,7 +54,7 @@
                   </div>
                   <DeviceFrame
                     :type="project.frame"
-                    :url="project.demoUrl"
+                    :url="project.browserUrl || project.demoUrl"
                     :videoSrc="project.videoUrl || ''"
                     class="relative z-10 max-w-xs sm:max-w-sm"
                   >

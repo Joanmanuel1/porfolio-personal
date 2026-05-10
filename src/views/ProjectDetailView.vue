@@ -200,7 +200,7 @@
           <div class="p-6 sm:p-8 flex justify-center bg-[#0d1120]/50">
             <DeviceFrame
               :type="project.frame"
-              :url="project.demoUrl"
+              :url="project.browserUrl || project.demoUrl"
               :videoSrc="project.videoUrl || ''"
               class="max-w-2xl w-full"
             >
