@@ -382,6 +382,24 @@
           "outcomes": "Plataforma en producción con clientes reales. Las invitaciones reemplazan el intercambio de capturas en WhatsApp y centralizan toda la logística del evento en un único link compartible."
         }
       },
+      "el-villano": {
+        "title": "El Villano",
+        "description": "Juego social de deducción con temática de superhéroes y villanos. Una partida multijugador donde los jugadores deben descubrir quién es el villano infiltrado entre los héroes antes de que sea demasiado tarde.",
+        "impact": "App nativa Android construida con Vue 3 + Ionic, distribuida como APK y en proceso de aprobación en Play Store.",
+        "gallery": {
+          "a": "Pantalla de inicio",
+          "b": "Selección de personaje",
+          "c": "Pantalla de partida",
+          "d": "Vista de roles",
+          "e": "Pantalla de resultado"
+        },
+        "caseStudy": {
+          "problem": "Los juegos de deducción social como Among Us no tienen una versión temática de superhéroes accesible para grupos pequeños sin necesidad de plataformas complejas. La mayoría requieren cuentas, servidores o conexión constante.",
+          "solution": "App nativa Android con partidas locales multijugador. Los jugadores comparten el dispositivo por turnos para ver su rol en secreto. Sin servidores, sin cuentas — solo instalar y jugar.",
+          "decisions": "Vue 3 + Ionic + Capacitor para compilar a APK nativa desde una sola base de código web. Esta stack permite iterar rápido con herramientas web conocidas sin sacrificar la experiencia nativa en Android.",
+          "outcomes": "App distribuida como APK y en proceso de revisión en Google Play Store. El ciclo de feedback con usuarios reales está activo desde la distribución del APK."
+        }
+      },
       "adogtame": {
         "title": "Adógtame",
         "description": "Plataforma de conexión para adopción de mascotas. Facilita el encuentro entre refugios y adoptantes potenciales.",

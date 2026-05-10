@@ -382,6 +382,24 @@
           "outcomes": "Platform in production with real clients. Invitations replace WhatsApp screenshot sharing and centralize all event logistics in a single shareable link."
         }
       },
+      "el-villano": {
+        "title": "El Villano",
+        "description": "Social deduction game with a superheroes and villains theme. A multiplayer game where players must uncover who the infiltrated villain is among the heroes before it's too late.",
+        "impact": "Native Android app built with Vue 3 + Ionic, distributed as APK and pending Play Store approval.",
+        "gallery": {
+          "a": "Home screen",
+          "b": "Character selection",
+          "c": "Game screen",
+          "d": "Roles view",
+          "e": "Result screen"
+        },
+        "caseStudy": {
+          "problem": "Social deduction games like Among Us lack a superhero-themed version accessible to small groups without complex platforms. Most require accounts, servers, or constant connectivity.",
+          "solution": "Native Android app with local multiplayer sessions. Players share the device in turns to secretly view their role. No servers, no accounts — just install and play.",
+          "decisions": "Vue 3 + Ionic + Capacitor to compile a native APK from a single web codebase. This stack allows fast iteration with familiar web tooling without sacrificing the native Android experience.",
+          "outcomes": "App distributed as APK and currently under Google Play Store review. Real user feedback loop is active since APK distribution."
+        }
+      },
       "adogtame": {
         "title": "Adógtame",
         "description": "Platform connecting pet shelters and potential adopters.",

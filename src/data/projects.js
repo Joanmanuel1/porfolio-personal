@@ -10,6 +10,7 @@ const idBySlug = {
   'pokedex': 5,
   'nutriamor': 6,
   'invitaciones-digitales': 7,
+  'el-villano': 8,
 }
 
 function buildGallery(slug, letters) {
@@ -93,6 +94,17 @@ export const productionProjects = [
         videoUrl: '/demo-quince.mp4',
       },
     ],
+  }),
+  make('el-villano', {
+    technologies: ['Vue 3', 'Ionic', 'Capacitor', 'Vite'],
+    demoUrl: '',
+    githubUrl: 'https://github.com/Joanmanuel1/impostor-con-superheroes',
+    status: false,
+    wip: true,
+    featured: true,
+    frame: 'mobile',
+    caseStudy: true,
+    galleryLetters: ['a', 'b', 'c', 'd', 'e'],
   }),
 ]
 
