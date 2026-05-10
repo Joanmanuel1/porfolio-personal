@@ -140,12 +140,11 @@
             {{ t('projects.kinds.practice') }}
           </h2>
         </div>
-        <div class="bento-grid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <ProjectCard
             v-for="(project, idx) in practiceProjects"
             :key="project.id"
             :project="project"
-            :class="bentoClass(idx)"
             v-motion
             :initial="{ opacity: 0, y: 20 }"
             :enter="{ opacity: 1, y: 0, transition: { delay: idx * 80, duration: 500 } }"
@@ -248,18 +247,6 @@ const displayProductionGallery = ref(false)
 const activeProject = ref(null)
 const activeGalleryItems = ref([])
 
-// Bento grid sizing — first card wider, rest balanced
-function bentoClass(idx) {
-  const layouts = [
-    'lg:col-span-2 lg:row-span-2',
-    'lg:col-span-1',
-    'lg:col-span-1',
-    'lg:col-span-2',
-    'lg:col-span-1',
-    'lg:col-span-1',
-  ]
-  return layouts[idx % layouts.length]
-}
 
 const openProductionGallery = (project) => {
   activeProject.value = project

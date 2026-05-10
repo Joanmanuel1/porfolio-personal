@@ -69,38 +69,32 @@
           <h3 class="text-xs font-semibold tracking-widest text-cyan-400 uppercase flex items-center gap-2">
             <Code :size="13" /> {{ t('about.stack.languages') }}
           </h3>
-          <div class="space-y-3">
-            <div v-for="s in devSkills" :key="s.label" class="space-y-1.5">
-              <div class="flex items-center justify-between">
-                <span class="text-sm font-medium" :style="{ color: s.color }">{{ s.label }}</span>
-                <span class="text-xs text-slate-500">{{ t(`about.levels.${s.level}`) }}</span>
-              </div>
-              <div class="h-1.5 rounded-full bg-white/5 overflow-hidden">
-                <div
-                  class="h-full rounded-full skill-bar"
-                  :style="{ width: s.pct + '%', background: `linear-gradient(90deg, ${s.color}99, ${s.color})` }"
-                ></div>
-              </div>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              v-for="s in devSkills"
+              :key="s.label"
+              class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border"
+              :style="{ color: s.color, borderColor: s.color + '40', background: s.color + '12' }"
+            >
+              {{ s.label }}
+              <span class="text-slate-500 text-[10px] font-mono">{{ s.years }}{{ t('about.skillsYears') }}</span>
+            </span>
           </div>
 
           <div class="border-t border-white/5 pt-5">
             <h3 class="text-xs font-semibold tracking-widest text-cyan-400 uppercase flex items-center gap-2 mb-4">
               <Palette :size="13" /> {{ t('about.stack.ui') }}
             </h3>
-            <div class="space-y-3">
-              <div v-for="s in uiSkills" :key="s.label" class="space-y-1.5">
-                <div class="flex items-center justify-between">
-                  <span class="text-sm font-medium" :style="{ color: s.color }">{{ s.label }}</span>
-                  <span class="text-xs text-slate-500">{{ t(`about.levels.${s.level}`) }}</span>
-                </div>
-                <div class="h-1.5 rounded-full bg-white/5 overflow-hidden">
-                  <div
-                    class="h-full rounded-full skill-bar"
-                    :style="{ width: s.pct + '%', background: `linear-gradient(90deg, ${s.color}99, ${s.color})` }"
-                  ></div>
-                </div>
-              </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="s in uiSkills"
+                :key="s.label"
+                class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border"
+                :style="{ color: s.color, borderColor: s.color + '40', background: s.color + '12' }"
+              >
+                {{ s.label }}
+                <span class="text-slate-500 text-[10px] font-mono">{{ s.years }}{{ t('about.skillsYears') }}</span>
+              </span>
             </div>
           </div>
 
@@ -108,19 +102,16 @@
             <h3 class="text-xs font-semibold tracking-widest text-cyan-400 uppercase flex items-center gap-2 mb-4">
               <Database :size="13" /> {{ t('about.stack.backend') }}
             </h3>
-            <div class="space-y-3">
-              <div v-for="s in backendSkills" :key="s.label" class="space-y-1.5">
-                <div class="flex items-center justify-between">
-                  <span class="text-sm font-medium" :style="{ color: s.color }">{{ s.label }}</span>
-                  <span class="text-xs text-slate-500">{{ t(`about.levels.${s.level}`) }}</span>
-                </div>
-                <div class="h-1.5 rounded-full bg-white/5 overflow-hidden">
-                  <div
-                    class="h-full rounded-full skill-bar"
-                    :style="{ width: s.pct + '%', background: `linear-gradient(90deg, ${s.color}99, ${s.color})` }"
-                  ></div>
-                </div>
-              </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="s in backendSkills"
+                :key="s.label"
+                class="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border"
+                :style="{ color: s.color, borderColor: s.color + '40', background: s.color + '12' }"
+              >
+                {{ s.label }}
+                <span class="text-slate-500 text-[10px] font-mono">{{ s.years }}{{ t('about.skillsYears') }}</span>
+              </span>
             </div>
           </div>
         </div>
@@ -205,24 +196,24 @@ useSeo({
 })
 
 const devSkills = [
-  { label: 'Vue 3',       color: '#4ade80', level: 'advanced',      pct: 92 },
-  { label: 'Angular',     color: '#f87171', level: 'advanced',      pct: 88 },
-  { label: 'TypeScript',  color: '#60a5fa', level: 'advanced',      pct: 85 },
-  { label: 'JavaScript',  color: '#facc15', level: 'expert',        pct: 95 },
+  { label: 'JavaScript',  color: '#facc15', years: 4 },
+  { label: 'Vue 3',       color: '#4ade80', years: 3 },
+  { label: 'Angular',     color: '#f87171', years: 3 },
+  { label: 'TypeScript',  color: '#60a5fa', years: 2 },
 ]
 
 const uiSkills = [
-  { label: 'Tailwind CSS', color: '#67e8f9', level: 'expert',    pct: 93 },
-  { label: 'PrimeVue',     color: '#c084fc', level: 'advanced',  pct: 88 },
-  { label: 'Bootstrap',    color: '#818cf8', level: 'proficient', pct: 75 },
-  { label: 'Vuetify',      color: '#60a5fa', level: 'proficient', pct: 70 },
+  { label: 'Tailwind CSS', color: '#67e8f9', years: 3 },
+  { label: 'PrimeVue',     color: '#c084fc', years: 2 },
+  { label: 'Bootstrap',    color: '#818cf8', years: 3 },
+  { label: 'Vuetify',      color: '#60a5fa', years: 1 },
 ]
 
 const backendSkills = [
-  { label: 'Node.js',    color: '#86efac', level: 'proficient', pct: 72 },
-  { label: 'PostgreSQL', color: '#93c5fd', level: 'proficient', pct: 70 },
-  { label: 'Firebase',   color: '#fb923c', level: 'advanced',   pct: 80 },
-  { label: 'REST APIs',  color: '#a78bfa', level: 'advanced',   pct: 85 },
+  { label: 'REST APIs',  color: '#a78bfa', years: 3 },
+  { label: 'Firebase',   color: '#fb923c', years: 2 },
+  { label: 'Node.js',    color: '#86efac', years: 2 },
+  { label: 'PostgreSQL', color: '#93c5fd', years: 1 },
 ]
 
 const portfolioStack = [

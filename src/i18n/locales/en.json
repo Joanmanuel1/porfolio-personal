@@ -6,12 +6,7 @@
     "close": "Close",
     "darkMode": "Switch to dark mode",
     "lightMode": "Switch to light mode",
-    "letsTalk": "Let's talk",
-    "recruiterMode": "Recruiter Mode",
-    "recruiterActive": "Recruiter Mode active",
-    "recruiterOn": "Enable recruiter mode",
-    "recruiterOff": "Disable recruiter mode",
-    "recruiterBannerHint": "Technical details hidden"
+    "letsTalk": "Let's talk"
   },
   "a11y": {
     "skip": "Skip to main content",
@@ -151,7 +146,8 @@
       "repos": "Repositories",
       "totalRepos": "Total repos",
       "yearsOnGithub": "Years on GitHub"
-    }
+    },
+    "skillsYears": "y"
   },
   "experience": {
     "meta": {
@@ -281,7 +277,7 @@
       "goludos-mobile": {
         "title": "Goludos Mobile App",
         "description": "Complete mobile ecosystem for amateur and professional football. Live results, detailed stats and a fluid native UX.",
-        "impact": "Solves information fragmentation in football leagues, centralizing data and delivering instant updates to thousands of active users.",
+        "impact": "Solves information fragmentation in amateur soccer leagues by centralizing tournament data, fixtures, results, and stats in a single app.",
         "learned": "The hardest part was maintaining state consistency between the Ionic app and the Node.js backend under high concurrency on match days. I solved it by combining optimized polling with local caching, eliminating 95% of redundant requests.",
         "gallery": {
           "a": "Standings screen",
@@ -300,13 +296,13 @@
           "problem": "Amateur soccer league organizers managed everything through WhatsApp groups and scattered Excel spreadsheets. Loading results was manual, players couldn't see their stats in real time, and notifications arrived late or not at all.",
           "solution": "We built a native mobile app with Ionic and Angular that centralizes tournament management, fixtures, results, and statistics. The Node.js backend with PostgreSQL handles scoring and ranking logic automatically.",
           "decisions": "I chose Ionic over React Native because the team already had Angular experience, which reduced the learning curve and delivery time. PostgreSQL over Firebase due to the relational nature of tournament data (teams, matches, goals, assists). Push notifications use Capacitor's native FCM integration.",
-          "outcomes": "The app was published on Google Play Store and has active users in Argentina. Result loading time dropped from hours (manual updates) to seconds. Organizers went from managing leagues across multiple tools to a single platform."
+          "outcomes": "The app was published on Google Play Store and has active users in Argentina. It replaced the WhatsApp + spreadsheets combination with a single platform where organizers and players access the same information in real time."
         }
       },
       "goludos-web": {
         "title": "Goludos Web",
         "description": "Scalable web platform that complements the mobile experience. Robust admin panel and complex data visualization for league managers and fans.",
-        "impact": "Lets organizations manage tournaments efficiently and stay accessible from any desktop device.",
+        "impact": "Enables organizations to efficiently manage tournaments from a web panel shared with the mobile app.",
         "learned": "The key learning was designing a granular role and permission system in Angular without coupling authorization logic to the component layer. I implemented composable route guards that kept presentation and access control completely separate.",
         "gallery": {
           "a": "Home",
@@ -321,13 +317,13 @@
           "problem": "Administrators needed a complete management interface to operate leagues: create tournaments, load fixtures, validate results, and generate reports. The mobile app was only for players and referees.",
           "solution": "Web panel in Angular with Bootstrap for full system administration. It shares the same backend as the mobile app, so changes reflect in real time across both platforms.",
           "decisions": "Bootstrap over Tailwind because the panel was an internal project with tight deadlines and Bootstrap sped up prototyping of complex forms and tables. The shared backend architecture with mobile avoided duplicating business logic.",
-          "outcomes": "Administrators can manage complete tournaments from the browser without manual coordination. The panel reduced the setup time for a new tournament from 2 hours to 20 minutes."
+          "outcomes": "The panel enables complete tournament management from the browser, eliminating manual coordination and centralizing operations in a single tool shared with the mobile app."
         }
       },
       "nutriamor": {
         "title": "NutriAmor",
         "description": "AI-powered nutrition platform. Detailed diet tracking, automatic nutritional analysis of recipes and personalized health reports.",
-        "impact": "Improves adherence to nutrition plans through immediate, personalized feedback — supporting nutritionists and empowering patients.",
+        "impact": "Improves adherence to nutritional plans with immediate feedback on each meal, replacing the wait between appointments.",
         "learned": "Integrating an AI API with variable response times was the main challenge. I designed a queue system with progressive UI feedback so users never perceived the latency as a failure, which improved the retention rate for the AI analysis feature.",
         "gallery": {
           "a": "Home",
@@ -346,13 +342,13 @@
           "problem": "Users of nutritional plans drop out in the first weeks because feedback on their progress only arrives days later during in-person appointments. Without immediate reinforcement, adherence drops drastically.",
           "solution": "Web platform integrating a computer vision API to analyze food photos and estimate macronutrients instantly. The system automatically compares actual intake vs. the nutritionist's plan and generates personalized alerts and suggestions.",
           "decisions": "Vue 3 with Composition API for the fine-grained reactivity needed by real-time progress dashboards. Firebase for auth and Firestore to persist meal history without own infrastructure. The food analysis AI is consumed via external API to avoid training costs.",
-          "outcomes": "Actively in development. Internal tests show meal logging time reduced from 5 minutes (manual notes) to 30 seconds (photo + confirmation). Currently in beta with a group of nutritionists."
+          "outcomes": "Project in active development, currently in internal testing. Meal logging went from manual notes to photo + confirmation, significantly simplifying tracking."
         }
       },
       "invitaciones-digitales": {
         "title": "Digital Invitations",
         "description": "Full-stack SaaS platform for creating and sharing customizable digital invitations. Covers three modules: commercial landing page, visual invitation editor, and mobile-first final product shareable via WhatsApp.",
-        "impact": "Replaces paper invites and WhatsApp groups with a centralized experience featuring real-time RSVP, countdown timer, photo gallery, and gift list — all accessible through a single link.",
+        "impact": "Replaces paper invitations and WhatsApp groups with a centralized interactive experience including RSVP, gallery, and countdown in a single link.",
         "learned": "Architecting a WYSIWYG-style editor with Vue 3 reactivity was the core challenge. I chose a Pinia store with normalized section structures and a reactive preview system, which made adding new editor sections possible without touching the render logic.",
         "videoAlt": "Demo of a completed quinceañera invitation",
         "stages": {
@@ -383,7 +379,7 @@
           "problem": "Social event invitations (weddings, quinceañeras, birthdays) were coordinated via WhatsApp images or PDFs with no interactivity. There was no way to confirm attendance, manage the guest list, or share updatable logistical information.",
           "solution": "SaaS platform where organizers create interactive invitations with a visual editor, unique link per event, RSVP attendance confirmation, countdown timer, and post-event photo gallery. All in a mobile-first experience.",
           "decisions": "Vue 3 with Vite for build speed and developer experience. Firebase Hosting + Firestore for serverless without infrastructure: each invitation is a real-time document, RSVPs update instantly. Tailwind for the visual editor where style iteration speed was critical. The demo video is served directly from hosting to minimize mobile latency.",
-          "outcomes": "Platform in production with real clients. Invitations eliminate WhatsApp screenshot sharing and centralize all event logistics. Creating a complete invitation takes under 10 minutes."
+          "outcomes": "Platform in production with real clients. Invitations replace WhatsApp screenshot sharing and centralize all event logistics in a single shareable link."
         }
       },
       "adogtame": {
@@ -450,7 +446,8 @@
     "profilesLabel": "Professional profiles",
     "location": "Buenos Aires, Argentina",
     "timezone": "GMT-3 (Buenos Aires) · Available Mon–Fri 9am–6pm",
-    "timezoneLabel": "Timezone & availability"
+    "timezoneLabel": "Timezone & availability",
+    "copyEmail": "Copy email"
   },
   "footer": {
     "rights": "© {year} Joan Manuel Romero. Built with Vue 3."

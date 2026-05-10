@@ -37,11 +37,6 @@ function recover() {
       <div class="absolute inset-0 bg-dot-grid opacity-[0.025]"></div>
     </div>
 
-    <!-- Recruiter mode banner -->
-    <div class="recruiter-banner" aria-live="polite">
-      {{ t('common.recruiterActive') }} — {{ t('common.recruiterBannerHint') }}
-    </div>
-
     <NavBar class="relative z-50" />
 
     <main id="main" tabindex="-1" class="relative z-10 flex-grow outline-none">

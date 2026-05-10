@@ -28,22 +28,32 @@
         <!-- Email -->
         <div>
           <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-3">{{ t('contact.emailLabel') }}</p>
-          <a
-            href="mailto:joanmanuelromero100@gmail.com?subject=Hola%20Joan%20%E2%80%94%20consulta%20desde%20portfolio"
-            class="inline-flex items-center gap-3 text-cyan-300 hover:text-cyan-200 font-semibold text-base sm:text-lg transition-colors group mb-3"
-          >
-            <span class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/25 transition-colors">
+          <div class="flex items-center gap-2 mb-4 p-3 rounded-xl bg-cyan-500/8 border border-cyan-500/20">
+            <span class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0">
               <i class="pi pi-envelope text-sm text-cyan-400"></i>
             </span>
-            joanmanuelromero100@gmail.com
-          </a>
-          <div>
-            <a
-              href="mailto:joanmanuelromero100@gmail.com?subject=Hola%20Joan%20%E2%80%94%20consulta%20desde%20portfolio"
-              class="cta-primary inline-flex text-sm"
+            <span class="text-cyan-300 font-mono text-sm sm:text-base flex-1 truncate">{{ email }}</span>
+            <button
+              @click="copyEmail"
+              class="px-2.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs text-slate-300 border border-white/10 transition-all flex-shrink-0"
+              :title="t('contact.copyEmail')"
             >
+              <i :class="copied ? 'pi pi-check text-emerald-400' : 'pi pi-copy'" class="text-xs"></i>
+            </button>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a :href="mailtoLink" class="cta-primary inline-flex text-sm">
               <i class="pi pi-send"></i>
               {{ t('contact.emailCta') }}
+            </a>
+            <a
+              :href="whatsappLink"
+              target="_blank"
+              rel="noopener"
+              class="cta-secondary inline-flex text-sm"
+            >
+              <i class="pi pi-whatsapp text-emerald-400"></i>
+              WhatsApp
             </a>
           </div>
         </div>
@@ -90,10 +100,24 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useSeo } from '@/composables/useSeo'
 
 const { t } = useI18n()
+
+const email = 'joanmanuelromero100@gmail.com'
+const mailtoLink = `mailto:${email}?subject=${encodeURIComponent('Hola Joan — consulta desde portfolio')}`
+const whatsappLink = 'https://wa.me/5491134567890?text=' + encodeURIComponent('Hola Joan, te escribo desde tu portfolio')
+
+const copied = ref(false)
+async function copyEmail() {
+  try {
+    await navigator.clipboard.writeText(email)
+    copied.value = true
+    setTimeout(() => (copied.value = false), 1800)
+  } catch {}
+}
 
 useSeo({
   titleKey: 'contact.meta.title',

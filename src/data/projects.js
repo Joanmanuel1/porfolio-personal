@@ -51,6 +51,7 @@ export const productionProjects = [
     status: false,
     featured: true,
     frame: 'browser',
+    caseStudy: true,
     galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
   }),
   make('nutriamor', {
@@ -61,6 +62,7 @@ export const productionProjects = [
     wip: true,
     featured: true,
     frame: 'browser',
+    caseStudy: true,
     galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
   }),
   make('invitaciones-digitales', {
@@ -72,6 +74,7 @@ export const productionProjects = [
     frame: 'mobile',
     videoUrl: '/demo-quince.mp4',
     galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'],
+    caseStudy: true,
     stages: [
       {
         titleKey: 'projects.items.invitaciones-digitales.stages.landing.title',

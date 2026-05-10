@@ -31,7 +31,13 @@
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)\\)\")",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('common',{}\\), indent=2, ensure_ascii=False\\)\\)\")",
       "Bash(node scripts/add-til-i18n.mjs)",
-      "Bash(node scripts/add-case-studies.mjs)"
+      "Bash(node scripts/add-case-studies.mjs)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('scripts:', d.get\\('scripts',{}\\)\\); print\\('devDeps has vitest:', 'vitest' in d.get\\('devDependencies',{}\\)\\)\")",
+      "Bash(npx vitest *)",
+      "Bash(node scripts/clean-case-studies.mjs)",
+      "Bash(sed -n '280,290p' /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/src/i18n/locales/es.json)",
+      "Bash(sed -n '310,325p' /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/src/i18n/locales/es.json)",
+      "Bash(sed -n '335,350p' /home/jmromero/Documentos/proyectos/portfolio/portfolio-frontend/src/i18n/locales/es.json)"
     ]
   }
 }

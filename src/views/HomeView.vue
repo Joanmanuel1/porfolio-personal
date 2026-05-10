@@ -1,7 +1,5 @@
 <template>
   <div>
-  <CursorAura />
-
   <section
     ref="heroRef"
     class="relative flex items-center overflow-hidden hero-glow"
@@ -220,59 +218,6 @@
     <MarqueeStack :items="marqueeItems" />
   </div>
 
-  <!-- Testimonials -->
-  <section class="section-pad">
-    <div class="max-w-5xl mx-auto">
-      <div
-        class="text-center mb-12"
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
-      >
-        <p class="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-3">{{ t('home.testimonials.subtitle') }}</p>
-        <h2 class="text-3xl sm:text-4xl font-display font-black text-white tracking-tightest">{{ t('home.testimonials.header') }}</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <article
-          v-for="(t_item, idx) in testimonials"
-          :key="t_item.id"
-          class="glass glass-hover rounded-2xl p-6 flex flex-col"
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0, transition: { delay: idx * 100, duration: 500 } }"
-        >
-          <!-- Stars -->
-          <div class="flex gap-1 mb-4">
-            <i v-for="s in 5" :key="s" class="pi pi-star-fill text-xs text-amber-400"></i>
-          </div>
-          <!-- Quote -->
-          <blockquote class="text-slate-400 text-sm leading-relaxed flex-grow italic mb-5">
-            "{{ t(t_item.quoteKey) }}"
-          </blockquote>
-          <!-- Author -->
-          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
-            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-              {{ t_item.initials }}
-            </div>
-            <div>
-              <p class="text-sm font-semibold text-white">{{ t(t_item.nameKey) }}</p>
-              <p class="text-xs text-slate-500">{{ t(t_item.roleKey) }}</p>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <p
-        class="text-center text-xs text-slate-600 mt-8"
-        v-motion
-        :initial="{ opacity: 0 }"
-        :enter="{ opacity: 1, transition: { delay: 400, duration: 600 } }"
-      >
-        {{ t('home.testimonials.disclaimer') }}
-      </p>
-    </div>
-  </section>
   </div>
 </template>
 
@@ -282,7 +227,6 @@ import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useSeo } from '@/composables/useSeo'
 import { useCountUp } from '@/composables/useCountUp'
-import CursorAura from '@/components/CursorAura.vue'
 import TypewriterRotator from '@/components/TypewriterRotator.vue'
 import MarqueeStack from '@/components/MarqueeStack.vue'
 
@@ -391,13 +335,6 @@ onUnmounted(() => {
   cancelAnimationFrame(avatarRaf)
   if (statsObserver) statsObserver.disconnect()
 })
-
-// ─── Testimonials ─────────────────────────────────────────────
-const testimonials = [
-  { id: 1, initials: 'MG', quoteKey: 'home.testimonials.items.0.quote', nameKey: 'home.testimonials.items.0.name', roleKey: 'home.testimonials.items.0.role' },
-  { id: 2, initials: 'LP', quoteKey: 'home.testimonials.items.1.quote', nameKey: 'home.testimonials.items.1.name', roleKey: 'home.testimonials.items.1.role' },
-  { id: 3, initials: 'AR', quoteKey: 'home.testimonials.items.2.quote', nameKey: 'home.testimonials.items.2.name', roleKey: 'home.testimonials.items.2.role' },
-]
 
 // ─── Marquee stack ────────────────────────────────────────────
 const marqueeItems = [

@@ -21,4 +21,26 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+  },
+  build: {
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('primevue') || id.includes('@primeuix') || id.includes('primeicons')) return 'primevue'
+            if (id.includes('vue-i18n') || id.includes('@intlify')) return 'i18n'
+            if (id.includes('@vueuse')) return 'vueuse'
+            if (id.includes('@unhead')) return 'unhead'
+            if (id.includes('lucide-vue-next')) return 'icons'
+            if (id.includes('vue-router') || id.includes('/vue/')) return 'vue-core'
+            return 'vendor'
+          }
+        },
+      },
+    },
+  },
 })

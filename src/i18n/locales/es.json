@@ -6,12 +6,7 @@
     "close": "Cerrar",
     "darkMode": "Cambiar a modo oscuro",
     "lightMode": "Cambiar a modo claro",
-    "letsTalk": "¿Hablamos?",
-    "recruiterMode": "Modo Recruiter",
-    "recruiterActive": "Modo Recruiter activo",
-    "recruiterOn": "Activar modo recruiter",
-    "recruiterOff": "Desactivar modo recruiter",
-    "recruiterBannerHint": "Se ocultan detalles técnicos"
+    "letsTalk": "¿Hablamos?"
   },
   "a11y": {
     "skip": "Saltar al contenido principal",
@@ -151,7 +146,8 @@
       "repos": "Repositorios",
       "totalRepos": "Repos totales",
       "yearsOnGithub": "Años en GitHub"
-    }
+    },
+    "skillsYears": "a"
   },
   "experience": {
     "meta": {
@@ -281,7 +277,7 @@
       "goludos-mobile": {
         "title": "Goludos App Mobile",
         "description": "Ecosistema móvil completo para el fútbol amateur y profesional. Ofrece resultados en tiempo real, estadísticas detalladas y una experiencia de usuario fluida y nativa.",
-        "impact": "Resuelve la fragmentación de información en ligas de fútbol, centralizando datos y ofreciendo actualizaciones instantáneas a miles de usuarios activos.",
+        "impact": "Resuelve la fragmentación de información en ligas de fútbol amateur, centralizando datos de torneos, fixtures, resultados y estadísticas en una sola app.",
         "learned": "Lo más desafiante fue mantener consistencia de estado entre la app Ionic y el backend Node.js bajo alta concurrencia en días de partido. Lo resolví combinando polling optimizado con caché local, lo que eliminó el 95% de las solicitudes redundantes.",
         "gallery": {
           "a": "Pantalla posiciones",
@@ -300,13 +296,13 @@
           "problem": "Los organizadores de ligas de fútbol amateur gestionaban todo a través de grupos de WhatsApp y planillas de Excel dispersas. La carga de resultados era manual, los jugadores no podían ver sus estadísticas en tiempo real y las notificaciones llegaban tarde o nunca.",
           "solution": "Desarrollamos una app móvil nativa con Ionic y Angular que centraliza la gestión de torneos, fixtures, resultados y estadísticas. El backend en Node.js con PostgreSQL maneja la lógica de puntuación y clasificación automáticamente.",
           "decisions": "Elegí Ionic sobre React Native porque el equipo ya tenía experiencia con Angular, lo que redujo la curva de aprendizaje y el tiempo de delivery. PostgreSQL sobre Firebase por la naturaleza relacional de los datos de torneos (equipos, partidos, goles, asistencias). Para las notificaciones usamos FCM nativo de Capacitor.",
-          "outcomes": "La app fue publicada en Google Play Store y acumula usuarios activos en Argentina. El tiempo de carga de resultados se redujo de horas (actualizaciones manuales) a segundos. Los organizadores pasaron de gestionar ligas en múltiples herramientas a una única plataforma."
+          "outcomes": "La app fue publicada en Google Play Store y tiene usuarios activos en Argentina. Reemplazó la combinación de WhatsApp + planillas con una única plataforma donde organizadores y jugadores acceden a la misma información en tiempo real."
         }
       },
       "goludos-web": {
         "title": "Goludos Web",
         "description": "Plataforma web escalable que complementa la experiencia móvil. Panel de administración robusto y visualización de datos complejos para gestores de ligas y aficionados.",
-        "impact": "Permite a las organizaciones gestionar torneos de manera eficiente y brinda accesibilidad desde cualquier dispositivo de escritorio.",
+        "impact": "Permite a las organizaciones gestionar torneos de manera eficiente desde un panel web compartido con la app móvil.",
         "learned": "El mayor aprendizaje fue diseñar un sistema de roles y permisos granulares en Angular que no acoplara la lógica de autorización al componente. Implementé guards de ruta compuestos que separaron completamente la presentación del control de acceso.",
         "gallery": {
           "a": "Home",
@@ -321,13 +317,13 @@
           "problem": "Los administradores necesitaban una interfaz de gestión completa para operar las ligas: crear torneos, cargar fixtures, validar resultados y generar reportes. La app móvil era solo para jugadores y árbitros.",
           "solution": "Panel web en Angular con Bootstrap para la gestión completa del sistema. Comparte el mismo backend que la app móvil, permitiendo que los cambios se reflejen en tiempo real en ambas plataformas.",
           "decisions": "Bootstrap sobre Tailwind porque el panel era un proyecto interno con plazos ajustados y Bootstrap aceleró el prototipado de formularios y tablas complejas. La arquitectura compartida con el backend mobile evitó duplicar lógica de negocio.",
-          "outcomes": "Los administradores pueden gestionar torneos completos desde el navegador sin necesidad de coordinación manual. El panel redujo el tiempo de configuración de un nuevo torneo de 2 horas a 20 minutos."
+          "outcomes": "El panel permite gestionar torneos completos desde el navegador, eliminando la necesidad de coordinación manual y centralizando la operación en una sola herramienta compartida con la app móvil."
         }
       },
       "nutriamor": {
         "title": "NutriAmor",
         "description": "Plataforma inteligente de nutrición asistida por IA. Permite el seguimiento detallado de dietas, análisis nutricional automático de recetas y generación de informes de salud personalizados.",
-        "impact": "Mejora la adherencia a planes nutricionales mediante feedback inmediato y personalización, facilitando la labor de nutricionistas y empoderando a los pacientes.",
+        "impact": "Mejora la adherencia a planes nutricionales con feedback inmediato sobre cada comida, reemplazando la espera entre consultas.",
         "learned": "Integrar una API de IA con respuestas variables en tiempo fue el reto principal. Diseñé un sistema de colas con feedback progresivo en la UI para que el usuario nunca percibiera la latencia como fallo, mejorando la tasa de retención de la feature de análisis.",
         "gallery": {
           "a": "Home",
@@ -346,13 +342,13 @@
           "problem": "Los usuarios de planes nutricionales abandonan en las primeras semanas porque el feedback de su progreso llega días después en la consulta presencial. Sin refuerzo inmediato, la adherencia cae drásticamente.",
           "solution": "Plataforma web que integra una API de visión artificial para analizar fotos de platos y estimar macronutrientes al instante. El sistema compara automáticamente la ingesta real vs. el plan del nutricionista y genera alertas y sugerencias personalizadas.",
           "decisions": "Vue 3 con Composition API por la reactividad granular necesaria para los dashboards de progreso en tiempo real. Firebase para autenticación y Firestore para persistir el historial alimentario sin infraestructura propia. La IA de análisis de alimentos se consume vía API externa para evitar costos de entrenamiento.",
-          "outcomes": "Proyecto en desarrollo activo. Las pruebas internas muestran una reducción del tiempo de registro de comidas de 5 minutos (anotación manual) a 30 segundos (foto + confirmación). Actualmente en beta con un grupo de nutricionistas."
+          "outcomes": "Proyecto en desarrollo activo, actualmente en fase de pruebas internas. El registro de comidas pasó de anotación manual a foto + confirmación, simplificando significativamente el seguimiento."
         }
       },
       "invitaciones-digitales": {
         "title": "Invitaciones Digitales",
         "description": "Plataforma SaaS completa para crear y compartir invitaciones digitales personalizables. Abarca tres módulos: landing comercial, editor visual de invitaciones y producto final mobile-first compartible por WhatsApp.",
-        "impact": "Reemplaza el papel y los grupos de WhatsApp por una experiencia centralizada con RSVP en tiempo real, contador regresivo, galería de fotos y lista de regalos — todo accesible desde un link.",
+        "impact": "Reemplaza el papel y los grupos de WhatsApp por una experiencia interactiva centralizada con RSVP, galería y countdown en un único link.",
         "learned": "Arquitectar un editor de tipo 'lo que ves es lo que obtienes' (WYSIWYG) con Vue 3 reactivity fue el desafío central. Opté por un store Pinia con estructuras de sección normalizadas y un sistema de previews reactivos, lo que permitió añadir nuevas secciones al editor sin tocar la lógica de renderizado.",
         "videoAlt": "Demo de invitación de 15 años finalizada",
         "stages": {
@@ -383,7 +379,7 @@
           "problem": "Las invitaciones de eventos sociales (casamientos, quinceañeros, cumpleaños) se coordinaban vía imágenes en WhatsApp o PDFs sin interactividad. No había forma de confirmar asistencia, gestionar la lista de invitados ni compartir información logística actualizable.",
           "solution": "Plataforma SaaS donde los organizadores crean invitaciones interactivas con editor visual, link único por evento, confirmación de asistencia (RSVP), contador regresivo y galería de fotos post-evento. Todo en una experiencia mobile-first.",
           "decisions": "Vue 3 con Vite por la velocidad de build y la experiencia de desarrollo. Firebase Hosting + Firestore para serverless sin infraestructura: cada invitación es un documento en tiempo real, los RSVP se actualizan al instante. Tailwind para el editor visual donde la velocidad de iteración de estilos era crítica. El video de demostración se sirve directamente desde el hosting para minimizar latencia en mobile.",
-          "outcomes": "Plataforma en producción con clientes reales. Las invitaciones eliminan el intercambio de capturas en WhatsApp y centralizan toda la logística del evento. El tiempo de creación de una invitación completa es menor a 10 minutos."
+          "outcomes": "Plataforma en producción con clientes reales. Las invitaciones reemplazan el intercambio de capturas en WhatsApp y centralizan toda la logística del evento en un único link compartible."
         }
       },
       "adogtame": {
@@ -450,7 +446,8 @@
     "profilesLabel": "Perfiles Profesionales",
     "location": "Buenos Aires, Argentina",
     "timezone": "GMT-3 (Buenos Aires) · Disponible L–V 9–18 hs",
-    "timezoneLabel": "Zona horaria y disponibilidad"
+    "timezoneLabel": "Zona horaria y disponibilidad",
+    "copyEmail": "Copiar email"
   },
   "footer": {
     "rights": "© {year} Joan Manuel Romero. Construido con Vue 3."
