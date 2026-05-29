@@ -19,8 +19,7 @@
     "experience": "Experience",
     "education": "Education",
     "about": "About",
-    "contact": "Contact",
-    "til": "TIL"
+    "contact": "Contact"
   },
   "home": {
     "meta": {
@@ -274,50 +273,40 @@
       "caseStudyTitle": "Case study"
     },
     "items": {
-      "goludos-mobile": {
-        "title": "Goludos Mobile App",
-        "description": "Mobile platform focused on Argentine football and the lower divisions, designed to follow results, tables and stats across different categories in a fast, simple and intuitive experience. The app lets users check updated match information, standings and team performance from any mobile device.",
-        "impact": "Centralizes information from different leagues and tournaments in a single platform, avoiding data scattered across social media, groups and multiple websites. The app makes it easy to follow Argentine football with quick access to fixtures, results and updated stats.",
-        "learned": "One of the biggest challenges was optimizing real-time data updates without affecting the mobile app's performance. I implemented controlled polling and local caching strategies to reduce unnecessary requests and improve navigation smoothness, especially during match days with many simultaneous games.",
+      "goludos": {
+        "title": "Goludos",
+        "description": "Platform focused on Argentine football and the lower divisions, available as a mobile app on Play Store and as a web version. Follow results, tables and stats across different categories in a fast, simple and intuitive experience.",
+        "impact": "Centralizes information from different leagues and tournaments in a single platform, avoiding data scattered across social media, groups and multiple websites. Available on mobile and web from the same codebase.",
+        "learned": "One of the biggest challenges was optimizing real-time data updates without affecting performance. I implemented controlled polling and local caching strategies to reduce unnecessary requests and improve navigation smoothness, especially during match days with many simultaneous games.",
         "gallery": {
-          "a": "Standings screen",
-          "b": "League table",
-          "c": "Fixture",
-          "d": "Fixture detail",
-          "e": "Goal details",
-          "f": "Lineup",
-          "g": "History",
-          "h": "Statistics",
-          "i": "Bookings",
-          "j": "Schedule",
-          "k": "Penalties"
+          "mobile": {
+            "a": "Standings screen",
+            "b": "League table",
+            "c": "Fixture",
+            "d": "Fixture detail",
+            "e": "Goal details",
+            "f": "Lineup",
+            "g": "History",
+            "h": "Statistics",
+            "i": "Bookings",
+            "j": "Schedule",
+            "k": "Penalties"
+          },
+          "web": {
+            "a": "Home",
+            "b": "Loading",
+            "c": "Standings & fixtures",
+            "d": "Top scorers & assists",
+            "e": "Bookings & red cards",
+            "f": "B Nacional",
+            "g": "Libertadores"
+          }
         },
         "caseStudy": {
           "problem": "Users following Argentine football and the lower divisions had to check multiple sources to access updated results, tables and stats. Information often arrived late, was disorganized or hard to view on mobile.",
-          "solution": "I developed a mobile app with Ionic and Angular focused on centralizing results, fixtures, standings and stats for Argentine football in a single platform. The app consumes data from sports APIs and prioritizes a fast, clear experience optimized for mobile devices.",
-          "decisions": "I chose Ionic with Angular to leverage a single cross-platform codebase and speed up mobile development. The architecture was designed prioritizing reusable components, lazy loading and API consumption optimization to improve load times and user experience.",
-          "outcomes": "The app was published on Google Play and validated a proposal specifically aimed at Argentine football and lower division fans. The project helped consolidate knowledge in hybrid mobile development, API consumption, performance optimization and scalable frontend architecture."
-        }
-      },
-      "goludos-web": {
-        "title": "Goludos Web",
-        "description": "Mobile platform focused on Argentine football and the lower divisions, designed to follow results, tables and stats across different categories in a fast, simple and intuitive experience. The app lets users check updated match information, standings and team performance from any mobile device.",
-        "impact": "Centralizes information from different leagues and tournaments in a single platform, avoiding data scattered across social media, groups and multiple websites. The app makes it easy to follow Argentine football with quick access to fixtures, results and updated stats.",
-        "learned": "One of the biggest challenges was optimizing real-time data updates without affecting the mobile app's performance. I implemented controlled polling and local caching strategies to reduce unnecessary requests and improve navigation smoothness, especially during match days with many simultaneous games.",
-        "gallery": {
-          "a": "Home",
-          "b": "Loading",
-          "c": "Standings & fixtures",
-          "d": "Top scorers & assists",
-          "e": "Bookings & red cards",
-          "f": "B Nacional",
-          "g": "Libertadores"
-        },
-        "caseStudy": {
-          "problem": "Users following Argentine football and the lower divisions had to check multiple sources to access updated results, tables and stats. Information often arrived late, was disorganized or hard to view on mobile.",
-          "solution": "I developed a mobile application with Ionic and Angular focused on centralizing results, fixtures, standings and stats for Argentine football in a single platform. The app consumes data from sports APIs and prioritizes a fast, clear experience optimized for mobile devices.",
-          "decisions": "I chose Ionic with Angular to leverage a single cross-platform codebase and speed up mobile development. The architecture was designed prioritizing reusable components, lazy loading and API consumption optimization to improve load times and user experience.",
-          "outcomes": "The app was published on Google Play and validated a proposal specifically aimed at Argentine football and lower division fans. The project helped consolidate knowledge in hybrid mobile development, API consumption, performance optimization and scalable frontend architecture."
+          "solution": "I built a platform with Ionic and Angular to centralize results, fixtures, standings and stats for Argentine football. The same codebase is deployed as a mobile app on Play Store and as a web version, consuming data from sports APIs.",
+          "decisions": "I chose Ionic with Angular to leverage a single cross-platform codebase: one development, two platforms (mobile + web). The architecture prioritizes reusable components, lazy loading and API consumption optimization.",
+          "outcomes": "The app was published on Google Play and the web version is live online. The project consolidated knowledge in hybrid mobile development, API consumption, performance optimization and scalable frontend architecture."
         }
       },
       "nutriamor": {
@@ -409,9 +398,8 @@
         }
       },
       "pokemon-game": {
-        "title": "Guess the Pokémon",
+        "title": "Fanático Pokémon",
         "description": "Pokémon trivia game with 4 difficulty modes, timer, type-based combo system, progressive Pokédex of 905 Pokémon, daily missions, login streaks and 30+ unlockable achievements. No backend — everything runs client-side.",
-        "impact": "Personal project that grew into a full-featured app with progression systems, synthesized audio via Web Audio API and particles via Canvas — with no external dependencies beyond Vue and Axios.",
         "gallery": {
           "a": "Main game screen",
           "b": "Difficulty modes and selection",
@@ -489,32 +477,6 @@
     "cta": "Back to home",
     "ctaProjects": "View projects",
     "commit": "git commit -m \"fix: add page that actually exists\""
-  },
-  "til": {
-    "subtitle": "Continuous learning",
-    "header": "Today I Learned",
-    "description": "Short notes on things I discovered while solving real problems. Debugging, patterns, mental shortcuts.",
-    "readMore": "Read more",
-    "meta": {
-      "title": "TIL · Joan Romero",
-      "description": "Small lessons learned on the frontend development journey."
-    },
-    "posts": {
-      "vue-transition-single-root": {
-        "title": "Vue <Transition> requires a single root node",
-        "summary": "I spent an hour debugging a Vue warning until I understood why fragments break route transitions.",
-        "body": "Vue's <Transition> component cannot animate fragments — components with more than one root node in their template.\n\nI was building my portfolio's HomeView with three root-level elements: a <CursorAura /> component, the main <section>, and a marquee <div>. Vue showed this in the console:\n\n```\nComponent inside <Transition> renders non-element root node that cannot be animated.\n```\n\n**Why this happens**\n\nVue applies the `enter-active` and `leave-active` classes to the component's root DOM element. With a fragment there's no single element, so the transition silently fails.\n\n**The fix**\n\nWrap the entire template in a single `<div>` container. It doesn't affect layout and resolves the warning entirely.\n\n**What I learned**\n\nBefore debugging broken animations, always check that the component isn't a fragment. It's one of those Vue constraints that isn't clearly signaled in error messages."
-      },
-      "css-background-clip-text": {
-        "title": "background-clip: text does not work through overflow: hidden",
-        "summary": "My gradient texts were invisible. The culprit was overflow: hidden on an intermediate container.",
-        "body": "I implemented gradient text in the hero — large name with cyan and emerald colors. Everything compiled fine but the text was completely invisible.\n\n**The problem**\n\n`background-clip: text` with `-webkit-text-fill-color: transparent` makes the background visible only where there is text. If you apply that class to the parent, and children have `overflow: hidden`, the gradient doesn't propagate.\n\nThe child inherits `color: transparent` without inheriting the parent's background gradient → invisible text.\n\n**The fix**\n\nMove the `gradient-text` class directly to the span that renders the text, not to the wrapper:\n\n```css\n/* Correct: gradient on the text element directly */\n.word-inner {\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-image: linear-gradient(...);\n}\n```\n\n**What I learned**\n\n`background-clip: text` needs to be on the element that renders the text. Intermediate elements with overflow break the inheritance chain."
-      },
-      "intersection-observer-pattern": {
-        "title": "IntersectionObserver: the correct pattern with Vue composables",
-        "summary": "I tried mounting the observer inside the composable but the ref was always null. The trick is to expose start() and let the caller control the timing.",
-        "body": "I was building a `useCountUp` hook to animate numbers when they enter the viewport. My first design created the IntersectionObserver internally inside the composable.\n\nThe problem: the element ref was always `null` because the composable's `onMounted` runs before the component's template has fully rendered.\n\n**The initial design (broken)**\n\n```js\nexport function useCountUp(target, elRef) {\n  onMounted(() => {\n    // elRef.value is null here ❌\n    new IntersectionObserver(...).observe(elRef.value)\n  })\n}\n```\n\n**The correct pattern**\n\nExpose `start()` and let the component control the timing:\n\n```js\nexport function useCountUp(target) {\n  const display = ref('0')\n  function start() { /* animate */ }\n  return { display, start }\n}\n\n// In the component:\nonMounted(() => {\n  new IntersectionObserver(([e]) => {\n    if (e.isIntersecting) { start(); observer.disconnect() }\n  }).observe(statsRef.value) // ✅ already available\n})\n```\n\n**What I learned**\n\nComposables should expose capabilities, not side effects that depend on the DOM. Timing control should always live in the component that knows its elements' lifecycle."
-      }
-    }
   }
+
 }

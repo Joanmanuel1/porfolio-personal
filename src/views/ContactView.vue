@@ -46,15 +46,6 @@
               <i class="pi pi-send"></i>
               {{ t('contact.emailCta') }}
             </a>
-            <a
-              :href="whatsappLink"
-              target="_blank"
-              rel="noopener"
-              class="cta-secondary inline-flex text-sm"
-            >
-              <i class="pi pi-whatsapp text-emerald-400"></i>
-              WhatsApp
-            </a>
           </div>
         </div>
 
@@ -108,7 +99,6 @@ const { t } = useI18n()
 
 const email = 'joanmanuelromero100@gmail.com'
 const mailtoLink = `mailto:${email}?subject=${encodeURIComponent('Hola Joan — consulta desde portfolio')}`
-const whatsappLink = 'https://wa.me/5491134567890?text=' + encodeURIComponent('Hola Joan, te escribo desde tu portfolio')
 
 const copied = ref(false)
 async function copyEmail() {

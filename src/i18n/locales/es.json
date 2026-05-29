@@ -19,8 +19,7 @@
     "experience": "Experiencia",
     "education": "Educación",
     "about": "Sobre mí",
-    "contact": "Contacto",
-    "til": "TIL"
+    "contact": "Contacto"
   },
   "home": {
     "meta": {
@@ -274,50 +273,40 @@
       "caseStudyTitle": "Caso de estudio"
     },
     "items": {
-      "goludos-mobile": {
-        "title": "Goludos App Mobile",
-        "description": "Plataforma móvil enfocada en el fútbol argentino y el ascenso, diseñada para seguir resultados, tablas y estadísticas de distintas categorías en una experiencia rápida, simple e intuitiva. La aplicación permite consultar información actualizada de partidos, posiciones y rendimiento de equipos desde cualquier dispositivo móvil.",
-        "impact": "Centraliza información de distintas ligas y torneos en una sola plataforma, evitando la dispersión de datos entre redes sociales, grupos y múltiples sitios web. La app facilita el seguimiento del fútbol argentino con acceso rápido a fixtures, resultados y estadísticas actualizadas.",
-        "learned": "Uno de los mayores desafíos fue optimizar las actualizaciones de datos en tiempo real sin afectar el rendimiento de la aplicación móvil. Implementé estrategias de polling controlado y caché local para reducir solicitudes innecesarias y mejorar la fluidez de navegación, especialmente durante jornadas con muchos partidos simultáneos.",
+      "goludos": {
+        "title": "Goludos",
+        "description": "Plataforma enfocada en el fútbol argentino y el ascenso, disponible como app móvil en Play Store y versión web. Permite seguir resultados, tablas y estadísticas de distintas categorías en una experiencia rápida, simple e intuitiva.",
+        "impact": "Centraliza información de distintas ligas y torneos en una sola plataforma, evitando la dispersión de datos entre redes sociales, grupos y múltiples sitios web. Disponible en mobile y web con la misma base de código.",
+        "learned": "Uno de los mayores desafíos fue optimizar las actualizaciones de datos en tiempo real sin afectar el rendimiento. Implementé estrategias de polling controlado y caché local para reducir solicitudes innecesarias y mejorar la fluidez de navegación, especialmente durante jornadas con muchos partidos simultáneos.",
         "gallery": {
-          "a": "Pantalla posiciones",
-          "b": "Tabla de posiciones",
-          "c": "Fixture",
-          "d": "Fixture detalle",
-          "e": "Detalle de goles",
-          "f": "Formación",
-          "g": "Historial",
-          "h": "Estadísticas",
-          "i": "Amonestados",
-          "j": "Calendario",
-          "k": "Penales"
+          "mobile": {
+            "a": "Pantalla posiciones",
+            "b": "Tabla de posiciones",
+            "c": "Fixture",
+            "d": "Fixture detalle",
+            "e": "Detalle de goles",
+            "f": "Formación",
+            "g": "Historial",
+            "h": "Estadísticas",
+            "i": "Amonestados",
+            "j": "Calendario",
+            "k": "Penales"
+          },
+          "web": {
+            "a": "Home",
+            "b": "Cargando",
+            "c": "Posiciones y fixture",
+            "d": "Goleadores y asistidores",
+            "e": "Amonestados y expulsados",
+            "f": "B Nacional",
+            "g": "Libertadores"
+          }
         },
         "caseStudy": {
           "problem": "Los usuarios que seguían el fútbol argentino y las categorías de ascenso debían consultar múltiples fuentes para acceder a resultados, tablas y estadísticas actualizadas. Muchas veces la información llegaba tarde, estaba desordenada o no era fácil de visualizar desde el celular.",
-          "solution": "Desarrollé una aplicación móvil con Ionic y Angular enfocada en centralizar resultados, fixtures, posiciones y estadísticas del fútbol argentino en una única plataforma. La aplicación consume datos desde APIs deportivas y prioriza una experiencia rápida, clara y optimizada para dispositivos móviles.",
-          "decisions": "Elegí Ionic con Angular para aprovechar una única base de código multiplataforma y acelerar el desarrollo mobile. La arquitectura se diseñó priorizando componentes reutilizables, lazy loading y optimización de consumo de API para mejorar tiempos de carga y experiencia de usuario.",
-          "outcomes": "La aplicación fue publicada en Google Play y permitió validar una propuesta orientada específicamente a los fanáticos del fútbol argentino y el ascenso. El proyecto sirvió para consolidar conocimientos en desarrollo mobile híbrido, consumo de APIs, optimización de rendimiento y arquitectura frontend escalable."
-        }
-      },
-      "goludos-web": {
-        "title": "Goludos Web",
-        "description": "Plataforma móvil enfocada en el fútbol argentino y el ascenso, diseñada para seguir resultados, tablas y estadísticas de distintas categorías en una experiencia rápida, simple e intuitiva. La aplicación permite consultar información actualizada de partidos, posiciones y rendimiento de equipos desde cualquier dispositivo móvil.",
-        "impact": "Centraliza información de distintas ligas y torneos en una sola plataforma, evitando la dispersión de datos entre redes sociales, grupos y múltiples sitios web. La app facilita el seguimiento del fútbol argentino con acceso rápido a fixtures, resultados y estadísticas actualizadas.",
-        "learned": "Uno de los mayores desafíos fue optimizar las actualizaciones de datos en tiempo real sin afectar el rendimiento de la aplicación móvil. Implementé estrategias de polling controlado y caché local para reducir solicitudes innecesarias y mejorar la fluidez de navegación, especialmente durante jornadas con muchos partidos simultáneos.",
-        "gallery": {
-          "a": "Home",
-          "b": "Cargando",
-          "c": "Posiciones y fixture",
-          "d": "Goleadores y asistidores",
-          "e": "Amonestados y expulsados",
-          "f": "B Nacional",
-          "g": "Libertadores"
-        },
-        "caseStudy": {
-          "problem": "Los usuarios que seguían el fútbol argentino y las categorías de ascenso debían consultar múltiples fuentes para acceder a resultados, tablas y estadísticas actualizadas. Muchas veces la información llegaba tarde, estaba desordenada o no era fácil de visualizar desde el celular.",
-          "solution": "Desarrollé una aplicación móvil con Ionic y Angular enfocada en centralizar resultados, fixtures, posiciones y estadísticas del fútbol argentino en una única plataforma. La aplicación consume datos desde APIs deportivas y prioriza una experiencia rápida, clara y optimizada para dispositivos móviles.",
-          "decisions": "Elegí Ionic con Angular para aprovechar una única base de código multiplataforma y acelerar el desarrollo mobile. La arquitectura se diseñó priorizando componentes reutilizables, lazy loading y optimización de consumo de API para mejorar tiempos de carga y experiencia de usuario.",
-          "outcomes": "La aplicación fue publicada en Google Play y permitió validar una propuesta orientada específicamente a los fanáticos del fútbol argentino y el ascenso. El proyecto sirvió para consolidar conocimientos en desarrollo mobile híbrido, consumo de APIs, optimización de rendimiento y arquitectura frontend escalable."
+          "solution": "Desarrollé una plataforma con Ionic y Angular para centralizar resultados, fixtures, posiciones y estadísticas del fútbol argentino. La misma base de código se despliega como app móvil en Play Store y como versión web, consumiendo datos desde APIs deportivas.",
+          "decisions": "Elegí Ionic con Angular para aprovechar una única base de código multiplataforma: un solo desarrollo, dos plataformas (mobile + web). La arquitectura se diseñó priorizando componentes reutilizables, lazy loading y optimización del consumo de API.",
+          "outcomes": "La app fue publicada en Google Play y la versión web está disponible online. El proyecto consolidó conocimientos en desarrollo mobile híbrido, consumo de APIs, optimización de rendimiento y arquitectura frontend escalable."
         }
       },
       "nutriamor": {
@@ -409,9 +398,8 @@
         }
       },
       "pokemon-game": {
-        "title": "Adivina qué Pokémon es",
+        "title": "Fanático Pokémon",
         "description": "Juego de trivia Pokémon con 4 modos de dificultad, timer, sistema de combos por tipo, Pokédex progresiva de 905 Pokémon, misiones diarias, rachas de login y más de 30 logros desbloqueables. Sin backend — todo en el cliente.",
-        "impact": "Proyecto personal que escaló a una app completa con sistemas de progresión, audio sintetizado con Web Audio API y partículas con Canvas — sin ninguna dependencia externa más allá de Vue y Axios.",
         "gallery": {
           "a": "Pantalla de juego principal",
           "b": "Modos de dificultad y selección",
@@ -489,32 +477,6 @@
     "cta": "Volver al inicio",
     "ctaProjects": "Ver proyectos",
     "commit": "git commit -m \"fix: add page that actually exists\""
-  },
-  "til": {
-    "subtitle": "Aprendizaje continuo",
-    "header": "Today I Learned",
-    "description": "Reflexiones cortas sobre cosas que descubrí resolviendo problemas reales. Debugging, patrones, atajos mentales.",
-    "readMore": "Leer más",
-    "meta": {
-      "title": "TIL · Joan Romero",
-      "description": "Pequeñas lecciones aprendidas en el camino del desarrollo frontend."
-    },
-    "posts": {
-      "vue-transition-single-root": {
-        "title": "Vue <Transition> requiere un único nodo raíz",
-        "summary": "Pasé una hora debuggeando un warning de Vue hasta entender por qué los fragments rompen las transiciones de ruta.",
-        "body": "El componente <Transition> de Vue no puede animar fragments — componentes con más de un nodo raíz en el template.\n\nEstaba construyendo el HomeView de mi portfolio con tres elementos raíz: un <CursorAura />, la <section> principal y un marquee <div>. Vue mostraba en consola:\n\n```\nComponent inside <Transition> renders non-element root node that cannot be animated.\n```\n\n**Por qué pasa**\n\nVue aplica las clases `enter-active` y `leave-active` al elemento DOM raíz del componente. Con un fragment no hay un único elemento y la transición falla silenciosamente.\n\n**La solución**\n\nEnvolver todo el template en un único `<div>` contenedor. No afecta el layout y resuelve el warning de raíz.\n\n**Lo que aprendí**\n\nAntes de debuggear animaciones rotas, verificar siempre que el componente no sea un fragment. Es una restricción de Vue poco señalada en los mensajes de error."
-      },
-      "css-background-clip-text": {
-        "title": "background-clip: text no funciona a través de overflow: hidden",
-        "summary": "Mis textos con gradiente quedaban invisibles. El culpable era overflow: hidden en un contenedor intermedio.",
-        "body": "Implementé textos con gradiente en el hero — nombre en grande con colores cyan y emerald. Todo compilaba bien pero el texto quedaba completamente invisible.\n\n**El problema**\n\n`background-clip: text` con `-webkit-text-fill-color: transparent` hace visible el background solo donde hay texto. Si aplicás esa clase al padre, y los hijos tienen `overflow: hidden`, el gradiente no se propaga.\n\nEl hijo hereda `color: transparent` sin heredar el background gradient del padre → texto invisible.\n\n**La solución**\n\nMover la clase `gradient-text` directamente al span que renderiza el texto, no al contenedor:\n\n```css\n/* Correcto: gradient en el elemento de texto directo */\n.word-inner {\n  background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-image: linear-gradient(...);\n}\n```\n\n**Lo que aprendí**\n\n`background-clip: text` necesita estar en el elemento que renderiza el texto. Los intermediarios con overflow rompen la cadena de herencia."
-      },
-      "intersection-observer-pattern": {
-        "title": "IntersectionObserver: el patrón correcto con composables Vue",
-        "summary": "Intenté montar el observer dentro del composable pero la ref siempre llegaba null. El truco está en exponer start() y dejar que el caller controle el timing.",
-        "body": "Estaba construyendo un hook `useCountUp` para animar números al entrar al viewport. Mi primer diseño creaba el IntersectionObserver internamente en el composable.\n\nEl problema: la ref del elemento siempre llegaba `null` porque el `onMounted` del composable se ejecuta antes que el template del componente renderice.\n\n**El diseño inicial (roto)**\n\n```js\nexport function useCountUp(target, elRef) {\n  onMounted(() => {\n    // elRef.value es null acá ❌\n    new IntersectionObserver(...).observe(elRef.value)\n  })\n}\n```\n\n**El patrón correcto**\n\nExponer `start()` y dejar que el componente controle el timing:\n\n```js\nexport function useCountUp(target) {\n  const display = ref('0')\n  function start() { /* animate */ }\n  return { display, start }\n}\n\n// En el componente:\nonMounted(() => {\n  new IntersectionObserver(([e]) => {\n    if (e.isIntersecting) { start(); observer.disconnect() }\n  }).observe(statsRef.value) // ✅ ya disponible\n})\n```\n\n**Lo que aprendí**\n\nLos composables deben exponer capacidades, no efectos secundarios que dependan del DOM. El timing siempre debe estar en el componente que conoce el ciclo de vida de sus elementos."
-      }
-    }
   }
+
 }

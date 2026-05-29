@@ -3,8 +3,7 @@
 // Image filenames follow {id}-{letter}.png in src/assets/img/.
 
 const idBySlug = {
-  'goludos-mobile': 1,
-  'goludos-web': 2,
+  'goludos': 1,
   'adogtame': 3,
   'pokemon-game': 4,
   'pokedex': 5,
@@ -22,7 +21,7 @@ function buildGallery(slug, letters) {
 }
 
 function make(slug, partial) {
-  const { galleryLetters = [], ...rest } = partial
+  const { galleryLetters = [], gallery: manualGallery, ...rest } = partial
   return {
     id: idBySlug[slug],
     slug,
@@ -30,30 +29,24 @@ function make(slug, partial) {
     descriptionKey: `projects.items.${slug}.description`,
     impactKey: `projects.items.${slug}.impact`,
     ...rest,
-    gallery: buildGallery(slug, galleryLetters),
+    gallery: manualGallery ?? buildGallery(slug, galleryLetters),
   }
 }
 
 export const productionProjects = [
-  make('goludos-mobile', {
+  make('goludos', {
     technologies: ['Ionic', 'Angular', 'Node.js', 'PostgreSQL'],
-    demoUrl:
-      'https://play.google.com/store/apps/details?id=com.miempresa.fulbo&hl=es_AR',
+    demoUrl: 'https://play.google.com/store/apps/details?id=com.miempresa.fulbo&hl=es_AR',
+    demoUrlWeb: 'https://goludos.netlify.app/',
     githubUrl: '',
     status: true,
     featured: true,
     frame: 'mobile',
-    galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
-  }),
-  make('goludos-web', {
-    technologies: ['Angular', 'Bootstrap', 'Node.js', 'PostgreSQL'],
-    demoUrl: 'https://goludos.netlify.app/',
-    githubUrl: '',
-    status: false,
-    featured: true,
-    frame: 'browser',
     caseStudy: true,
-    galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+    gallery: [
+      ...['a','b','c','d','e','f','g','h','i','j','k'].map(l => ({ item: `1-${l}.png`, altKey: `projects.items.goludos.gallery.mobile.${l}` })),
+      ...['a','b','c','d','e','f','g'].map(l => ({ item: `2-${l}.png`, altKey: `projects.items.goludos.gallery.web.${l}` })),
+    ],
   }),
   make('nutriamor', {
     technologies: ['Vue 3', 'TensorFlow/AI API', 'Tailwind', 'Firebase'],
