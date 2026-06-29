@@ -37,15 +37,15 @@ export const productionProjects = [
   make('goludos', {
     technologies: ['Ionic', 'Angular', 'Node.js', 'PostgreSQL'],
     demoUrl: 'https://play.google.com/store/apps/details?id=com.miempresa.fulbo&hl=es_AR',
-    demoUrlWeb: 'https://goludos.netlify.app/',
+    demoUrlWeb: 'https://goludos.com/',
     githubUrl: '',
     status: true,
     featured: true,
     frame: 'mobile',
     caseStudy: true,
     gallery: [
-      ...['a','b','c','d','e','f','g','h','i','j','k'].map(l => ({ item: `1-${l}.png`, altKey: `projects.items.goludos.gallery.mobile.${l}` })),
-      ...['a','b','c','d','e','f','g'].map(l => ({ item: `2-${l}.png`, altKey: `projects.items.goludos.gallery.web.${l}` })),
+      ...['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'].map(l => ({ item: `1-${l}.png`, altKey: `projects.items.goludos.gallery.mobile.${l}` })),
+      ...['a', 'b', 'c', 'd', 'e', 'f', 'g'].map(l => ({ item: `2-${l}.png`, altKey: `projects.items.goludos.gallery.web.${l}` })),
     ],
   }),
   make('nutriamor', {
