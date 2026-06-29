@@ -43,7 +43,7 @@
       "stats": {
         "years": "years of experience",
         "production": "production projects",
-        "stack": "main frameworks"
+        "stack": "real clients"
       },
       "localTime": "Buenos Aires"
     },
@@ -257,6 +257,7 @@
       "learned": "What I learned",
       "demo": "View Demo",
       "playstore": "Play Store",
+      "webSite": "Web Site",
       "code": "Code",
       "gallery": "Gallery",
       "preview": "Preview",

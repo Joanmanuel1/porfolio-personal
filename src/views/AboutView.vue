@@ -77,7 +77,6 @@
               :style="{ color: s.color, borderColor: s.color + '40', background: s.color + '12' }"
             >
               {{ s.label }}
-              <span class="text-slate-500 text-[10px] font-mono">{{ s.years }}{{ t('about.skillsYears') }}</span>
             </span>
           </div>
 
@@ -93,7 +92,6 @@
                 :style="{ color: s.color, borderColor: s.color + '40', background: s.color + '12' }"
               >
                 {{ s.label }}
-                <span class="text-slate-500 text-[10px] font-mono">{{ s.years }}{{ t('about.skillsYears') }}</span>
               </span>
             </div>
           </div>
@@ -110,7 +108,6 @@
                 :style="{ color: s.color, borderColor: s.color + '40', background: s.color + '12' }"
               >
                 {{ s.label }}
-                <span class="text-slate-500 text-[10px] font-mono">{{ s.years }}{{ t('about.skillsYears') }}</span>
               </span>
             </div>
           </div>

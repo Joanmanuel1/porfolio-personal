@@ -102,23 +102,11 @@ export const productionProjects = [
 ]
 
 export const practiceProjects = [
-  make('adogtame', {
-    technologies: ['Angular', 'Firebase'],
-    demoUrl: '',
-    githubUrl: 'https://github.com/Joanmanuel1/Adogtame-frontend',
-    galleryLetters: ['a', 'b'],
-  }),
   make('pokemon-game', {
     technologies: ['Vue 3', 'PokeAPI', 'Web Audio API', 'Canvas API'],
     demoUrl: 'https://fanaticopokemon.netlify.app/',
     githubUrl: 'https://github.com/Joanmanuel1/Pokemon-game',
     galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
-  }),
-  make('pokedex', {
-    technologies: ['Vue 3', 'REST API'],
-    demoUrl: 'https://pokemon-vue-global66.netlify.app/',
-    githubUrl: 'https://github.com/Joanmanuel1/pokemon-vue',
-    galleryLetters: ['a', 'b', 'c'],
   }),
 ]
 

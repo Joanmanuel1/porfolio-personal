@@ -103,10 +103,20 @@
                     rel="noopener"
                     class="cta-primary text-sm px-4 py-2 rounded-lg"
                   >
-                    <i class="pi pi-external-link"></i> {{ t('projects.labels.demo') }}
+                    <i :class="project.demoUrlWeb ? 'pi pi-android' : 'pi pi-external-link'"></i>
+                    {{ project.demoUrlWeb ? t('projects.labels.playstore') : t('projects.labels.demo') }}
+                  </a>
+                  <a
+                    v-if="project.demoUrlWeb"
+                    :href="project.demoUrlWeb"
+                    target="_blank"
+                    rel="noopener"
+                    class="cta-primary text-sm px-4 py-2 rounded-lg"
+                  >
+                    <i class="pi pi-globe"></i> {{ t('projects.labels.webSite') }}
                   </a>
                   <span
-                    v-else-if="project.wip"
+                    v-if="!project.demoUrl && !project.demoUrlWeb && project.wip"
                     :title="t('projects.labels.wipTooltip')"
                     class="inline-flex items-center gap-1.5 text-sm px-4 py-2 rounded-lg bg-amber-500/10 border border-amber-500/25 text-amber-400 cursor-default select-none"
                   >
@@ -132,8 +142,9 @@
         </div>
       </div>
 
+
       <!-- Practice projects -->
-      <div>
+      <div v-if="practiceProjects.length">
         <div class="flex items-center gap-3 mb-8">
           <span class="w-1 h-5 rounded-full bg-gradient-to-b from-cyan-400 to-emerald-500"></span>
           <h2 class="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">

@@ -90,6 +90,15 @@
             </RouterLink>
             <a
               v-magnetic="0.2"
+              href="/CV-JoanManuelRomero.pdf"
+              download
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20"
+            >
+              <i class="pi pi-download text-slate-400"></i>
+              CV
+            </a>
+            <a
+              v-magnetic="0.2"
               href="https://www.linkedin.com/in/joanmanuelromero/"
               target="_blank"
               rel="noopener"
@@ -97,15 +106,6 @@
             >
               <i class="pi pi-linkedin text-blue-400"></i>
               LinkedIn
-            </a>
-            <a
-              v-magnetic="0.2"
-              href="/CV-JoanManuelRomero.pdf"
-              download
-              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20"
-            >
-              <i class="pi pi-download text-slate-400"></i>
-              CV
             </a>
           </div>
 
@@ -256,9 +256,10 @@ function updateTime() {
 }
 
 // ─── Animated counters ────────────────────────────────────────
-const { display: yearsDisplay, start: startYears } = useCountUp(3, { duration: 1400, suffix: '+' })
+const experienceYears = new Date().getFullYear() - 2022
+const { display: yearsDisplay, start: startYears } = useCountUp(experienceYears, { duration: 1400, suffix: '+' })
 const { display: projectsDisplay, start: startProjects } = useCountUp(4, { duration: 1600 })
-const { display: frameworksDisplay, start: startFrameworks } = useCountUp(2, { duration: 1200 })
+const { display: frameworksDisplay, start: startFrameworks } = useCountUp(3, { duration: 1200 })
 const statsRef = ref(null)
 let statsObserver = null
 
