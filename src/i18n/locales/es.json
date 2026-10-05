@@ -281,26 +281,26 @@
         "learned": "Uno de los mayores desafíos fue optimizar las actualizaciones de datos en tiempo real sin afectar el rendimiento. Implementé estrategias de polling controlado y caché local para reducir solicitudes innecesarias y mejorar la fluidez de navegación, especialmente durante jornadas con muchos partidos simultáneos.",
         "gallery": {
           "mobile": {
-            "a": "Pantalla posiciones",
-            "b": "Tabla de posiciones",
-            "c": "Fixture",
-            "d": "Fixture detalle",
-            "e": "Detalle de goles",
-            "f": "Formación",
-            "g": "Historial",
-            "h": "Estadísticas",
-            "i": "Amonestados",
-            "j": "Calendario",
-            "k": "Penales"
-          },
-          "web": {
-            "a": "Home",
-            "b": "Cargando",
-            "c": "Posiciones y fixture",
-            "d": "Goleadores y asistidores",
-            "e": "Amonestados y expulsados",
-            "f": "B Nacional",
-            "g": "Libertadores"
+            "a": "Bienvenida",
+            "b": "Elegí tu equipo",
+            "c": "Elegí tus ligas",
+            "d": "Activar notificaciones",
+            "e": "Partidos de hoy con canales de TV",
+            "f": "Resultados de ayer con goleadores",
+            "g": "Partidos de mañana",
+            "h": "Detalle del partido e historial",
+            "i": "Historial y noticias del partido",
+            "j": "Tabla de posiciones",
+            "k": "Fixture por fecha",
+            "l": "Fixture por fecha de Primera Nacional",
+            "m": "Posiciones de Primera Nacional",
+            "n": "Tabla de La Liga",
+            "o": "Perfil de Real Madrid",
+            "p": "Próximos partidos de Real Madrid",
+            "q": "Eventos: goles y tarjetas del partido",
+            "r": "Alineaciones en cancha",
+            "s": "Champions League: fase de liga",
+            "t": "Libertadores: cuadro de fase final"
           }
         },
         "caseStudy": {
@@ -316,17 +316,17 @@
         "impact": "Mejora la adherencia a planes nutricionales con feedback inmediato sobre cada comida, reemplazando la espera entre consultas.",
         "learned": "Integrar una API de IA con respuestas variables en tiempo fue el reto principal. Diseñé un sistema de colas con feedback progresivo en la UI para que el usuario nunca percibiera la latencia como fallo, mejorando la tasa de retención de la feature de análisis.",
         "gallery": {
-          "a": "Home",
-          "b": "Cargar informe",
-          "c": "Detalle del informe",
-          "d": "Registro de comida",
-          "e": "IA carga comida",
-          "f": "Análisis de IA",
-          "g": "Carga de datos",
-          "h": "Datos complementarios",
-          "i": "Home cargado",
-          "j": "Recetas de comida",
-          "k": "Receta nueva carga"
+          "a": "Detalle de una comida con foto y macros",
+          "b": "Calendario con progreso diario",
+          "c": "Resumen del día: agua, actividad y comidas",
+          "d": "Inicio de sesión",
+          "e": "Registrar comida: con foto o a mano",
+          "f": "La IA analiza la foto del plato",
+          "g": "Chef IA: calorías y macros estimados",
+          "h": "Revisión final antes de guardar",
+          "i": "Agregar colación",
+          "j": "Generar informe mensual o semanal",
+          "k": "Perfil y objetivo"
         },
         "caseStudy": {
           "problem": "Los usuarios de planes nutricionales abandonan en las primeras semanas porque el feedback de su progreso llega días después en la consulta presencial. Sin refuerzo inmediato, la adherencia cae drásticamente.",
@@ -479,5 +479,4 @@
     "ctaProjects": "Ver proyectos",
     "commit": "git commit -m \"fix: add page that actually exists\""
   }
-
 }

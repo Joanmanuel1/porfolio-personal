@@ -281,26 +281,26 @@
         "learned": "One of the biggest challenges was optimizing real-time data updates without affecting performance. I implemented controlled polling and local caching strategies to reduce unnecessary requests and improve navigation smoothness, especially during match days with many simultaneous games.",
         "gallery": {
           "mobile": {
-            "a": "Standings screen",
-            "b": "League table",
-            "c": "Fixture",
-            "d": "Fixture detail",
-            "e": "Goal details",
-            "f": "Lineup",
-            "g": "History",
-            "h": "Statistics",
-            "i": "Bookings",
-            "j": "Schedule",
-            "k": "Penalties"
-          },
-          "web": {
-            "a": "Home",
-            "b": "Loading",
-            "c": "Standings & fixtures",
-            "d": "Top scorers & assists",
-            "e": "Bookings & red cards",
-            "f": "B Nacional",
-            "g": "Libertadores"
+            "a": "Welcome",
+            "b": "Pick your team",
+            "c": "Pick your leagues",
+            "d": "Enable notifications",
+            "e": "Today's matches with TV channels",
+            "f": "Yesterday's results with scorers",
+            "g": "Tomorrow's matches",
+            "h": "Match detail and head-to-head",
+            "i": "Head-to-head and match news",
+            "j": "League table",
+            "k": "Fixtures by matchday",
+            "l": "Primera Nacional fixtures by matchday",
+            "m": "Primera Nacional standings",
+            "n": "La Liga table",
+            "o": "Real Madrid team profile",
+            "p": "Real Madrid upcoming matches",
+            "q": "Match events: goals and cards",
+            "r": "Lineups on the pitch",
+            "s": "Champions League: league phase",
+            "t": "Libertadores: knockout bracket"
           }
         },
         "caseStudy": {
@@ -316,17 +316,17 @@
         "impact": "Improves adherence to nutritional plans with immediate feedback on each meal, replacing the wait between appointments.",
         "learned": "Integrating an AI API with variable response times was the main challenge. I designed a queue system with progressive UI feedback so users never perceived the latency as a failure, which improved the retention rate for the AI analysis feature.",
         "gallery": {
-          "a": "Home",
-          "b": "Upload report",
-          "c": "Report detail",
-          "d": "Meal logging",
-          "e": "AI meal logging",
-          "f": "AI analysis",
-          "g": "Data input",
-          "h": "Complementary data",
-          "i": "Home loaded",
-          "j": "Recipes",
-          "k": "New recipe"
+          "a": "Meal detail with photo and macros",
+          "b": "Calendar with daily progress",
+          "c": "Daily summary: water, activity and meals",
+          "d": "Sign in",
+          "e": "Log a meal: by photo or manually",
+          "f": "AI analyzing the meal photo",
+          "g": "AI Chef: estimated calories and macros",
+          "h": "Final review before saving",
+          "i": "Add a snack",
+          "j": "Generate a monthly or weekly report",
+          "k": "Profile and goal"
         },
         "caseStudy": {
           "problem": "Users of nutritional plans drop out in the first weeks because feedback on their progress only arrives days later during in-person appointments. Without immediate reinforcement, adherence drops drastically.",
@@ -479,5 +479,4 @@
     "ctaProjects": "View projects",
     "commit": "git commit -m \"fix: add page that actually exists\""
   }
-
 }
