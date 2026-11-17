@@ -15,18 +15,18 @@
         </h1>
       </div>
 
-      <!-- Production projects -->
-      <div class="mb-20">
+      <!-- Project groups: production and practice share the same layout -->
+      <div v-for="group in projectGroups" :key="group.kind" class="mb-20 last:mb-0">
         <div class="flex items-center gap-3 mb-8">
           <span class="w-1 h-5 rounded-full bg-gradient-to-b from-cyan-400 to-emerald-500"></span>
           <h2 class="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
-            {{ t('projects.kinds.production') }}
+            {{ t(`projects.kinds.${group.kind}`) }}
           </h2>
         </div>
 
         <div class="space-y-8">
           <article
-            v-for="(project, idx) in productionProjects"
+            v-for="(project, idx) in group.items"
             :key="project.id"
             class="glass glass-hover rounded-2xl overflow-hidden"
             v-motion
@@ -122,6 +122,15 @@
                   >
                     <i class="pi pi-wrench text-xs"></i> {{ t('projects.labels.wip') }}
                   </span>
+                  <a
+                    v-if="project.githubUrl"
+                    :href="project.githubUrl"
+                    target="_blank"
+                    rel="noopener"
+                    class="cta-secondary text-sm px-4 py-2 rounded-lg"
+                  >
+                    <i class="pi pi-github"></i> {{ t('projects.labels.code') }}
+                  </a>
                   <RouterLink
                     :to="{ name: 'ProjectDetail', params: { slug: project.slug } }"
                     class="cta-secondary text-sm px-4 py-2 rounded-lg"
@@ -142,26 +151,6 @@
         </div>
       </div>
 
-
-      <!-- Practice projects -->
-      <div v-if="practiceProjects.length">
-        <div class="flex items-center gap-3 mb-8">
-          <span class="w-1 h-5 rounded-full bg-gradient-to-b from-cyan-400 to-emerald-500"></span>
-          <h2 class="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
-            {{ t('projects.kinds.practice') }}
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ProjectCard
-            v-for="(project, idx) in practiceProjects"
-            :key="project.id"
-            :project="project"
-            v-motion
-            :initial="{ opacity: 0, y: 20 }"
-            :enter="{ opacity: 1, y: 0, transition: { delay: idx * 80, duration: 500 } }"
-          />
-        </div>
-      </div>
 
       <!-- Gallery dialog -->
       <Dialog
@@ -234,7 +223,6 @@
 </template>
 
 <script setup>
-import ProjectCard from '@/components/ProjectCard.vue'
 import DeviceFrame from '@/components/DeviceFrame.vue'
 import Dialog from 'primevue/dialog'
 import Galleria from 'primevue/galleria'
@@ -242,6 +230,11 @@ import { ref, reactive } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { productionProjects, practiceProjects } from '@/data/projects'
+
+const projectGroups = [
+  { kind: 'production', items: productionProjects },
+  { kind: 'practice', items: practiceProjects },
+].filter((g) => g.items.length)
 import { useImageUrl } from '@/composables/useImageUrl'
 import { useSeo } from '@/composables/useSeo'
 

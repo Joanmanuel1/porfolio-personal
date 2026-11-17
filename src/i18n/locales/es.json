@@ -421,6 +421,7 @@
       "pokemon-game": {
         "title": "Fanático Pokémon",
         "description": "Juego de trivia Pokémon con 4 modos de dificultad, timer, sistema de combos por tipo, Pokédex progresiva de 905 Pokémon, misiones diarias, rachas de login y más de 30 logros desbloqueables. Sin backend — todo en el cliente.",
+        "impact": "Juego completo que corre 100% en el navegador: progreso, logros y misiones se guardan localmente, sin servidor ni costos de infraestructura.",
         "gallery": {
           "a": "Pantalla de juego principal",
           "b": "Modos de dificultad y selección",
