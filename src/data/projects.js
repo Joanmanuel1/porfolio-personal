@@ -117,6 +117,8 @@ export const practiceProjects = [
     technologies: ['Vue 3', 'PokeAPI', 'Web Audio API', 'Canvas API'],
     demoUrl: 'https://fanaticopokemon.netlify.app/',
     githubUrl: 'https://github.com/Joanmanuel1/Pokemon-game',
+    frame: 'browser',
+    browserUrl: 'fanaticopokemon.netlify.app',
     galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
   }),
 ]
