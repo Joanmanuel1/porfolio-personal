@@ -310,6 +310,26 @@
           "outcomes": "La app fue publicada en Google Play y la versión web está disponible online. El proyecto consolidó conocimientos en desarrollo mobile híbrido, consumo de APIs, optimización de rendimiento y arquitectura frontend escalable."
         }
       },
+      "sistema-bcra": {
+        "title": "Sistema de Gestión BCRA",
+        "description": "Aplicación de escritorio para Windows, vendida a un cliente del sector financiero, que prepara la presentación mensual del régimen informativo al BCRA. Importa los Excel, valida cada deudor y genera los archivos TXT y el XML listos para presentar.",
+        "impact": "Reemplazó tres planillas Excel que no validaban nada: los errores (CUIT inválidos, duplicados, totales que no cierran) se detectan antes de presentar y no después de un rechazo.",
+        "learned": "El desafío fue traducir una normativa con muchas reglas de formato en validaciones claras para alguien no técnico. Separé un núcleo de validación y generación sin interfaz, cubierto con tests, y encima construí la UI: cada error dice fila, motivo y cómo corregirlo, con arreglos sugeridos en un clic.",
+        "gallery": {
+          "a": "Resumen del período",
+          "b": "Deudores con proveedor e importe",
+          "c": "Problemas detectados con su corrección",
+          "d": "Carga de un nuevo deudor",
+          "e": "Paleta de comandos (Ctrl+K)",
+          "f": "Tema oscuro"
+        },
+        "caseStudy": {
+          "problem": "Cada mes el cliente armaba la presentación al BCRA a mano en tres planillas Excel. Nada se validaba: un CUIT mal tipeado o un deudor duplicado aparecía recién cuando la presentación era rechazada.",
+          "solution": "App de escritorio que importa los Excel (reconoce cuál es cada uno al arrastrarlos), muestra cada deudor con sus errores y una corrección sugerida, guarda el historial por período y genera los 4 archivos de la presentación solo cuando no quedan errores.",
+          "decisions": "Electron + Vue 3 con TypeScript para una app instalable que funcione sin internet. SQLite embebido (node:sqlite) para no compilar módulos nativos. Núcleo de validación independiente de la interfaz, usable también por línea de comandos y testeado con datos ficticios. Instalador de Windows generado en GitHub Actions.",
+          "outcomes": "Entregada y en uso por el cliente. Las presentaciones salen validadas, con historial de períodos, guardado automático y deshacer. Los datos reales nunca salen de la PC del cliente."
+        }
+      },
       "nutriamor": {
         "title": "NutriAmor",
         "description": "Plataforma inteligente de nutrición asistida por IA. Permite el seguimiento detallado de dietas, análisis nutricional automático de recetas y generación de informes de salud personalizados.",

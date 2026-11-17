@@ -4,6 +4,7 @@
 
 const idBySlug = {
   'goludos': 1,
+  'sistema-bcra': 2,
   'adogtame': 3,
   'pokemon-game': 4,
   'pokedex': 5,
@@ -46,6 +47,17 @@ export const productionProjects = [
     gallery: [
       ...'abcdefghijklmnopqrst'.split('').map(l => ({ item: `1-${l}.png`, altKey: `projects.items.goludos.gallery.mobile.${l}` })),
     ],
+  }),
+  make('sistema-bcra', {
+    technologies: ['Electron', 'Vue 3', 'TypeScript', 'SQLite', 'PrimeVue'],
+    demoUrl: '',
+    githubUrl: '',
+    status: true,
+    featured: true,
+    frame: 'browser',
+    browserUrl: 'Presentación BCRA · app de escritorio',
+    caseStudy: true,
+    galleryLetters: ['a', 'b', 'c', 'd', 'e', 'f'],
   }),
   make('nutriamor', {
     technologies: ['Vue 3', 'TensorFlow/AI API', 'Tailwind', 'Firebase'],

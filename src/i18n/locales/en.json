@@ -310,6 +310,26 @@
           "outcomes": "The app was published on Google Play and the web version is live online. The project consolidated knowledge in hybrid mobile development, API consumption, performance optimization and scalable frontend architecture."
         }
       },
+      "sistema-bcra": {
+        "title": "BCRA Reporting System",
+        "description": "Windows desktop app, sold to a client in the financial sector, that prepares the monthly regulatory filing to Argentina's Central Bank (BCRA). It imports the Excel sheets, validates every debtor and generates the TXT files and XML ready to submit.",
+        "impact": "Replaced three Excel sheets with no validation: errors (invalid tax IDs, duplicates, totals that don't add up) are caught before filing, not after a rejection.",
+        "learned": "The challenge was turning a regulation full of format rules into clear validations for a non-technical user. I built a UI-free validation and generation core, covered by tests, and the UI on top of it: every error shows the row, the reason and how to fix it, with one-click suggested fixes.",
+        "gallery": {
+          "a": "Period overview",
+          "b": "Debtors with provider and amount",
+          "c": "Detected problems with their fix",
+          "d": "Adding a new debtor",
+          "e": "Command palette (Ctrl+K)",
+          "f": "Dark theme"
+        },
+        "caseStudy": {
+          "problem": "Every month the client built the BCRA filing by hand across three Excel sheets. Nothing was validated: a mistyped tax ID or a duplicated debtor only showed up when the filing was rejected.",
+          "solution": "Desktop app that imports the Excel files (detecting which is which when dropped together), lists each debtor with its errors and a suggested fix, keeps history per period and generates the 4 filing files only when no errors remain.",
+          "decisions": "Electron + Vue 3 with TypeScript for an installable app that works offline. Embedded SQLite (node:sqlite) to avoid native modules. A validation core independent of the UI, also usable from the command line and tested with fictitious data. Windows installer built in GitHub Actions.",
+          "outcomes": "Delivered and in use by the client. Filings go out validated, with period history, autosave and undo. Real data never leaves the client's PC."
+        }
+      },
       "nutriamor": {
         "title": "NutriAmor",
         "description": "AI-powered nutrition platform. Detailed diet tracking, automatic nutritional analysis of recipes and personalized health reports.",
